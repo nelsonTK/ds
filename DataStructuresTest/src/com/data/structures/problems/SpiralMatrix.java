@@ -7,8 +7,9 @@ import com.data.structures.utils.PrintHelper;
 
 /**
  * em Java matrix de matrizes significa que primeiro temos o index da row ou y, e depois temos o indice das colunas ou x.
- * Ã© contruitivo para quem Ã© de matemÃ¡tica onde as matrizes sÃ£o m(x, y) em java sÃ£o m(y, x) ou m[y][x]
- * Ã© importante perceber isto para nÃ£o fazer confusÃ£o neste tipo de exercicios, ou a preencher uma matriz... 
+ * É confuso para quem é de matematica onde as matrizes sao m(x, y) em java sao m(y, x) ou m[y][x]
+ * É importante perceber isto para nao fazer confusao neste tipo de exercicios, ou a preencher uma matriz... 
+ * por outras palavras matrix de [row][column]
  * @author nelson
  *
  */
@@ -36,6 +37,7 @@ public class SpiralMatrix {
 	}
 	
 	/**
+	 * Foi a solução assimétrica aplicada ao Leet Code
 	 * Leetcode 54
 	 * @param matrix
 	 * @return
@@ -100,6 +102,10 @@ public class SpiralMatrix {
 	        return list;
 	    }
 
+	/**
+	 * Foi a minha segunda solução Para resolver o problema para quadrados simétricos e assimétricos
+	 * @param matrix
+	 */
 	public static void spiralAssimetricArrayPrint(int [][] matrix) {
 		//boundaries
 		int u = 0;
@@ -156,7 +162,8 @@ public class SpiralMatrix {
 	}
 	
 	/**
-	 * para quadrados simÃ©tricos
+	 * para quadrados simétricos
+	 * foi a minha primeira solução, tinha um certo bug relacionado com "x + 1  >= y" vs x + 1
 	 * @param matrix
 	 */
 	public static void spiralPrint(int [][] matrix) {
