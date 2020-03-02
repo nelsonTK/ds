@@ -1,6 +1,6 @@
 package com.data.structures.main;
 
-import com.data.structures.models.Queue1;
+import com.data.structures.ds.Queue1;
 import com.data.structures.utils.PrintHelper;
 
 public class QueueTest {

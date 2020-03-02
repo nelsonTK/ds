@@ -1,4 +1,4 @@
-package com.data.structures.models;
+package com.data.structures.ds;
 
 public class BinarySearchTree {
 	private int value;

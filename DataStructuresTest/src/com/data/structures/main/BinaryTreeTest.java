@@ -1,6 +1,6 @@
 package com.data.structures.main;
 
-import com.data.structures.models.BinaryTree;
+import com.data.structures.ds.BinaryTree;
 
 public class BinaryTreeTest {
 

@@ -1,6 +1,6 @@
 package com.data.structures.main;
 
-import com.data.structures.models.BinarySearchTree;
+import com.data.structures.ds.BinarySearchTree;
 
 public class BinarySearchTreeTest {
 	BinarySearchTree root;

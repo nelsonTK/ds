@@ -1,4 +1,4 @@
-package com.data.structures.models;
+package com.data.structures.ds;
 
 import java.util.Stack;
 

@@ -1,17 +1,16 @@
-package com.data.structures.models;
-
-import java.lang.reflect.Array;
+package com.data.structures.ds;
 
 import com.data.structures.utils.PrintHelper;
 
-public class ArrayListGeneric1<T> {
+public class ArrayList1 {
 	private int capacity;
 	private int size;
-	private T [] array;
-	boolean initialized;
+	private int [] array;
 
-	public ArrayListGeneric1() {
+	public ArrayList1() {
+		super();
 		capacity = 1;
+		array = new int[capacity];
 		size = 0;
 	}
 
@@ -19,14 +18,7 @@ public class ArrayListGeneric1<T> {
 	 * Add Element to a List
 	 * @param element
 	 */
-	@SuppressWarnings("unchecked")
-	public void add(T element) {
-
-		if(!initialized)
-		{
-			array = (T[]) Array.newInstance(element.getClass(), capacity);
-			initialized = true;
-		}
+	public void add(int element) {
 
 		if (size < capacity)
 		{
@@ -34,25 +26,26 @@ public class ArrayListGeneric1<T> {
 		}
 		else
 		{
-			//increase capacity
-			increaseCapacity(element);
+			increaseCapacity();
 			array[size] = element;
-
-			System.out.println("capacity increase");
 		}
 		size++;
 	}
 
-	@SuppressWarnings("unchecked")
-	public void increaseCapacity(T element) {
+	/**
+	 * Increase Capacity of the array
+	 */
+	public void increaseCapacity() {
+
+		//increase capacity
 		capacity = array.length * 2;			
-		//			T [] newArray = new int[capacity];
-		T [] newArray = (T[]) Array.newInstance(element.getClass(), capacity);
+		int [] newArray = new int[capacity];			
 		for (int i = 0, j = array.length - 1; i <= j; i++, j--) {
 			newArray[i] = array[i];
 			newArray[j] = array[j];
 		}
-		array = newArray;		
+		array = newArray;
+		System.out.println("capacity increase");
 	}
 
 	/**
@@ -60,7 +53,7 @@ public class ArrayListGeneric1<T> {
 	 * @param index
 	 * @return
 	 */
-	public T get(int index) {
+	public int get(int index) {
 
 		if (index >= size)
 		{
@@ -77,7 +70,7 @@ public class ArrayListGeneric1<T> {
 	 */
 	public void removeLast() {
 		if (size > 0) {
-			array[size] = null;
+			array[size] = 0;
 			size--;
 		}
 		else
@@ -92,41 +85,17 @@ public class ArrayListGeneric1<T> {
 	 */
 	public void removeAt(int index) {
 		if (size > 0 && index >= 0 && index < size) {
-
 			for (int i = index + 1; i < size; i ++ ) {
 				array[i - 1] = array[i];
 			}
-			array[size - 1] = null;
+			array[size - 1] = 0;
 			size--;
 		}
 	}
 
 	public void print() {
-		int from = 0, to = size -1;
-
-		String result = "";
-
-		if(array == null || array.length == 0)
-		{
-			result = "[Empty]";
-		}
-		else if(from < 0 || to < 0)
-		{
-			result = "[Empty] (computed)";
-		}
-		else if (from > to) 
-		{
-			result = "[ILLEGAL BOUNDARIES] from " + from + " : to " + to;
-		}
-		else 
-		{
-			for (int i = from; i<= to; i++)
-			{
-				result += "["+array[i]+"]";
-			}
-		}
-		System.out.println(result);
-	}	
+		PrintHelper.printArray(array, 0, size-1);
+	}
 
 	public int getCapacity() {
 		return capacity;
@@ -140,10 +109,10 @@ public class ArrayListGeneric1<T> {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	public T[] getArray() {
+	public int[] getArray() {
 		return array;
 	}
-	public void setArray(T[] array) {
+	public void setArray(int[] array) {
 		this.array = array;
 	}
 }

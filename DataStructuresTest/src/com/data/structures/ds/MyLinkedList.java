@@ -1,4 +1,4 @@
-package com.data.structures.models;
+package com.data.structures.ds;
 
 /**
  * Implementação errada, eu coloquei o como last o que era na verdade o first, e vice versa...

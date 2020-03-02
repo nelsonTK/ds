@@ -1,6 +1,6 @@
 package com.data.structures.main;
 
-import com.data.structures.models.ArrayList1;
+import com.data.structures.ds.ArrayList1;
 
 public class ArrayListMain {
 

@@ -1,7 +1,7 @@
 package com.data.structures.main;
 
-import com.data.structures.models.LinkedList2;
-import com.data.structures.models.MyLinkedList;
+import com.data.structures.ds.LinkedList2;
+import com.data.structures.ds.MyLinkedList;
 
 public class MyLinkedListTest {
 

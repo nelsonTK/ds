@@ -1,16 +1,17 @@
-package com.data.structures.models;
+package com.data.structures.ds;
+
+import java.lang.reflect.Array;
 
 import com.data.structures.utils.PrintHelper;
 
-public class ArrayList1 {
+public class ArrayListGeneric1<T> {
 	private int capacity;
 	private int size;
-	private int [] array;
+	private T [] array;
+	boolean initialized;
 
-	public ArrayList1() {
-		super();
+	public ArrayListGeneric1() {
 		capacity = 1;
-		array = new int[capacity];
 		size = 0;
 	}
 
@@ -18,7 +19,14 @@ public class ArrayList1 {
 	 * Add Element to a List
 	 * @param element
 	 */
-	public void add(int element) {
+	@SuppressWarnings("unchecked")
+	public void add(T element) {
+
+		if(!initialized)
+		{
+			array = (T[]) Array.newInstance(element.getClass(), capacity);
+			initialized = true;
+		}
 
 		if (size < capacity)
 		{
@@ -26,26 +34,25 @@ public class ArrayList1 {
 		}
 		else
 		{
-			increaseCapacity();
+			//increase capacity
+			increaseCapacity(element);
 			array[size] = element;
+
+			System.out.println("capacity increase");
 		}
 		size++;
 	}
 
-	/**
-	 * Increase Capacity of the array
-	 */
-	public void increaseCapacity() {
-
-		//increase capacity
+	@SuppressWarnings("unchecked")
+	public void increaseCapacity(T element) {
 		capacity = array.length * 2;			
-		int [] newArray = new int[capacity];			
+		//			T [] newArray = new int[capacity];
+		T [] newArray = (T[]) Array.newInstance(element.getClass(), capacity);
 		for (int i = 0, j = array.length - 1; i <= j; i++, j--) {
 			newArray[i] = array[i];
 			newArray[j] = array[j];
 		}
-		array = newArray;
-		System.out.println("capacity increase");
+		array = newArray;		
 	}
 
 	/**
@@ -53,7 +60,7 @@ public class ArrayList1 {
 	 * @param index
 	 * @return
 	 */
-	public int get(int index) {
+	public T get(int index) {
 
 		if (index >= size)
 		{
@@ -70,7 +77,7 @@ public class ArrayList1 {
 	 */
 	public void removeLast() {
 		if (size > 0) {
-			array[size] = 0;
+			array[size] = null;
 			size--;
 		}
 		else
@@ -85,17 +92,41 @@ public class ArrayList1 {
 	 */
 	public void removeAt(int index) {
 		if (size > 0 && index >= 0 && index < size) {
+
 			for (int i = index + 1; i < size; i ++ ) {
 				array[i - 1] = array[i];
 			}
-			array[size - 1] = 0;
+			array[size - 1] = null;
 			size--;
 		}
 	}
 
 	public void print() {
-		PrintHelper.printArray(array, 0, size-1);
-	}
+		int from = 0, to = size -1;
+
+		String result = "";
+
+		if(array == null || array.length == 0)
+		{
+			result = "[Empty]";
+		}
+		else if(from < 0 || to < 0)
+		{
+			result = "[Empty] (computed)";
+		}
+		else if (from > to) 
+		{
+			result = "[ILLEGAL BOUNDARIES] from " + from + " : to " + to;
+		}
+		else 
+		{
+			for (int i = from; i<= to; i++)
+			{
+				result += "["+array[i]+"]";
+			}
+		}
+		System.out.println(result);
+	}	
 
 	public int getCapacity() {
 		return capacity;
@@ -109,10 +140,10 @@ public class ArrayList1 {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	public int[] getArray() {
+	public T[] getArray() {
 		return array;
 	}
-	public void setArray(int[] array) {
+	public void setArray(T[] array) {
 		this.array = array;
 	}
 }

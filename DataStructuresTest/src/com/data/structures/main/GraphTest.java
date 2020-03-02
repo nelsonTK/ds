@@ -1,7 +1,7 @@
 package com.data.structures.main;
 
-import com.data.structures.models.Graph1;
-import com.data.structures.models.Graph1.Graph;
+import com.data.structures.ds.Graph1;
+import com.data.structures.ds.Graph1.Graph;
 
 public class GraphTest {
 
