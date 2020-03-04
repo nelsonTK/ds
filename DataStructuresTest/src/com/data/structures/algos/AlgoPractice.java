@@ -20,7 +20,7 @@ public class AlgoPractice {
 
 	/**
 	 * O Bubble sort vai percorrer o array de tamanho n, n vezes com dois apontadores i e i+1, ou i e j
-	 * O Bubble sort precisa sempre percorrer o array uma vez sem ter alterações efetuadas
+	 * O Bubble sort precisa sempre percorrer o array uma vez sem ter alterações efetuadas para saber que terminou
 	 * 
 	 * @param array
 	 */
@@ -148,7 +148,7 @@ public class AlgoPractice {
 	}
 
 	/**
-	 * First Merge Sort Draft (não recursivo, não iterativo)
+	 * First Merge Sort Draft (não recursivo, apenas de 1 nível)
 	 * @param array
 	 */
 	private static void MergeSort(int [] array){
@@ -223,7 +223,6 @@ public class AlgoPractice {
 
 		}
 	}
-
 
 	public static void quickSort(int [] array) {
 

@@ -1,5 +1,7 @@
 package com.data.structures.main;
 
+import java.util.Hashtable;
+
 import com.data.structures.algos.AlgoPractice;
 import com.data.structures.utils.PrintHelper;
 
@@ -14,7 +16,6 @@ public class AlgorithmsTest {
 //		AlgoSolutions.mergersort(array);
 		AlgoPractice.quickSort(array);
 		//Collections.swap(new ArrayList<String>(), 0, 4); 
-
 	}
 
 	public static void mergeSortTest(int [] array) {
