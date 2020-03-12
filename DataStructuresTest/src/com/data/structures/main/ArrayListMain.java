@@ -6,7 +6,6 @@ public class ArrayListMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		ArrayListGeneric1<Integer> a = new ArrayListGeneric1<Integer>();
 		ArrayList1 a = new ArrayList1();
 		a.removeLast();
 		a.print();

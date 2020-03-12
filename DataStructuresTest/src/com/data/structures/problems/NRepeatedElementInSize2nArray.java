@@ -4,6 +4,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+/**
+ * 961
+ * https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class NRepeatedElementInSize2nArray {
 
 	/**

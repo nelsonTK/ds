@@ -5,6 +5,14 @@ import java.util.Map;
 
 import com.data.structures.utils.PrintHelper;
 
+/**
+ * 1
+ * https://leetcode.com/problems/two-sum/
+ * EASY
+ * 
+ * @author Nelson Costa
+ *
+ */
 public class TwoSum {
 
 	public static void main(String[] args) {

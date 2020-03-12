@@ -16,13 +16,14 @@ public class HashMap1<K, V> {
 		size = 0;
 	}
 
+	
 	/**
 	 * Ao fazer resize podem ocorrer resizings dentro de resizings
 	 * @param key
 	 * @param newVal
 	 */
 	@SuppressWarnings("unchecked")
-	public void put2(K key, V newVal) {
+	public void put(K key, V newVal) {
 
 		if (entry == null)
 		{
@@ -36,59 +37,52 @@ public class HashMap1<K, V> {
 
 		if (existingNode == null) 
 		{
-			//Posso substituir por add new bucket
-			//new
 			entry = addNewBucketKey(newEntry, hashIndex, entry);
-//			addNewBucketKey(key, newVal, hashIndex, entry);
-
-//			if(!requiresResize()) {
-//				newEntry = new Entry<K,V>(key, newVal);
-//				entry[hashIndex] = newEntry;
-//				debugPrint(newEntry, hashIndex, "[PUT]","[NEW]");
-//				size++;
-//			}else {
-//				resize();
-//				newEntry = new Entry<K,V>(key, newVal);
-//				entry[hashIndex] = newEntry;
-//				debugPrint(newEntry, hashIndex, "[PUT]","[NEW][CAUSED RESIZE]");
-//				size++;
-//			}
+			
+			//delete after finding the rehashing error...
+			/*
+			if (get(key) == null)
+			{
+				System.out.println("[PUT ERROR] put error, cannot find element just added..." + key);
+				get(key);
+			}*/
 		}
 		else if (existingNode != null)
 		{
-			//Posso substituir por update existingBucket
-			//replace
 			updateExistingBucketKey(existingNode, newEntry, hashIndex);
-//			if (existingNode.key == key) 
-//			{
-//				existingNode.value = newVal;
-//				debugPrint(existingNode, hashIndex, "[PUT]","[REPLACE]");
-//			}
-//			else {
-//				//Append
-//				newEntry = new Entry<K,V>(key, newVal);
-//				existingNode.setNext(newEntry);
-//				debugPrint(newEntry, hashIndex, "[PUT]", "[COLLISION]");
-//
-//			}
 		}
 	}
 
 	
+	/**
+	 * 
+	 * @param updateNode
+	 * @param newEntry
+	 * @param hashIndex
+	 */
 	private void updateExistingBucketKey(Entry<K, V> updateNode, Entry<K, V> newEntry, int hashIndex) {
 		if (updateNode.key == newEntry.getKey()) 
 		{
+			//replace
 			updateNode.value = newEntry.getValue();
 			debugPrint(updateNode, hashIndex, "[PUT]","[REPLACE]");
 		}
-		else {
+		else 
+		{
 			//Append
-			//newEntry = new Entry<K,V>(key, newVal);
 			updateNode.setNext(newEntry);
 			debugPrint(newEntry, hashIndex, "[PUT]", "[COLLISION]");
 		}
 	}
 
+	
+	/**
+	 * Adds a new key to the hashmap, or if you prefer fills a new bucket of the array
+	 * @param newEntry new hashmap entry
+	 * @param hashIndex hashcode
+	 * @param entry	array where the buckets will be filled
+	 * @return returns the updated or resized array
+	 */
 	private Entry<K,V>[] addNewBucketKey(Entry<K, V> newEntry, int hashIndex, Entry<K, V> [] entry) {
 		if(!requiresResize()) {
 			entry[hashIndex] = newEntry;
@@ -96,6 +90,7 @@ public class HashMap1<K, V> {
 			size++;
 		}else {
 			entry = resize(entry);
+			hashIndex = getHashCode(newEntry.key); //recalculating hash because it can became obsolete on a resize.
 			entry[hashIndex] = newEntry;
 			debugPrint(newEntry, hashIndex, "[PUT]","[NEW][CAUSED RESIZE]");
 			size++;
@@ -103,6 +98,7 @@ public class HashMap1<K, V> {
 		
 		return entry;
 	}
+	
 	
 	/**
 	 * This method should be called one resizing is done on entry array
@@ -112,10 +108,11 @@ public class HashMap1<K, V> {
 	 */
 	private void addBucketKeyOnResize(Entry<K, V> newEntry, int hashIndex, Entry<K, V> [] entry) {
 			entry[hashIndex] = newEntry;
-			debugPrint(newEntry, hashIndex, "[PUT]","[NEW]");
+			debugPrint(newEntry, hashIndex, "[PUT]","[REHASHING][NEW]");
 			size++;
 		
 	}
+	
 	
 	/**
 	 * Metodo usado para passar keys de um array para outro
@@ -135,45 +132,14 @@ public class HashMap1<K, V> {
 		int hashIndex = getHashCode(node.key);
 		boolean returnLastIfNotFound = true;
 		Entry <K, V> existingNode = getEntry(node.key, array, returnLastIfNotFound);
+		
 		if (existingNode == null) 
 		{
-			//new
-			
-			//addNewBucketKey(node, hashIndex, array);
 			addBucketKeyOnResize(node, hashIndex, array);
-//			if(!requiresResize()) {
-//				//newEntry = new Entry<K,V>(node.key, newVal);
-//				array[hashIndex] = node;
-//				debugPrint(node, hashIndex, "[PUT]","[REHASHING][NEW]");
-//				size++;
-//			}else {
-//				resize();
-//				//newEntry = new Entry<K,V>(key, newVal);
-//				array[hashIndex] = node;
-//				debugPrint(node, hashIndex, "[PUT]","[REHASHING][NEW][NOT EXPECTED][RESIZED]");
-//				size++;
-//			}
-			
-			
 		}
 		else if (existingNode != null)
 		{
-			//Posso substituir por //Update existing bucket...
-			//replace
 			updateExistingBucketKey(existingNode, node, hashIndex);
-
-//			if (existingNode.key == node.key) 
-//			{
-//				existingNode.value = node.value;
-//				debugPrint(existingNode, hashIndex, "[PUT]","[REHASHING][REPLACE]");
-//			}
-//			else {
-//				//Append
-//				//newEntry = new Entry<K,V>(key, newVal);
-//				existingNode.setNext(node);
-//				debugPrint(node, hashIndex, "[PUT]", "[REHASHING][COLLISION]");
-//
-//			}
 		}
 	}
 
@@ -181,6 +147,7 @@ public class HashMap1<K, V> {
 		//Needs to be implemented
 	}
 
+	
 	/**
 	 * Resizes the Hashmap array by multiplying by two until all keys fit a below load factor for the calculated capacity
 	 * @param entry
@@ -230,6 +197,7 @@ public class HashMap1<K, V> {
 		int keys = calculateKeysForCapacity(capacity);
 		while (requiresResize(keys, capacity))
 		{
+			System.out.println("[Capacity skipped] >> " + capacity + " | keys for capacity : " + keys);
 			capacity = capacity << 1;
 			keys = calculateKeysForCapacity(capacity);
 		}		
@@ -308,7 +276,8 @@ public class HashMap1<K, V> {
 	
 	/**
 	 * Returns the value for a given key in the hashmap array
-	 * if not it can return null or the last element of the list, depending if we pass the returnLastIfNotFound with false or true respectively
+	 * if not it can return null or the last element of the list, 
+	 * depending if we pass the returnLastIfNotFound with false or true respectively
 	 * @param key
 	 * @param returnLastIfNotFound
 	 * @return
@@ -357,7 +326,31 @@ public class HashMap1<K, V> {
 	 * @return
 	 */
 	private int getHashCode(Object o, int capacity) {
-
+		return hashAlgo2(o, capacity);
+	}
+	
+	/**
+	 * More performant algo
+	 * @param o
+	 * @param capacity
+	 * @return
+	 */
+	private int hashAlgo2(Object o, int capacity) {
+		if (o == null) {
+			return 0;
+		}
+		
+		return Math.abs((o.hashCode()*7) % capacity);
+	}
+	
+	/**
+	 * Less performant hash algo
+	 * @param o
+	 * @param capacity
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	private int hashAlgo1(Object o, int capacity) {
 		if (o == null) {
 			return 0;
 		}
@@ -370,7 +363,6 @@ public class HashMap1<K, V> {
 
 		return code;
 	}
-	
 	
 	/**
 	 * Gera o hashcode adaptado à capacidade do array
@@ -393,6 +385,7 @@ public class HashMap1<K, V> {
 		debugPrint(printEntry, hashIndex, prefix, null);
 	}
 
+	
 	/**
 	 * debug print pode ser desativado ao colocar a variavel DEBUG_MODE
 	 * @param printEntry
@@ -410,48 +403,22 @@ public class HashMap1<K, V> {
 		}
 	}
 
-
-//	/**
-//	 * Metodo antigo não tratava das colisões como deve de ser
-//	 * @param key
-//	 * @return
-//	 */
-//	private Entry<K,V> getEntry(K key){
-//		int index = getHashCode(key);
-//
-//		Entry<K,V> item = getLastBucketElement(entry[index]);
-//
-//		return (item != null) ? item : null;
-//	}
-
 	
-//	/**
-//	 * Não se tem revelado necessário
-//	 * @param item
-//	 * @return
-//	 */
-//	private Entry<K,V> getLastBucketElement(Entry<K,V> item){
-//		if (item == null)
-//			return item;
-//
-//		while (item.getNext() != null)
-//		{
-//			item = item.getNext();
-//		}
-//
-//		return item;
-//	}
-
-	
+	/**
+	 * Gets the hashmapsize
+	 * @return
+	 */
 	public int getSize() {
 		return size;
 	}
-
-	public void setSize(int size) {
-		this.size = size;
+	
+	/**
+	 * Gets Capacity
+	 * @return
+	 */
+	public int getCapacity() {
+		return capacity;
 	}
-
-
 }
 
 class Entry<K, V>{

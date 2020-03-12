@@ -6,6 +6,10 @@ import java.util.List;
 import com.data.structures.utils.PrintHelper;
 
 /**
+ * 54
+ * https://leetcode.com/problems/spiral-matrix/
+ * MEDIUM
+ * 
  * em Java matrix de matrizes significa que primeiro temos o index da row ou y, e depois temos o indice das colunas ou x.
  * É confuso para quem é de matematica onde as matrizes sao m(x, y) em java sao m(y, x) ou m[y][x]
  * É importante perceber isto para nao fazer confusao neste tipo de exercicios, ou a preencher uma matriz... 

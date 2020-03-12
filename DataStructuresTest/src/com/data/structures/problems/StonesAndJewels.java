@@ -6,6 +6,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * 771
+ * https://leetcode.com/problems/jewels-and-stones/
+ * EASY
+ * 
  * Identifiquei que para cada exercicio devo identificar a time complexity e a space complexity
  * @author Nelson Costa
  *
