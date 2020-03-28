@@ -8,6 +8,7 @@ import java.util.Random;
 import org.junit.jupiter.api.Test;
 
 import com.data.structures.ds.HashMap1;
+import com.data.structures.ds.Trie1;
 
 class HashMap1Test {
 
@@ -15,7 +16,7 @@ class HashMap1Test {
 	 * Validate that the output of java hashmap and my hashmap is equal for a number of key-value pairs 
 	 */
 	@Test
-	void Test_put_and_get_a_few_keys() {
+	void test_put_and_get_a_few_keys() {
 		
 		HashMap<String,String> control = new HashMap<String,String>();
 		HashMap1<String,String> target = new HashMap1<String,String>();
@@ -60,5 +61,24 @@ class HashMap1Test {
 			target.put(generatedString, generatedString);
 			//debugGenerateData(target, generatedString);
 		}
+	}
+
+	@Test
+	void test_hashmap_hashcode_consistency_after_object_change() {
+		
+		Trie1 t = new Trie1();
+
+		System.out.println(t.hashCode());
+		t.addWord("peterish");
+		
+//		HashMap<Trie1, String> consistencyCheck = new HashMap<Trie1, String>();
+//		consistencyCheck.put(t,"c1");
+		System.out.println(t.hashCode());
+		
+		t = new Trie1();
+		System.out.println(t.hashCode());
+
+		
+		
 	}
 }

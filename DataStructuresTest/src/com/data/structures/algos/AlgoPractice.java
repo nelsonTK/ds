@@ -58,6 +58,35 @@ public class AlgoPractice {
 		}
 	}
 
+	public static void permutation(String string) {
+		StringBuilder s = new StringBuilder(string);
+		permutation(s, 0, string.length() - 1);
+	}
+	
+	private static void permutation(StringBuilder string, int start, int end) {
+
+		if (start - end == 0) {
+			System.out.println(string);
+			return;
+		}
+		
+		for (int i = start; i <= end; i++) {
+			
+			swap(string, start, i); //branching
+			permutation(string, start + 1, end); //permuting branch
+			swap(string, start, i);
+		}
+		
+
+	}
+	
+	
+	private static void swap(StringBuilder string, int a, int b) {
+		char tmp = string.charAt(a);
+		string.setCharAt(a, string.charAt(b));
+		string.setCharAt(b, tmp);
+	}
+	
 	/**
 	 * My First Merge Sort from scratch
 	 * @return
