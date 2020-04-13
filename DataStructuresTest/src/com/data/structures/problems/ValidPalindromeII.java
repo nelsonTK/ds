@@ -67,3 +67,31 @@ public class ValidPalindromeII {
 			   validate(i, j - 1, s, skipLetters - 1);
 	}
 }
+
+/**
+ * this guy's solution says that after you jump a faulty pair the following characters must be palindrome.
+ * Is an efficient solution but is not flexible in the sense that it is tailor made for 1 error, my solution allows configurable skipchar Value.
+ * Both this and my solution behave in tO(N) sO(1)
+ * further more he uses this complex aritmetic to fo the for loop, is disturbing, but well it's a different way of thinking and we got to respect that.
+ * 
+ * @author leetcode
+ *
+ */
+class ValidPalindromeIISolution {
+    public boolean isPalindromeRange(String s, int i, int j) {
+        for (int k = i; k <= i + (j - i) / 2; k++) {
+            if (s.charAt(k) != s.charAt(j - k + i)) return false;
+        }
+        return true;
+    }
+    public boolean validPalindrome(String s) {
+        for (int i = 0; i < s.length() / 2; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+                int j = s.length() - 1 - i;
+                return (isPalindromeRange(s, i+1, j) ||
+                        isPalindromeRange(s, i, j-1));
+            }
+        }
+        return true;
+    }
+}

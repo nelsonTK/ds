@@ -3,18 +3,21 @@ package com.data.structures.main;
 import java.util.Hashtable;
 
 import com.data.structures.algos.AlgoPractice;
+import com.data.structures.algos.QuickSort3;
 import com.data.structures.utils.PrintHelper;
 
 public class AlgorithmsTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] array = AlgorithmsTest.createArray(4);
+		int [] array = AlgorithmsTest.createArray(8);
 		//bubbleSortTest(array);
 		//mergeSortTest(array);
 //		AlgoPractice.MergeSortFirst(array);
 //		AlgoSolutions.mergersort(array);
-		AlgoPractice.quickSort(array);
+		//AlgoPractice.quickSort(array);
+		PrintHelper.printArray(array);
+		QuickSort3.quickSort(array);
 		//Collections.swap(new ArrayList<String>(), 0, 4); 
 	}
 

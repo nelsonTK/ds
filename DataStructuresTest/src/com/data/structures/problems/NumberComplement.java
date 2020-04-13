@@ -141,8 +141,5 @@ Memory Usage: 36.2 MB, less than 8.70% of Java online submissions for Number Com
 
 			return result;
 		}
-
-
-
 	}
 }

@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -69,7 +70,7 @@ public class Graph2<T> {
 
 		if (edges.size() == 0) {
 			edges.add(edge);
-			System.out.println("New Edge Created");
+			//			System.out.println("New Edge Created");
 		}
 		else
 		{
@@ -87,7 +88,7 @@ public class Graph2<T> {
 			else
 			{
 				edges.add(edge);
-				System.out.println("New Edge Created");
+				//				System.out.println("New Edge Created");
 			}
 
 		}
@@ -197,6 +198,183 @@ public class Graph2<T> {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Trial of Tarjan's Strongly Connected Components Algorithm
+	 * @param start
+	 */
+	public void FindStronglyConnectedComponents() {
+
+		HashSet<Node<T>> visited = new HashSet<>();
+		Stack<Node<T>> stack = new Stack<Node<T>>();
+		HashMap<Node<T>, Integer> lowLinkmap = new HashMap<Node<T>, Integer>(); 
+		HashMap<Integer, ArrayList<Node<T>>> components = new HashMap<Integer, ArrayList<Node<T>>>();
+
+		for (Node<T> curr : adj.keySet()) {
+
+			if (!lowLinkmap.containsKey(curr))
+			{
+				findSCC(curr, lowLinkmap.size() , null, visited, stack, lowLinkmap, components);
+			}
+
+		}
+
+		Integer component;
+		ArrayList<Node<T>> nodes;
+
+		for (Entry<Integer, ArrayList<Node<T>>>  entry: components.entrySet()) {
+			component = entry.getKey();
+			nodes = entry.getValue();
+
+			System.out.println("Compoent: " + component);
+			for (Node<T> node : nodes) {
+				System.out.println("--> " + node.getValue());
+			}
+		}
+	}
+
+	private int findSCC(Node<T> curr, int currLowLink, Node<T> prev, HashSet<Node<T>> visited, Stack<Node<T>> stack, HashMap<Node<T>, Integer> lowLinkmap, HashMap<Integer, ArrayList<Node<T>>> components) {
+
+		//visited can be replaced by lowLinkMap
+		if (visited.contains(curr) && stack.contains(curr))
+		{
+			return Math.min(lowLinkmap.get(prev), lowLinkmap.get(curr));
+		}
+
+		//must ignore entry
+		if (visited.contains(curr) && !stack.contains(curr))
+		{
+			return Integer.MAX_VALUE;
+		}
+
+		if (!visited.contains(curr))
+		{
+			visited.add(curr);
+			lowLinkmap.put(curr, currLowLink);
+			stack.add(curr);
+		}
+
+		Node<T> neighbor;
+
+		int nextLowLink = currLowLink;
+		for (Edge<T> edge : adj.get(curr)) {
+
+			neighbor = edge.getDest();
+
+			if (!visited.contains(neighbor))
+			{
+				nextLowLink++;
+			}
+
+			currLowLink = Math.min(currLowLink, findSCC(neighbor, nextLowLink, curr, visited, stack, lowLinkmap, components));
+
+			lowLinkmap.put(curr, currLowLink); //no verification... can imporve
+
+		}
+
+		stack.pop();
+		ArrayList<Node<T>> a;
+
+		if(!components.containsKey(currLowLink))
+		{
+			a = new ArrayList<Node<T>>();
+			a.add(curr);
+			components.put(currLowLink, a);
+		}
+		else {
+			a = components.get(currLowLink);
+			a.add(curr);
+			components.put(currLowLink, a);
+		}
+
+		return currLowLink;
+	}
+
+	public void topologicalSort() {
+		Stack<Node<T>> topOrder = new Stack<Node<T>>();
+		HashSet<Node<T>> visited = new HashSet<>();
+		for (Node<T> n : adj.keySet())
+		{
+			if (!visited.contains(n))
+			{
+				topSort(n, visited, topOrder);
+			}
+		}
+
+		while (!topOrder.isEmpty())
+		{
+			System.out.print(" -> " + topOrder.pop().getValue());
+
+		}
+	}
+
+
+	private void topSort(Node<T> n, HashSet<Node<T>> visited, Stack<Node<T>> topOrder) {
+
+		if (visited.contains(n))
+		{
+			return;
+		}
+
+		visited.add(n);
+
+		for(Edge<T> edge : adj.get(n))
+		{
+			topSort(edge.getDest(), visited, topOrder);
+		}
+
+		topOrder.add(n);		
+	}
+
+	public boolean isBipartite() {
+		if (adj.size() == 0)
+		{
+			return true;
+		}
+
+		HashSet<Node<T>> red = new HashSet<>();
+		HashSet<Node<T>> blue = new HashSet<>();
+		Queue<Node<T>> q = new ArrayDeque<>();
+		Node<T> curr = adj.keySet().iterator().next();
+		q.add(curr);
+		red.add(curr);
+		while (!q.isEmpty())
+		{
+			curr = q.poll();
+			if (red.contains(curr))
+			{
+				if(!colorNeighbors(curr, blue, red, q))
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if(!colorNeighbors(curr,red, blue, q))
+				{
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
+	public boolean colorNeighbors(Node<T> node, HashSet<Node<T>> correctColor, HashSet<Node<T>> wrong, Queue<Node<T>> q) {
+
+		for (Edge<T> edge : adj.get(node)) {
+
+			if (wrong.contains(edge.getDest()))
+			{
+				return false;
+			}
+			else if(!correctColor.contains(edge.getDest())) {
+				correctColor.add(edge.getDest());
+				q.add(edge.getDest());
+			}			
+		}
+		return true;
 	}
 
 	public void process(Node<T> node) {
