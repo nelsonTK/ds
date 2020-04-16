@@ -1,8 +1,7 @@
 package com.data.structures.main;
 
-import java.util.Hashtable;
-
 import com.data.structures.algos.AlgoPractice;
+import com.data.structures.algos.MergeSort1;
 import com.data.structures.algos.QuickSort3;
 import com.data.structures.utils.PrintHelper;
 
@@ -23,7 +22,7 @@ public class AlgorithmsTest {
 
 	public static void mergeSortTest(int [] array) {
 		//Algorithm.MergeSort(array);
-		AlgoPractice.MergeSortFirst(array);
+		MergeSort1.MergeSort(array);
 	}
 
 	public static void bubbleSortTest(int array[]) {
@@ -64,21 +63,4 @@ public class AlgorithmsTest {
 
 		return array;
 	}
-//	private static int[] createArray8() {
-//
-//		int [] array = {3,1,2,0,6,4,5,7};
-//		return array;
-//	}
-//
-//	private static int[] createArrayOdd() {
-//
-//		int [] array = {64, 34, 25, 52, 22, 22, 11, 11, 90,7, 9}; 
-//		return array;
-//	}
-
-	//	private static int[] createArrayEven() {
-	//
-	//		int [] array = {64, 34, 25, 12, 22, 90}; 
-	//		return array;
-	//	}
 }

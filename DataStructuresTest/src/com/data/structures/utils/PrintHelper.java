@@ -1,6 +1,7 @@
 package com.data.structures.utils;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class PrintHelper {
 
@@ -20,6 +21,7 @@ public class PrintHelper {
 		return " > " + text;
 	}
 
+	
 	public static void printArray(int [] array) {
 		if (array != null) {
 			System.out.println(Arrays.toString(array));

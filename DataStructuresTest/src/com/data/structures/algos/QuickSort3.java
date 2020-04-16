@@ -38,6 +38,7 @@ public class QuickSort3 {
 		
 		//Repeat for left and right site
 		quickSort(a, partitionIndex + 1, r);
+		
 		quickSort(a, l, partitionIndex - 1);
 	}
 	
