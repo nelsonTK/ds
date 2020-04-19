@@ -1,5 +1,20 @@
 package com.data.structures.algos;
 
+/**
+ * Binary Search is a Beast Algorithm for searching
+ * The big problem is that there are a lot of ways to implement it and the differences are subtle
+ * some times you compare low < high, other times low <= high
+ * sometimes you have to deal with duplicates, other times dont
+ * all of this contributes to changes in the algorithm.
+ * 
+ * As I Saw earlier
+ * 
+ * it is the easiest difficult algorithm to master (GeeksForGeeks)
+ * 
+ * 
+ * @author Nelson Costa
+ *
+ */
 public class BinarySearch {
 
 	/**
@@ -82,7 +97,7 @@ public class BinarySearch {
 	 * @param a
 	 * @return
 	 */
-	public static int search(int x, int a[])
+	public static int search2(int x, int a[])
 	{
 		int min = 0, max = a.length -1, mid = min + (max - min)/2;
 		while (min <= max)
@@ -102,7 +117,98 @@ public class BinarySearch {
 				mid = min + (max - min)/2;
 			}
 		}
-		
+
 		return -1;
 	}
+
+	/**
+	 * Improved binary search
+	 * 
+	 * @param x
+	 * @param a
+	 * @return
+	 */
+	public static int search (int x, int a [])
+	{
+		int low = 0;
+		int high = a.length - 1;
+		int mid;
+
+		while (low < high) {
+			mid = low + (high - low)/2;
+
+			if (a[mid] == x)
+			{
+				return a[mid];
+			}
+			else if (a[mid] > x)
+			{
+				high = mid;
+			}
+			else
+			{
+				low = mid + 1;
+			}
+		}
+		return a[low];
+	}
+
+	/**
+	 * 
+	 * @param x
+	 * @param a
+	 * @return
+	 */
+	public static int getRightMostIndexForDuplicates (int x, int a [])
+	{
+		if(a == null || a.length == 0 || x > a[a.length-1] || x < a[0]) {
+			return -1;
+		}
+		
+		int low = 0;
+		int high = a.length - 1;
+		int mid;
+
+		while (low <= high) {
+			mid = low + (high - low)/2;
+
+			if (a[mid] <= x)
+			{
+				low = mid + 1;
+			}
+			else if (a[mid] > x)
+			{
+				high = mid - 1;
+			}
+		}
+		
+		return high;
+	}
+
+	/**
+	 * Returns the left most duplicate in the array
+	 * @param x
+	 * @param a
+	 * @return
+	 */
+	public static int getLeftMostIndexForDuplicates (int x, int a []) {
+		int low = 0, high = a.length -1;
+		int mid;
+		
+		while (low <= high)
+		{
+			mid = low + (high - low)/2;
+			
+			if (a[mid] >= x) {
+				high = mid - 1;
+			}
+			else
+			{
+				low = mid + 1;
+			}
+		}
+		
+		return low;
+	}
+
 }

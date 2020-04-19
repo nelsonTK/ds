@@ -42,6 +42,7 @@ public class MeetingRoomsII {
 	 * 
 	 * @time O(N^2) I believe it is a N(N-1)/2 * nlogn time complexity
 	 * @space O(N) because of storing the frequencies
+	 * @bestconceivableruntime O(NLogN)
 	 * 
 	 * @param intervals
 	 * @return
