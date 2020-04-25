@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
 
+import com.data.structures.problems.ds.LeetCodeExercise;
+
 /**
  * https://leetcode.com/problems/meeting-rooms/
  * EASY
@@ -12,17 +14,15 @@ import java.util.HashSet;
  * @author Nelson Costa
  *
  */
-public class MeetingRooms {
+public class MeetingRooms extends LeetCodeExercise{
 
 	public static void main(String[] args) {
 		MeetingRooms m = new MeetingRooms();
 
 		//false
 		int [][] interval = new int [3][2];
-		interval[0] = new int []{0,30};
-		interval[1] = new int []{5,10};
-		interval[2] = new int []{15,20};
-
+		interval = m.stringToMatrix("[[0,30],[5,10],[15,20]]");
+		
 		//true
 		//		int [][] interval = new int [3][2];
 		//		interval[1] = new int []{7,10};
