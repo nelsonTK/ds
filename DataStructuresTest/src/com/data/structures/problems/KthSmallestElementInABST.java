@@ -29,7 +29,11 @@ public class KthSmallestElementInABST {
 		System.out.println(k.kthSmallest(n1, kth));
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * 
 	 * 
@@ -81,6 +85,10 @@ Memory Usage: 39.3 MB, less than 13.76% of Java online submissions for Kth Small
 		return checkKth(node.right, s, k);
 	}
 
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	int kthSmallest = 0;
 	int k = 0;
 

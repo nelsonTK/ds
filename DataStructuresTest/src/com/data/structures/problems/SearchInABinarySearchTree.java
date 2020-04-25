@@ -1,5 +1,7 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.TreeNode;
+
 /**
  * EASY
  * https://leetcode.com/problems/search-in-a-binary-search-tree/
@@ -11,11 +13,11 @@ public class SearchInABinarySearchTree {
 
 	public static void main(String[] args) {
 		SearchInABinarySearchTree s = new SearchInABinarySearchTree();
-		TreeNode t0 = s.new TreeNode(4);
-		TreeNode t1 = s.new TreeNode(2);
-		TreeNode t2 = s.new TreeNode(7);
-		TreeNode t3 = s.new TreeNode(1);
-		TreeNode t4 = s.new TreeNode(3);
+		TreeNode t0 = new TreeNode(4);
+		TreeNode t1 = new TreeNode(2);
+		TreeNode t2 = new TreeNode(7);
+		TreeNode t3 = new TreeNode(1);
+		TreeNode t4 = new TreeNode(3);
 		t0.left = t1;
 		t0.right = t2;
 		t1.left = t3;
@@ -75,12 +77,5 @@ public class SearchInABinarySearchTree {
 		}
 
 		return null;
-	}
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
 	}
 }

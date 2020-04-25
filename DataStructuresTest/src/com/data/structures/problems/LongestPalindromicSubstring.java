@@ -11,8 +11,6 @@ public class LongestPalindromicSubstring {
 
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		LongestPalindromicSubstring l = new LongestPalindromicSubstring();
 		String s = "bb";
 		System.out.println(s);

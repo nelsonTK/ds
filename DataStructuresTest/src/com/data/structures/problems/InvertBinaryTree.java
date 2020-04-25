@@ -1,5 +1,7 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.TreeNode;
+
 /**
  * 226. Invert Binary Tree
  * https://leetcode.com/problems/invert-binary-tree/
@@ -14,10 +16,10 @@ public class InvertBinaryTree {
 
 	public static void main(String[] args) {
 		InvertBinaryTree b = new InvertBinaryTree();
-		TreeNode root = b.new TreeNode(1);
-		TreeNode n2 = b.new TreeNode(2);
-		TreeNode n4 = b.new TreeNode(4);
-		TreeNode n3 = b.new TreeNode(3);
+		TreeNode root = new TreeNode(1);
+		TreeNode n2 = new TreeNode(2);
+		TreeNode n4 = new TreeNode(4);
+		TreeNode n3 = new TreeNode(3);
 
 		root.left = n2;
 		root.right = n3;
@@ -57,28 +59,6 @@ public class InvertBinaryTree {
 		return node;	
 	}
 
-	//	/**
-	//	 * 
-	//	 * @param node
-	//	 * @return
-	//	 */
-	//	public TreeNode invert(TreeNode node) {
-	//		
-	//		if (node == null)
-	//		{
-	//			return node;
-	//		}
-	//		
-	//		TreeNode tmp = node.left;
-	//		node.left = node.right;
-	//		node.right = tmp;
-	//		
-	//		invert(node.left);
-	//		invert(node.right);
-	//		
-	//		return node;
-	//	}
-
 	public void print(TreeNode node) {
 
 		if (node == null)
@@ -87,14 +67,6 @@ public class InvertBinaryTree {
 		print(node.left);
 		System.out.println(node.val);
 		print(node.right);
-
-	}
-
-	class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
 
 	}
 }

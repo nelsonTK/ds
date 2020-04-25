@@ -1,22 +1,30 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.TreeNode;
+
+/**
+ * https://leetcode.com/problems/closest-binary-search-tree-value/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class ClosestBinarySearchTreeValue {
 
 	public static void main(String[] args) {
 
 		ClosestBinarySearchTreeValue c = new ClosestBinarySearchTreeValue();
-		TreeNode t1 = c.new TreeNode(4);
-		TreeNode t2 = c.new TreeNode(2);
-		TreeNode t3 = c.new TreeNode(5);
-		TreeNode t4 = c.new TreeNode(0);
-		TreeNode t5 = c.new TreeNode(3);
+		TreeNode t1 = new TreeNode(4);
+		TreeNode t2 = new TreeNode(2);
+		TreeNode t3 = new TreeNode(5);
+		TreeNode t4 = new TreeNode(0);
+		TreeNode t5 = new TreeNode(3);
 
 		t1.left = t2;
 		t1.right = t3;
 		t2.left = t4;
 		t2.right = t5;
-		TreeNode t6 = c.new TreeNode(1500000000);
-		TreeNode t7 = c.new TreeNode(1400000000);
+		TreeNode t6 = new TreeNode(1500000000);
+		TreeNode t7 = new TreeNode(1400000000);
 		t6.left = t7;
 
 		double target = -1500000000;
@@ -102,13 +110,6 @@ Memory Usage: 39.1 MB, less than 5.13% of Java online submissions for Closest Bi
 
 		return closest;
 	}
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
 }
 
 
@@ -130,12 +131,5 @@ class ClosestBinarySearchTreeValueSolution {
 			root =  target < root.val ? root.left : root.right;
 		}
 		return closest;
-	}
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
 	}
 }

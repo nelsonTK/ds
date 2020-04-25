@@ -5,7 +5,8 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * 
+ * https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+ * MEDIUM
  * @author Nelson Costa
  *
  */
@@ -27,7 +28,11 @@ public class KthSmallestElementInASortedMatrix {
 		KthSmallestElementInASortedMatrixSolution4 s = new KthSmallestElementInASortedMatrixSolution4();
 		s.kthSmallest(matrix, k);
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * Runtime: 17 ms, faster than 35.41% of Java online submissions for Kth Smallest Element in a Sorted Matrix.
 Memory Usage: 45 MB, less than 35.14% of Java online submissions for Kth Smallest Element in a Sorted Matrix.
@@ -90,6 +95,10 @@ Memory Usage: 45 MB, less than 35.14% of Java online submissions for Kth Smalles
 		return min[0];
 	}
 	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	/**
 	 *  OPTIMIZATION
 	 * 
@@ -135,8 +144,6 @@ Memory Usage: 45 MB, less than 35.14% of Java online submissions for Kth Smalles
 		}
 
 		Tuple min = null;
-		int row = 1;
-		int col = 2;
 		int nextCol; //next column
 
 		while (k > 0)

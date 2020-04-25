@@ -25,10 +25,13 @@ public class VerifyPreorderSequenceInBinarySearchTree {
 		//int [] array = new int[]{5}; //false
 		System.out.println(Arrays.toString(array));
 
-		System.out.println(v.verifyPreorder2ndBest(array));
+		System.out.println(v.verifyPreorder(array));
 
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	/**@explanation
 	 * 
 	 * 	Runtime: 437 ms, faster than 6.91% of Java online submissions for Verify Preorder Sequence in Binary Search Tree.
@@ -92,12 +95,19 @@ public class VerifyPreorderSequenceInBinarySearchTree {
 		return true;
 	}
 
-	/**
-	 * https://www.cnblogs.com/Dylan-Java-NYC/p/5327638.html
-	 * @author Dylan-Java-NYC
-	 *
-	 */
 
+}
+
+
+/*********************************
+ * OTHERS SOLUTIONS
+ ********************************/	
+/**
+ * https://www.cnblogs.com/Dylan-Java-NYC/p/5327638.html
+ * @author Dylan-Java-NYC
+ *
+ */
+class VerifyPreorderSequenceInBinarySearchTreeSolution1 {
 	public boolean verifyPreorderBest(int[] preorder) {
 		int index = -1;
 		int low = Integer.MIN_VALUE;
@@ -115,11 +125,11 @@ public class VerifyPreorderSequenceInBinarySearchTree {
 			// 5 2 3 1
 			// this would mean
 			//   5
-			
+
 			//2    3
-			
+
 			//1
-			
+
 			//in pre order you have the node, all its children below, and than all its children bigger.
 			//in the above example this was not possible (5 4 3 1) 1 is printed after a right child it's wrong
 			// this question required you to really understand the trees
@@ -132,8 +142,10 @@ public class VerifyPreorderSequenceInBinarySearchTree {
 		}
 		return true;
 	}
+}
+class VerifyPreorderSequenceInBinarySearchTreeSolution2 {
 
-	public boolean verifyPreorder2ndBest(int[] preorder) {
+	public boolean verifyPreorder(int[] preorder) {
 
 		//Method 1
 		int low = Integer.MIN_VALUE;

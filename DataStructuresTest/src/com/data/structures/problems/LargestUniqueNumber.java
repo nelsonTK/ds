@@ -4,6 +4,12 @@ import java.util.HashMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+/**
+ * https://leetcode.com/problems/largest-unique-number/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class LargestUniqueNumber {
 
 	public static void main(String[] args) {
@@ -14,7 +20,11 @@ public class LargestUniqueNumber {
 		LargestUniqueNumber l = new LargestUniqueNumber();
 		System.out.println(l.largestUniqueNumber(a));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * I use a TreeSet because I want quick access to the maximum number, I also thought in Priority Queue but rejected that idea
 	 * Because I think Treeset has O(1) to the last
@@ -48,7 +58,10 @@ public class LargestUniqueNumber {
 		return result != null ? result : - 1;
 	}
 
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	/**
 	 * 		Runtime: 7 ms, faster than 5.91% of Java online submissions for Largest Unique Number.
 			Memory Usage: 39.7 MB, less than 33.33% of Java online submissions for Largest Unique Number.
@@ -84,7 +97,9 @@ public class LargestUniqueNumber {
 		return result != null ? result : - 1;
 	}
 
-
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/
 	/**
 	 * 
 	 	Runtime: 3 ms, faster than 58.39% of Java online submissions for Largest Unique Number.
@@ -120,6 +135,10 @@ public class LargestUniqueNumber {
 		return result;
 	}
 
+	/*********************************
+	 * SOLUTION 4
+	 ********************************/
+	
 	/**
 	 * its constant because of the input restrictions
 	 * 

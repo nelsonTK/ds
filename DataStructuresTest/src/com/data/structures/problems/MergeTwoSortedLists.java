@@ -2,6 +2,12 @@ package com.data.structures.problems;
 
 import java.util.Stack;
 
+/**
+ * https://leetcode.com/problems/merge-two-sorted-lists/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class MergeTwoSortedLists {
 
 	public static void main(String[] args) {
@@ -33,7 +39,11 @@ public class MergeTwoSortedLists {
 		m.printList(m.mergeTwoLists(a1, b1));
 		//		m.printList(m.reverse(m.mergeTwoLists1(a1, b1)));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**[WRONG]
 	 * the rational was to keep the first list and add nodes appropriately but I failed 
 	 * mainly because I forgot to address the return of the object
@@ -91,8 +101,10 @@ public class MergeTwoSortedLists {
 		return ans;
 	}
 
-
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	/**
 	 * nothing fancy.
 	 * performed in place sorting
@@ -154,7 +166,11 @@ public class MergeTwoSortedLists {
 
 		return curr;
 	}
-
+	
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/
+	
 	/**
 	 * 		Runtime: 0 ms, faster than 100.00% of Java online submissions for Merge Two Sorted Lists.
 			Memory Usage: 38.7 MB, less than 19.53% of Java online submissions for Merge Two Sorted Lists.
@@ -230,7 +246,10 @@ public class MergeTwoSortedLists {
 
 		return prev;
 	}
-
+	
+	/*********************************
+	 * SOLUTION 4
+	 ********************************/
 
 	/**
 	 * 	Runtime: 0 ms, faster than 100.00% of Java online submissions for Merge Two Sorted Lists.
@@ -284,7 +303,9 @@ public class MergeTwoSortedLists {
 
 		return beforeFirst.next;
 	}
-
+	/*********************************
+	 * SOLUTION 5
+	 ********************************/
 	/**
 	 * Recursive Solution of the same problem
 	 * had troubles trying to represent the possibilities of this problem

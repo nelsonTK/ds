@@ -39,10 +39,142 @@ public class SpiralMatrix {
 			}
 		}
 	}
+	  
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
+	/**
+	 * para quadrados simétricos
+	 * foi a minha primeira solução, tinha um certo bug relacionado com "x + 1  >= y" vs x + 1
+	 * @param matrix
+	 */
+	public static void spiralPrint(int [][] matrix) {
+		//boundaries
+		int u = 0;
+		int r = matrix[0].length;
+		int b = matrix.length;
+		int l = -1;
+		int printcount=0;
+		int x = 0, y = 0;
+		int items = matrix[0].length * matrix.length;
+
+		while (printcount < items) {
+
+			System.out.println(matrix[y][x]);
+			printcount++;
+
+
+			if (x + 1  >= y && x + 1 < r) {
+				//x + 1;
+				x++;
+
+				if (x + 1 == r)
+					r--;
+
+			} else if (x >= y && y + 1 < b) {
+				//y + 1					
+				y++;
+
+				if (y + 1 == b)
+				{
+					b--;
+				}
+
+			} else if (x -1 <= y && x - 1 > l) {
+				// x - 1
+				x--;
+
+				if (x - 1 == l) 
+				{
+					l++;
+				}
+
+
+			} else if (x <= y  && y - 1 > u) {
+				// y - 1
+				y--;
+
+				if (y - 1 == u)
+					u++;
+			}
+		}
+	}
+	
+
+	  
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/	
+	/**
+	 * Foi a minha segunda solução Para resolver o problema para quadrados simétricos e assimétricos
+	 * @param matrix
+	 */
+	public static void spiralAssimetricArrayPrint(int [][] matrix) {
+		//boundaries
+		int u = 0;
+		int r = matrix[0].length;
+		int b = matrix.length;
+		int l = -1;
+		int printcount=0;
+		int x = 0, y = 0;
+		int items = matrix[0].length * matrix.length;
+
+		System.out.println(matrix[y][x]);
+		printcount++;
+		while (printcount < items) {
+
+			if (x < r && printcount < items) {
+				while (x + 1 != r) {
+					x++;
+					printcount = printAndCount(printcount, matrix[y][x]);
+				}				
+				r--;
+			}
+
+			if (y < b && printcount < items) {
+				while (y + 1 != b) {
+					y++;
+					printcount = printAndCount(printcount, matrix[y][x]);
+				}
+				b--;
+			}
+
+			if (x > l && printcount < items) {
+				while (x - 1 != l)
+				{
+					x--;
+					printcount = printAndCount(printcount, matrix[y][x]);
+				}
+				l++;
+			}
+
+			if (y > u && printcount < items) {
+				while (y - 1 != u)
+				{
+					y--;
+					printcount = printAndCount(printcount, matrix[y][x]);
+				}
+				u++;
+			}
+		}
+	}
+	
+	public static int printAndCount(int counter, int valueToPrint) {
+		System.out.println(valueToPrint);
+		return ++counter;
+	}
+	
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/	
 	
 	/**
 	 * Foi a solução assimétrica aplicada ao Leet Code
 	 * Leetcode 54
+	 * 
+	 * 		Runtime: 0 ms, faster than 100.00% of Java online submissions for Spiral Matrix.
+			Memory Usage: 37.2 MB, less than 5.21% of Java online submissions for Spiral Matrix.
+	 * 
 	 * @param matrix
 	 * @return
 	 */
@@ -105,120 +237,4 @@ public class SpiralMatrix {
 	        }
 	        return list;
 	    }
-
-	/**
-	 * Foi a minha segunda solução Para resolver o problema para quadrados simétricos e assimétricos
-	 * @param matrix
-	 */
-	public static void spiralAssimetricArrayPrint(int [][] matrix) {
-		//boundaries
-		int u = 0;
-		int r = matrix[0].length;
-		int b = matrix.length;
-		int l = -1;
-		int printcount=0;
-		int x = 0, y = 0;
-		int items = matrix[0].length * matrix.length;
-
-		System.out.println(matrix[y][x]);
-		printcount++;
-		while (printcount < items) {
-
-			if (x < r && printcount < items) {
-				while (x + 1 != r) {
-					x++;
-					printcount = printAndCount(printcount, matrix[y][x]);
-				}				
-				r--;
-			}
-
-			if (y < b && printcount < items) {
-				while (y + 1 != b) {
-					y++;
-					printcount = printAndCount(printcount, matrix[y][x]);
-				}
-				b--;
-			}
-
-			if (x > l && printcount < items) {
-				while (x - 1 != l)
-				{
-					x--;
-					printcount = printAndCount(printcount, matrix[y][x]);
-				}
-				l++;
-			}
-
-			if (y > u && printcount < items) {
-				while (y - 1 != u)
-				{
-					y--;
-					printcount = printAndCount(printcount, matrix[y][x]);
-				}
-				u++;
-			}
-		}
-	}
-	
-	public static int printAndCount(int counter, int valueToPrint) {
-		System.out.println(valueToPrint);
-		return ++counter;
-	}
-	
-	/**
-	 * para quadrados simétricos
-	 * foi a minha primeira solução, tinha um certo bug relacionado com "x + 1  >= y" vs x + 1
-	 * @param matrix
-	 */
-	public static void spiralPrint(int [][] matrix) {
-		//boundaries
-		int u = 0;
-		int r = matrix[0].length;
-		int b = matrix.length;
-		int l = -1;
-		int printcount=0;
-		int x = 0, y = 0;
-		int items = matrix[0].length * matrix.length;
-
-		while (printcount < items) {
-
-			System.out.println(matrix[y][x]);
-			printcount++;
-
-
-			if (x + 1  >= y && x + 1 < r) {
-				//x + 1;
-				x++;
-
-				if (x + 1 == r)
-					r--;
-
-			} else if (x >= y && y + 1 < b) {
-				//y + 1					
-				y++;
-
-				if (y + 1 == b)
-				{
-					b--;
-				}
-
-			} else if (x -1 <= y && x - 1 > l) {
-				// x - 1
-				x--;
-
-				if (x - 1 == l) 
-				{
-					l++;
-				}
-
-
-			} else if (x <= y  && y - 1 > u) {
-				// y - 1
-				y--;
-
-				if (y - 1 == u)
-					u++;
-			}
-		}
-	}
 }

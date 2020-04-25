@@ -2,7 +2,7 @@ package com.data.structures.problems;
 
 /**
  * 231
- * https://leetcode.com/problems/power-of-two/submissions/
+ * https://leetcode.com/problems/power-of-two
  * Easy
  * @author Nelson Costa
  *

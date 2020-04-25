@@ -5,6 +5,12 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * https://leetcode.com/problems/k-closest-points-to-origin/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class KClosestPointsToOrigin {
 
 	public static void main(String[] args) {
@@ -33,7 +39,7 @@ public class KClosestPointsToOrigin {
 	}
 
 	/*********************************
-	 * MY SOLUTION 1
+	 * SOLUTION 1
 	 ********************************/
 
 	/**
@@ -69,7 +75,7 @@ public class KClosestPointsToOrigin {
 	}
 
 	/*********************************
-	 * MY SOLUTION 2
+	 * SOLUTION 2
 	 ********************************/
 
 	/**

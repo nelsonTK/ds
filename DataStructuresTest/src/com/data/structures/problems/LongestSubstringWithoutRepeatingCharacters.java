@@ -5,12 +5,10 @@ import java.util.Set;
 
 /**
  * N: 3
- * https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/
+ * https://leetcode.com/problems/longest-substring-without-repeating-characters
  * Category: Strings
  * Medium
- * nota:
- * 	Repetir
- *  perceber melhor as soluções
+ * Though one need to repeat in the future
  * 20200316
  * 
  * 

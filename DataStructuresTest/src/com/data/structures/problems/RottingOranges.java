@@ -6,6 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
 
+/**
+ * https://leetcode.com/problems/rotting-oranges/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class RottingOranges {
 
 	public static void main(String[] args) {
@@ -353,6 +359,7 @@ class Orange {
 		this.timeStamp = s;
 	}
 }
+
 
 /**
  * leetcode solution

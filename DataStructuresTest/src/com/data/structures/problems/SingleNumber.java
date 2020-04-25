@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 /**
  * 136
- * https://leetcode.com/problems/single-number/submissions/
+ * https://leetcode.com/problems/single-number
  *  I had a lot of troubles understanding this question because of the space constraint
  *  
  * @author Nelson Costa
@@ -22,25 +22,46 @@ public class SingleNumber {
 
 	}
 	
-	/**
-	 * a XOR a = 0
-	 * 0 XOR b = b
-	 * a XOR b XOR a = (a XOR a) XOR b
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
+	
+	/** Runtime: 11 ms, faster than 8.88% of Java online submissions for Single Number.
+		Memory Usage: 46.1 MB, less than 5.19% of Java online submissions for Single Number.
 	 * 
-	 * Learned about the associativity and commutativity of bitwise operations
+	 * 
+	 * 
+	 * @Failed, I've understimated the question, saw very little cases. didn't debug my code before first run (I had a bad sleep though)
+	 * I coun't get to the perfect math solution I tried hard, got close but wasn't good enouhg
+	 * @time O(N)
+	 * @space O(N/2) => O(N)
 	 * @param nums
 	 * @return
 	 */
-	public int singleNumber(int [] nums)
-	{
-		int total = 0;
+	public int singleNumber1(int[] nums) {
+		
+		HashSet<Integer> map = new HashSet<Integer>();
 		
 		for (int i = 0; i < nums.length; i++) {
-			total ^= nums[i];
+
+			if (map.contains(nums[i]))
+			{
+				map.remove(nums[i]);
+			}
+			else
+			{
+				map.add(nums[i]);
+			}
 		}
 		
-		return total;
+		return map.stream().findAny().orElse(0);
 	}
+	
+
+	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/	
 	
 	/**
 	 * 
@@ -76,35 +97,27 @@ public class SingleNumber {
 		
 		return total - sum;
 	}
-
-	/** Runtime: 11 ms, faster than 8.88% of Java online submissions for Single Number.
-		Memory Usage: 46.1 MB, less than 5.19% of Java online submissions for Single Number.
+	
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/	
+	/**
+	 * a XOR a = 0
+	 * 0 XOR b = b
+	 * a XOR b XOR a = (a XOR a) XOR b
 	 * 
-	 * 
-	 * 
-	 * @Failed, I've understimated the question, saw very little cases. didn't debug my code before first run (I had a bad sleep though)
-	 * I coun't get to the perfect math solution I tried hard, got close but wasn't good enouhg
-	 * @time O(N)
-	 * @space O(N/2) => O(N)
+	 * Learned about the associativity and commutativity of bitwise operations
 	 * @param nums
 	 * @return
 	 */
-	public int singleNumber1(int[] nums) {
-		
-		HashSet<Integer> map = new HashSet<Integer>();
+	public int singleNumber(int [] nums)
+	{
+		int total = 0;
 		
 		for (int i = 0; i < nums.length; i++) {
-
-			if (map.contains(nums[i]))
-			{
-				map.remove(nums[i]);
-			}
-			else
-			{
-				map.add(nums[i]);
-			}
+			total ^= nums[i];
 		}
 		
-		return map.stream().findAny().orElse(0);
+		return total;
 	}
 }

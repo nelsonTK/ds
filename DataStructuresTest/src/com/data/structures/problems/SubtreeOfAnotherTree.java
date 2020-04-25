@@ -1,25 +1,26 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.TreeNode;
+
 public class SubtreeOfAnotherTree {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		SubtreeOfAnotherTree s = new SubtreeOfAnotherTree();
 		//Main Tree
-/*
-			 3
-		    / \
-		   4   5
-		  / \
-		 1   2
-		 
-*/
-		TreeNode s1 = s.new TreeNode(3);
-		TreeNode s2 = s.new TreeNode(4);
-		TreeNode s3 = s.new TreeNode(5);
-		TreeNode s4 = s.new TreeNode(1);
-		TreeNode s5 = s.new TreeNode(2);
+		/*
+					 3
+				    / \
+				   4   5
+				  / \
+				 1   2
+				 
+		*/
+		TreeNode s1 = new TreeNode(3);
+		TreeNode s2 = new TreeNode(4);
+		TreeNode s3 = new TreeNode(5);
+		TreeNode s4 = new TreeNode(1);
+		TreeNode s5 = new TreeNode(2);
 		
 		s1.left = s2;
 		s1.right = s3;
@@ -27,9 +28,9 @@ public class SubtreeOfAnotherTree {
 		s2.right = s5;
 		
 		//SubTree
-		TreeNode t1 = s.new TreeNode(4);
-		TreeNode t2 = s.new TreeNode(1);
-		TreeNode t3 = s.new TreeNode(2);
+		TreeNode t1 = new TreeNode(4);
+		TreeNode t2 = new TreeNode(1);
+		TreeNode t3 = new TreeNode(2);
 		t1.left = t2;
 		t1.right = t3;
 
@@ -37,11 +38,11 @@ public class SubtreeOfAnotherTree {
 
 		
 		System.out.println("New Test Case");
-		TreeNode x1 = s.new TreeNode(1);
-		TreeNode x2 = s.new TreeNode(1);
+		TreeNode x1 = new TreeNode(1);
+		TreeNode x2 = new TreeNode(1);
 		x1.left = x2;
 		
-		TreeNode y1 = s.new TreeNode(1);
+		TreeNode y1 = new TreeNode(1);
 		System.out.println(s.isSubtree(x1, y1));
 
 	}
@@ -104,14 +105,5 @@ public class SubtreeOfAnotherTree {
 		}
 		
 		return equals(s.left, t.left) && equals(s.right, t.right);
-	}
-
-
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
 	}
 }

@@ -9,7 +9,7 @@ import java.util.Map;
  * MEDIUM
  * @author Nelson Costa
  * 
- * 
+ * @score
  * 		Runtime: 11 ms, faster than 99.91% of Java online submissions for LRU Cache.
 		Memory Usage: 47.8 MB, less than 100.00% of Java online submissions for LRU Cache.
 		

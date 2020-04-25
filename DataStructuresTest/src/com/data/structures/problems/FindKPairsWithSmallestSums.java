@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
+/**
+ * https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class FindKPairsWithSmallestSums {
 
 	public static void main(String[] args) {
@@ -266,6 +272,10 @@ public class FindKPairsWithSmallestSums {
 	 * 		One of the Hardest Execises to date, I couldn't go from a solution better than bruteforce
 	 * 		really violent one, I loved it.
 	 * 
+	 * 
+	 * @score
+	 * 		Runtime: 3 ms, faster than 100.00% of Java online submissions for Find K Pairs with Smallest Sums.
+			Memory Usage: 39.9 MB, less than 66.67% of Java online submissions for Find K Pairs with Smallest Sums.
 	 * 
 	 * INTUITION
 	 * 		We will calculate the smallest sum, using one of the tables as reference.

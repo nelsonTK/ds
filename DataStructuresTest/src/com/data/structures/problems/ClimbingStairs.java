@@ -2,6 +2,12 @@ package com.data.structures.problems;
 
 import java.util.HashMap;
 
+/**
+ * https://leetcode.com/problems/climbing-stairs/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class ClimbingStairs {
 
 	private int n;

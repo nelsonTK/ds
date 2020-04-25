@@ -21,6 +21,11 @@ public class FindTheDifference {
 		System.out.println(f.findTheDifference(s, t));
 
 	}
+	
+	/**************************************
+	 * SOLUTION 1
+	 *************************************/
+	
 
 	/**
 	 * Nothing Fancy here
@@ -75,6 +80,11 @@ public class FindTheDifference {
 	}
 
 
+	/**************************************
+	 * SOLUTION 2
+	 *************************************/
+	
+	
 	/**
 	 * Sligthly improved I reduced the space used, and processing
 	 * 
@@ -136,8 +146,12 @@ public class FindTheDifference {
 		return 0;
 	}
 
+	/**************************************
+	 * SOLUTION 3
+	 *************************************/
 
 	/**
+	 * @score
 	 * 		Runtime: 2 ms, faster than 47.26% of Java online submissions for Find the Difference.
 			Memory Usage: 38.1 MB, less than 6.25% of Java online submissions for Find the Difference.
 	 * 
@@ -168,6 +182,10 @@ public class FindTheDifference {
 
 		return ct[s.length()];
 	}
+
+	/**************************************
+	 * SOLUTION 4
+	 *************************************/
 	
 	/**
 	 * 	Runtime: 1 ms, faster than 99.36% of Java online submissions for Find the Difference.

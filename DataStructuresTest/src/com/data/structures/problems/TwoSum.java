@@ -16,12 +16,14 @@ import com.data.structures.utils.PrintHelper;
 public class TwoSum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		PrintHelper.printArray(twoSum(new int[] {2, 2,7,15}, 4));
-		PrintHelper.printArray(twoSum2(new int[] {2, 2,7, 7,15}, 14));
+		TwoSum t = new TwoSum();
+		PrintHelper.printArray(t.twoSum(new int[] {2, 2,7,15}, 4));
+		PrintHelper.printArray(t.twoSum1(new int[] {2, 2,7, 7,15}, 14));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	/**
 	 * Não estou a contar com repetidos
 	 * baseado em : https://www.youtube.com/watch?v=BoHO04xVeU0
@@ -29,7 +31,7 @@ public class TwoSum {
 	 * @param target
 	 * @return
 	 */
-	public static int [] twoSum(int [] nums, int target) {
+	public int [] twoSum1(int [] nums, int target) {
 		Map<Integer, Integer> prevIndices = new HashMap<>();
 		for(int i = 0; i< nums.length; i++) {
 			int solutionNum = target - nums[i];
@@ -42,8 +44,11 @@ public class TwoSum {
 		}
 		return null;
 	}
-
-	public static int[] twoSum2(int[]nums, int target) {
+	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/	
+	public int[] twoSum(int[]nums, int target) {
 		
 		Map<Integer, Integer> prev = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {

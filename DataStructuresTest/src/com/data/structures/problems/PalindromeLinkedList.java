@@ -10,7 +10,6 @@ package com.data.structures.problems;
 public class PalindromeLinkedList {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		PalindromeLinkedList p = new PalindromeLinkedList();
 		ListNode l1 = p.new ListNode(-129);
@@ -24,7 +23,11 @@ public class PalindromeLinkedList {
 		p.printList(l1);
 		System.out.println(p.isPalindrome(l1));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * INTUITION
 	 * 
@@ -78,6 +81,10 @@ public class PalindromeLinkedList {
 		return val <= 0 ? 0 : (int) Math.floor(Math.log10(val));
 	}
 
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	/**
 	 * @failed in -129 -129, this guys dont tell that the palindrome is in respect to numbers....
 	 * 
@@ -104,7 +111,11 @@ public class PalindromeLinkedList {
 
 		return true;
 	}
-
+	
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/
+	
 	/**
 	 * 
 	 * Runtime: 10 ms, faster than 6.50% of Java online submissions for Palindrome Linked List.

@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * https://leetcode.com/problems/meeting-rooms-ii
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class MeetingRoomsII {
 
 	public static void main(String[] args) {
@@ -28,6 +34,10 @@ public class MeetingRoomsII {
 		System.out.println("minimumRooms: " + m.minMeetingRooms(a));
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * 
 	 * 		Runtime: 421 ms, faster than 5.03% of Java online submissions for Meeting Rooms II.
@@ -78,6 +88,9 @@ public class MeetingRoomsII {
 		return maxOcurrence + 1;
 	}
 	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 
 	/**
 	 * 

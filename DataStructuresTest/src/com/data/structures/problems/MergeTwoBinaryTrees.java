@@ -1,19 +1,25 @@
 package com.data.structures.problems;
 
-import com.data.structures.problems.MergeTwoBinaryTrees.TreeNode;
+import com.data.structures.problems.ds.TreeNode;
 
+/**
+ * https://leetcode.com/problems/merge-two-binary-trees/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class MergeTwoBinaryTrees {
 
 	public static void main(String[] args) {
 
 		MergeTwoBinaryTrees m = new MergeTwoBinaryTrees();
-		TreeNode t1 = m.new TreeNode(1);
-		TreeNode t2 = m.new TreeNode(2);
-		TreeNode t3 = m.new TreeNode(3);
-		TreeNode a1 = m.new TreeNode(2);
-		TreeNode a2 = m.new TreeNode(1);
-		TreeNode a3 = m.new TreeNode(3);
-		TreeNode a4 = m.new TreeNode(4);
+		TreeNode t1 = new TreeNode(1);
+		TreeNode t2 = new TreeNode(2);
+		TreeNode t3 = new TreeNode(3);
+		TreeNode a1 = new TreeNode(2);
+		TreeNode a2 = new TreeNode(1);
+		TreeNode a3 = new TreeNode(3);
+		TreeNode a4 = new TreeNode(4);
 		t1.left = t2;
 		t1.right = t3;
 		a1.left = a2;
@@ -78,13 +84,6 @@ public class MergeTwoBinaryTrees {
 		printTree(node.left);
 
 		printTree(node.right);
-	}
-
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
 	}
 }
 

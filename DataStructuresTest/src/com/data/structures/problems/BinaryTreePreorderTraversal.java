@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import com.data.structures.problems.ds.TreeNode;
+
 /**
  * Apparantly easy question
  * 144
@@ -16,10 +18,10 @@ public class BinaryTreePreorderTraversal {
 
 	public static void main(String[] args) {
 		BinaryTreePreorderTraversal b = new BinaryTreePreorderTraversal();
-		TreeNode root = b.new TreeNode(1);
-		TreeNode n2 = b.new TreeNode(2);
-		TreeNode n3 = b.new TreeNode(3);
-		TreeNode n4 = b.new TreeNode(4);
+		TreeNode root = new TreeNode(1);
+		TreeNode n2 = new TreeNode(2);
+		TreeNode n3 = new TreeNode(3);
+		TreeNode n4 = new TreeNode(4);
 		root.right = n2;
 		n2.left = n3;
 		root.left = n4;
@@ -29,8 +31,15 @@ public class BinaryTreePreorderTraversal {
 	}
 
 	/**
-	 * @timeComplexity  O(N)
-	 * @spaceComplexity O(2^H) + O(N) = O(2^H), I think so. Where H is the Tree Height
+	 * 
+	 * @score
+	 * 		Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Preorder Traversal.
+			Memory Usage: 37.6 MB, less than 5.17% of Java online submissions for Binary Tree Preorder Traversal.
+
+
+	 * @time  O(N)
+	 * @space O(2^H) + O(N) = O(2^H), I think so. Where H is the Tree Height
+	 * 
 	 * @param node
 	 * @return
 	 */
@@ -62,14 +71,5 @@ public class BinaryTreePreorderTraversal {
 		}
 		return list;
 	}
-
-	//Nested class
-	class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
-
 }
 

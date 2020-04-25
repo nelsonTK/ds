@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.TreeSet;
 
 /**
- * https://leetcode.com/problems/kth-largest-element-in-an-array/solution/
+ * https://leetcode.com/problems/kth-largest-element-in-an-array/
  * MEDIUM
  * @author Nelson Costa
  *
@@ -24,6 +24,10 @@ public class KthLargestElementInAnArray {
 
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * Nothing fancy here was applied...
 	 * Just tried to apply the best data structures
@@ -65,11 +69,17 @@ public class KthLargestElementInAnArray {
 		return tree.first();
 	}
 
+	
+
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	/**
 	 * 		Runtime: 1 ms, faster than 97.34% of Java online submissions for Kth Largest Element in an Array.
 			Memory Usage: 40.1 MB, less than 5.18% of Java online submissions for Kth Largest Element in an Array.
 	 * 
-	 * @time complexity  worst case n^2 average nlogn
+	 * @time worst case n^2 average nlogn
 	 * @space O(1) 
 	 * 
 	 * @param a
@@ -87,6 +97,10 @@ public class KthLargestElementInAnArray {
 	}
 
 
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/
+	
 	/**
 	 * 
 	 * OTIMIZATION ATTEMPT

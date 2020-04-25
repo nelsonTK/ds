@@ -2,6 +2,8 @@ package com.data.structures.problems;
 
 import java.util.TreeSet;
 
+import com.data.structures.problems.ds.TreeNode;
+
 /**
  * https://leetcode.com/problems/binary-tree-maximum-path-sum/
  * HARD
@@ -26,11 +28,11 @@ public class BinaryTreeMaximumPathSum {
 //		t1.left = t2;
 //		t1.right = t3;
 		
-		TreeNode a1 = b.new TreeNode(-10);
-		TreeNode a2 = b.new TreeNode(9);
-		TreeNode a3 = b.new TreeNode(20);
-		TreeNode a4 = b.new TreeNode(15);
-		TreeNode a5 = b.new TreeNode(7);
+		TreeNode a1 = new TreeNode(-10);
+		TreeNode a2 = new TreeNode(9);
+		TreeNode a3 = new TreeNode(20);
+		TreeNode a4 = new TreeNode(15);
+		TreeNode a5 = new TreeNode(7);
 		a1.left = a2;
 		a1.right = a3;
 		a3.left = a5;
@@ -85,12 +87,5 @@ public class BinaryTreeMaximumPathSum {
 		sums.add(node.val);
 		
 		return Math.max(node.val + Math.max(left, right), node.val);
-	}
-
-	class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
 	}
 }

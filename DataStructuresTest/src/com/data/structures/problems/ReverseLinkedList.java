@@ -1,5 +1,11 @@
 package com.data.structures.problems;
 
+/**
+ * https://leetcode.com/problems/reverse-linked-list/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class ReverseLinkedList {
 
 	public static void main(String[] args) {

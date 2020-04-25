@@ -62,7 +62,11 @@ public class MeetingRooms {
 
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
+	
 	/**
 	 * INTUITION
 	 * 
@@ -208,53 +212,10 @@ public class MeetingRooms {
 
 
 
-
-
-
-
-	/**
-	 * Has expected this solution was bad a mere brute force solution.
-	 * 
-	 * 		Runtime: 1499 ms, faster than 5.00% of Java online submissions for Meeting Rooms.
-			Memory Usage: 45.6 MB, less than 5.13% of Java online submissions for Meeting Rooms.
-
-			the runtime was drastically improved by removing the hashset from the equation
-			 699 ms.
-	 * 
-	 * @time this looks like a O(N^2)
-	 * @space this takes O(N) space because of the hashmap, if I couldn't affort more space I would remove it from the solution
-	 * @param intervals
-	 * @return
-	 */
-
-
-	public boolean canAttendMeetingsBruteForce(int[][] intervals) {
-
-		if (intervals == null || intervals.length == 0 || intervals[0].length < 2)
-			return true;
-
-		//HashSet<Integer> visited = new HashSet<>();
-
-		for (int rowOutter = 0; rowOutter < intervals.length; rowOutter++) {
-
-			for (int rowInner = 0; rowInner < intervals.length; rowInner++) {
-
-				//not process the same pair
-				if (rowOutter != rowInner) {
-
-					//validate intervals
-					if (!validateIntervals(intervals, rowOutter, rowInner))
-					{
-						return false;
-					}
-
-					//visited.add(getHashCode(rowOutter, rowInner));
-				}
-			}
-		}
-
-		return true;
-	}
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	public boolean canAttendMeetingsBruteForce0(int[][] intervals) {
 
 		if (intervals == null || intervals.length == 0 || intervals[0].length < 2)
@@ -284,6 +245,44 @@ public class MeetingRooms {
 	}
 
 
+	/**
+	 * Has expected this solution was bad a mere brute force solution.
+	 * 
+	 * 		Runtime: 1499 ms, faster than 5.00% of Java online submissions for Meeting Rooms.
+			Memory Usage: 45.6 MB, less than 5.13% of Java online submissions for Meeting Rooms.
+
+			the runtime was drastically improved by removing the hashset from the equation
+			 699 ms.
+	 * 
+	 * @time this looks like a O(N^2)
+	 * @space this takes O(N) space because of the hashmap, if I couldn't affort more space I would remove it from the solution
+	 * @param intervals
+	 * @return
+	 */
+	public boolean canAttendMeetingsBruteForce(int[][] intervals) {
+
+		if (intervals == null || intervals.length == 0 || intervals[0].length < 2)
+			return true;
+
+		for (int rowOutter = 0; rowOutter < intervals.length; rowOutter++) {
+
+			for (int rowInner = 0; rowInner < intervals.length; rowInner++) {
+
+				//not process the same pair
+				if (rowOutter != rowInner) {
+
+					//validate intervals
+					if (!validateIntervals(intervals, rowOutter, rowInner))
+					{
+						return false;
+					}
+				}
+			}
+		}
+
+		return true;
+	}
+	
 	private int getHashCode(int rowOutter, int rowInner) {
 		//7 is just a prime number... could be any ano but 1 ou 0 I think
 		//calendar 0
@@ -304,31 +303,8 @@ public class MeetingRooms {
 				intervals[rowInner][end] < intervals[rowOutter][end]	||
 				
 					intervals[rowOutter][start] == intervals[rowInner][start] && 
-					intervals[rowOutter][end] == intervals[rowInner][end]
-				
-				) return false;
-		
-//		//check start
-//		if (intervals[rowOutter][start] < intervals[rowInner][start] && 
-//				intervals[rowInner][start] < intervals[rowOutter][end])
-//		{
-//			return false;
-//		}
-//
-//		//check end
-//		if (intervals[rowOutter][start] < intervals[rowInner][end] && 
-//				intervals[rowInner][end] < intervals[rowOutter][end])
-//		{
-//			return false;
-//		}
-//
-//		//check complete overlap
-//		if (intervals[rowOutter][start] == intervals[rowInner][start] && 
-//				intervals[rowOutter][end] == intervals[rowInner][end])
-//		{		
-//			return false;
-//		}
-
+					intervals[rowOutter][end] == intervals[rowInner][end]) 
+			return false;
 		return true;
 	}
 

@@ -3,6 +3,7 @@ package com.data.structures.problems;
 import java.util.Arrays;
 import java.util.HashMap;
 /**
+ * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
  * EASY
  * @author Nelson Costa
  *
@@ -24,57 +25,11 @@ public class TwoSumIIInputArrayIsSorted {
 		System.out.println(Arrays.toString(TwoSumIIInputArrayIsSortedSolution2.twoSum(a, x)));
 	}
 
-	public static final int val = 0;
-	public static final int index = 1;
+	
 
-	/**
-	 * 		Runtime: 6 ms, faster than 13.42% of Java online submissions for Two Sum II - Input array is sorted.
-			Memory Usage: 43 MB, less than 5.22% of Java online submissions for Two Sum II - Input array is sorted.
-	 * 
-	 * nothing fancy here
-	 * 
-	 * @time 	O(N)
-	 * @space 	O(N)
-	 * @bcr 	O(N)
-	 * 
-	 * @param a
-	 * @param x
-	 * @return
-	 */
-	public int[] twoSum0(int[] a, int x) {
-
-		if (a == null || a.length == 0)
-			return null;
-
-		HashMap<Integer, int[]> map = new HashMap<>();
-		boolean [] visited = new boolean[a.length];
-
-		for (int i = 0; i < a.length; i++)
-		{
-			map.put(a[i], new int[] {x - a[i], i});
-		}
-
-		int[] candidate;
-		int [] complement;
-
-		for (int i = 0; i < a.length; i++)
-		{
-			visited[i] = true;
-			candidate = map.get(a[i]);
-			complement = map.get(candidate[val]);
-
-			if (complement != null && visited[complement[index]] == false)
-			{
-				return new int [] {
-						Math.min(complement[index] + 1, i + 1),
-						Math.max(complement[index] + 1, i + 1)
-				};
-			}
-		}
-
-		return null;
-	}
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	private int index2 = -1;
 
 	/**
@@ -99,7 +54,7 @@ public class TwoSumIIInputArrayIsSorted {
 	 * @param x
 	 * @return
 	 */
-	public int[] twoSum(int[] a, int x) {
+	public int[] twoSum0(int[] a, int x) {
 
 		int low = 0;
 		int high = a.length - 1;
@@ -190,6 +145,62 @@ public class TwoSumIIInputArrayIsSorted {
 		}
 		low = low >= a.length ? a.length - 1 : low;
 		return x - a[low];
+	}
+	
+	
+
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/		
+	public static final int val = 0;
+	public static final int index = 1;
+
+	/**
+	 * 		Runtime: 6 ms, faster than 13.42% of Java online submissions for Two Sum II - Input array is sorted.
+			Memory Usage: 43 MB, less than 5.22% of Java online submissions for Two Sum II - Input array is sorted.
+	 * 
+	 * nothing fancy here
+	 * 
+	 * @time 	O(N)
+	 * @space 	O(N)
+	 * @bcr 	O(N)
+	 * 
+	 * @param a
+	 * @param x
+	 * @return
+	 */
+	public int[] twoSum1(int[] a, int x) {
+
+		if (a == null || a.length == 0)
+			return null;
+
+		HashMap<Integer, int[]> map = new HashMap<>();
+		boolean [] visited = new boolean[a.length];
+
+		for (int i = 0; i < a.length; i++)
+		{
+			map.put(a[i], new int[] {x - a[i], i});
+		}
+
+		int[] candidate;
+		int [] complement;
+
+		for (int i = 0; i < a.length; i++)
+		{
+			visited[i] = true;
+			candidate = map.get(a[i]);
+			complement = map.get(candidate[val]);
+
+			if (complement != null && visited[complement[index]] == false)
+			{
+				return new int [] {
+						Math.min(complement[index] + 1, i + 1),
+						Math.max(complement[index] + 1, i + 1)
+				};
+			}
+		}
+
+		return null;
 	}
 }
 

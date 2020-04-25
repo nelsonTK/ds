@@ -1,5 +1,11 @@
 package com.data.structures.problems;
 
+/**
+ * https://leetcode.com/problems/number-of-islands/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class NumberOfIslands {
 	public static void main(String[] args) {
 		

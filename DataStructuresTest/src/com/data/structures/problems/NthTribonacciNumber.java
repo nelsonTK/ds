@@ -3,6 +3,12 @@ package com.data.structures.problems;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/**
+ * https://leetcode.com/problems/n-th-tribonacci-number/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class NthTribonacciNumber {
 
 	public static void main(String[] args) {	    
@@ -15,7 +21,7 @@ public class NthTribonacciNumber {
 
 	/**
 	 * Runtime: 0 ms, faster than 100.00% of Java online submissions for N-th Tribonacci Number.
-Memory Usage: 36.6 MB, less than 10S0.00% of Java online submissions for N-th Tribonacci Number.
+Memory Usage: 36.6 MB, less than 100.00% of Java online submissions for N-th Tribonacci Number.
 	 * 
 	 * This is my iterative solution.
 	 * I could have done a recursive solution but I think it was too much of an expense.

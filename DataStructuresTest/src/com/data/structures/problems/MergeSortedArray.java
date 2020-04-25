@@ -22,7 +22,11 @@ public class MergeSortedArray {
 
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * 	Runtime: 0 ms, faster than 100.00% of Java online submissions for Merge Sorted Array.
 		Memory Usage: 39.2 MB, less than 5.94% of Java online submissions for Merge Sorted Array.
@@ -48,6 +52,10 @@ public class MergeSortedArray {
 			Arrays.sort(nums1);
 		}
 	}
+	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	
 	/**
 	 * no fail

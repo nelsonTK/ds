@@ -40,7 +40,10 @@ public class Permutations {
 	public static void main(String[] args) {
 		permute(new int[] {1,2,3});
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 
 	public static List<List<Integer>> permute(int[] nums) {
 		permute(nums, 0);
@@ -59,8 +62,6 @@ public class Permutations {
 
 		if (start >= nums.length)
 		{
-			System.out.println(Arrays.toString(nums));
-
 			list.add(copyArrayToList(nums));
 			return;
 		}
@@ -73,16 +74,6 @@ public class Permutations {
 	}
 
 
-	private static List<Integer> copyList(List<Integer> list) {
-		List<Integer> nList = new ArrayList<Integer>();
-
-		for (Integer integer : list) {
-			nList.add(integer);
-		}
-
-		return nList;
-	}
-
 	private static List<Integer> copyArrayToList(int [] nums){
 		List<Integer> nList = new ArrayList<Integer> ();
 
@@ -94,12 +85,27 @@ public class Permutations {
 		return nList;
 	}
 	
-
+	/**
+	 * 
+	 * @param nums
+	 * @param i element to swap position index
+	 * @param j element to swap position index
+	 */
+	private static void swap(int [] nums, int i, int j) {
+		int tmp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = tmp;		
+	}	
+	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	
 	/**
 	 * @param nums
 	 * @return
 	 */
-	public static List<List<Integer>> permuteold(int[] nums) {
+	public static List<List<Integer>> permute0(int[] nums) {
 
 		List<Integer> input = Arrays
 				.stream(nums)
@@ -123,10 +129,6 @@ public class Permutations {
 		if (start >= nums.size())
 		{
 			System.out.println(Arrays.toString(nums.toArray()));
-			//			ArrayList<Integer> clone = (ArrayList<Integer>) nums
-			//					.stream()
-			//					.map( x -> Integer.valueOf(x))
-			//					.collect(Collectors.toList());	
 
 			list.add(copyList(nums));
 			return;
@@ -138,7 +140,6 @@ public class Permutations {
 			swap(nums, start, i);
 		}
 	}
-
 	/**
 	 * 
 	 * @param nums
@@ -149,15 +150,13 @@ public class Permutations {
 		Collections.swap(nums, i, j);
 	}	
 
-	/**
-	 * 
-	 * @param nums
-	 * @param i element to swap position index
-	 * @param j element to swap position index
-	 */
-	private static void swap(int [] nums, int i, int j) {
-		int tmp = nums[i];
-		nums[i] = nums[j];
-		nums[j] = tmp;		
-	}	
+	private static List<Integer> copyList(List<Integer> list) {
+		List<Integer> nList = new ArrayList<Integer>();
+
+		for (Integer integer : list) {
+			nList.add(integer);
+		}
+
+		return nList;
+	}
 }
