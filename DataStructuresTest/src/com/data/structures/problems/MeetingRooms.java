@@ -21,7 +21,7 @@ public class MeetingRooms extends LeetCodeExercise{
 
 		//false
 		int [][] interval = new int [3][2];
-		interval = m.stringToMatrix("[[0,30],[5,10],[15,20]]");
+		interval = stringToMatrix("[[0,30],[5,10],[15,20]]");
 		
 		//true
 		//		int [][] interval = new int [3][2];

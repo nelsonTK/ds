@@ -30,6 +30,15 @@ public class PrintHelper {
 			System.out.println("[Empty]");
 		}
 	}
+	
+	public static void printArray(Object [] array) {
+		if (array != null) {
+			System.out.println(Arrays.toString(array));
+		}else
+		{
+			System.out.println("[Empty]");
+		}
+	}
 
 	public static void printArray(int [] array, int from, int to) {
 		String result = "";
@@ -62,6 +71,14 @@ public class PrintHelper {
 			for (int j = 0; j < matrix[i].length; j++) {
 				System.out.println(matrix[i][j]);
 			}
+		}
+	}
+	
+	public static void printMatrix(int [][] m)
+	{
+		for (int i = 0; i < m.length; i++)
+		{
+			System.out.println(Arrays.toString(m[i]));
 		}
 	}
 }
