@@ -150,6 +150,9 @@ public class ContainerWithMostWater extends LeetCodeExercise{
 
 }
 
+/**************************************
+ * OTHERS SOLUTIONS
+ *************************************/
 /**
  * Is the best solution from leetcode
  * my solution is a little bit better, by 1 ms.

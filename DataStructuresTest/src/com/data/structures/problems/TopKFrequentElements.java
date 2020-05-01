@@ -2,11 +2,8 @@ package com.data.structures.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.PriorityQueue;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
@@ -33,6 +30,10 @@ public class TopKFrequentElements extends LeetCodeExercise{
 
 	}
 
+	/**************************************
+	 * SOLUTION 1
+	 *************************************/
+	
 	/**
 	 *  [ATTENTION THE ANSWER FORMAT IS WRONG IN LEETCODE, IT ASKS LIST<INTEGER> BUT EXPECTS IS INT[] 
 	 *  
@@ -110,6 +111,9 @@ public class TopKFrequentElements extends LeetCodeExercise{
 
 
 
+	/**************************************
+	 * SOLUTION 1
+	 *************************************/
 
 	/** [CORRECT RETURN TYPE, NEGLICTING LEETCODE'S INDICATION]
 	 * 

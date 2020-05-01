@@ -197,6 +197,10 @@ public class TrappingRainWater extends LeetCodeExercise{
 
 }
 
+/**************************************
+ * OTHERS SOLUTIONS
+ *************************************/
+
 class TrappingRainWaterSolutions4 {
 
 	/**
