@@ -1,5 +1,7 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.ListNode;
+
 /**
  * https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
  * EASY
@@ -45,10 +47,4 @@ public class ConvertBinaryNumberInALinkedListToInteger {
 		return r;
 	}
 
-}
-
-class ListNode {
-	int val;
-	ListNode next;
-	ListNode(int x) { val = x; }
 }

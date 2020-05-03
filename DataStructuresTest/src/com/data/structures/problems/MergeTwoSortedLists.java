@@ -2,6 +2,8 @@ package com.data.structures.problems;
 
 import java.util.Stack;
 
+import com.data.structures.problems.ds.ListNode;
+
 /**
  * https://leetcode.com/problems/merge-two-sorted-lists/
  * EASY
@@ -15,17 +17,17 @@ public class MergeTwoSortedLists {
 		// 1->2->4, 1->3->4
 
 		MergeTwoSortedLists m = new MergeTwoSortedLists();
-		ListNode a1 = m.new ListNode(1); 
-		ListNode a2 = m.new ListNode(2); 
-		ListNode a3 = m.new ListNode(4); 
+		ListNode a1 = new ListNode(1); 
+		ListNode a2 = new ListNode(2); 
+		ListNode a3 = new ListNode(4); 
 		a1.next = a2; a2.next = a3;
 
 
-		ListNode b1 = m.new ListNode(2); 
-		ListNode b2 = m.new ListNode(3); 
-		ListNode b3 = m.new ListNode(4); 
-		ListNode b4 = m.new ListNode(5); 
-		ListNode b5 = m.new ListNode(6); 
+		ListNode b1 = new ListNode(2); 
+		ListNode b2 = new ListNode(3); 
+		ListNode b3 = new ListNode(4); 
+		ListNode b4 = new ListNode(5); 
+		ListNode b5 = new ListNode(6); 
 		b1.next = b2; 
 		b2.next = b3; 
 		b3.next = b4; 
@@ -347,13 +349,6 @@ public class MergeTwoSortedLists {
 		}
 
 		System.out.println("NULL");
-	}
-
-
-	public class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
 	}
 }
 

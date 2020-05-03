@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.data.structures.performance.BenchMark;
+import com.data.structures.performance.FunctionInputIntArray;
+
 /**
  * https://leetcode.com/problems/permutations/
  * MEDIUM
@@ -38,14 +41,23 @@ public class Permutations {
 
 
 	public static void main(String[] args) {
-		permute(new int[] {1,2,3});
+		
+		Permutations p = new Permutations();
+		p.permute(new int[] {1,2,3});
+		
+		BenchMark b = new BenchMark();
+		
+		FunctionInputIntArray f1 = x-> p.permute(x);
+		List<FunctionInputIntArray> listOfFunctions = new ArrayList<FunctionInputIntArray> ();
+		listOfFunctions.add(f1);
+		b.BenchMarkFunctionInputIntArray(listOfFunctions, 0, 10, 16, 2);
+		
 	}
 	
 	/*********************************
 	 * SOLUTION 1
 	 ********************************/
-
-	public static List<List<Integer>> permute(int[] nums) {
+	public List<List<Integer>> permute(int[] nums) {
 		permute(nums, 0);
 		return list;
 	}
@@ -55,7 +67,7 @@ public class Permutations {
 	 * @param nums 	
 	 * @param start
 	 */
-	private static void permute(int [] nums, int start)
+	private void permute(int [] nums, int start)
 	{
 		if (nums == null)
 			return;
@@ -74,7 +86,7 @@ public class Permutations {
 	}
 
 
-	private static List<Integer> copyArrayToList(int [] nums){
+	private List<Integer> copyArrayToList(int [] nums){
 		List<Integer> nList = new ArrayList<Integer> ();
 
 		for (int i = 0; i < nums.length; i++)
@@ -91,7 +103,7 @@ public class Permutations {
 	 * @param i element to swap position index
 	 * @param j element to swap position index
 	 */
-	private static void swap(int [] nums, int i, int j) {
+	private void swap(int [] nums, int i, int j) {
 		int tmp = nums[i];
 		nums[i] = nums[j];
 		nums[j] = tmp;		
@@ -105,7 +117,7 @@ public class Permutations {
 	 * @param nums
 	 * @return
 	 */
-	public static List<List<Integer>> permute0(int[] nums) {
+	public List<List<Integer>> permute0(int[] nums) {
 
 		List<Integer> input = Arrays
 				.stream(nums)
@@ -121,7 +133,7 @@ public class Permutations {
 	 * @param nums 	
 	 * @param start
 	 */
-	private static void permute(List<Integer> nums, int start)
+	private void permute(List<Integer> nums, int start)
 	{
 		if (nums == null)
 			return;
@@ -146,11 +158,11 @@ public class Permutations {
 	 * @param i element to swap position index
 	 * @param j element to swap position index
 	 */
-	private static void swap(List<Integer> nums, int i, int j) {
+	private void swap(List<Integer> nums, int i, int j) {
 		Collections.swap(nums, i, j);
 	}	
 
-	private static List<Integer> copyList(List<Integer> list) {
+	private List<Integer> copyList(List<Integer> list) {
 		List<Integer> nList = new ArrayList<Integer>();
 
 		for (Integer integer : list) {

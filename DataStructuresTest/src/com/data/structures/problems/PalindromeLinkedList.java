@@ -1,5 +1,7 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.ListNode;
+
 /**
  * 
  * https://leetcode.com/problems/palindrome-linked-list
@@ -12,10 +14,10 @@ public class PalindromeLinkedList {
 	public static void main(String[] args) {
 
 		PalindromeLinkedList p = new PalindromeLinkedList();
-		ListNode l1 = p.new ListNode(-129);
-		ListNode l2 = p.new ListNode(9);
-		ListNode l3 = p.new ListNode(9);
-		ListNode l4 = p.new ListNode(-129);
+		ListNode l1 = new ListNode(-129);
+		ListNode l2 = new ListNode(9);
+		ListNode l3 = new ListNode(9);
+		ListNode l4 = new ListNode(-129);
 
 		l1.next = l2;
 		l2.next = l3;
@@ -170,12 +172,6 @@ Memory Usage: 46.5 MB, less than 6.10% of Java online submissions for Palindrome
 				System.out.print(" -> ");
 		}
 		System.out.println();
-	}
-
-	public class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
 	}
 }
 

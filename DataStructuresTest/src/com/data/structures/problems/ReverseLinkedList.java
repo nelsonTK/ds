@@ -1,5 +1,7 @@
 package com.data.structures.problems;
 
+import com.data.structures.problems.ds.ListNode;
+
 /**
  * https://leetcode.com/problems/reverse-linked-list/
  * EASY
@@ -12,11 +14,11 @@ public class ReverseLinkedList {
 		// TODO Auto-generated method stub
 		ReverseLinkedList r = new ReverseLinkedList();
 
-		ListNode l1 = r.new ListNode(1);
-		ListNode l2 = r.new ListNode(2);
-				ListNode l3 = r.new ListNode(3);
+		ListNode l1 = new ListNode(1);
+		ListNode l2 = new ListNode(2);
+		ListNode l3 = new ListNode(3);
 		l1.next = l2;
-				l2.next = l3;
+		l2.next = l3;
 		r.printLinkedList(l1);
 		r.printLinkedList(r.reverseList(l1));
 	}
@@ -67,7 +69,7 @@ public class ReverseLinkedList {
 			//even element number of nodes 
 			cur = prev;
 		}
-		
+
 		return cur;
 	}
 
@@ -90,28 +92,21 @@ public class ReverseLinkedList {
 			}
 		}
 	}
-
-
-	class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
-	}
 }
 
 class ReverseLinkedListSolution {
-	
+
 	public ListNode reverseList(ListNode head) {
-	    ListNode prev = null;
-	    ListNode curr = head;
-	    
-	    //very simple approach, go through each node and se next equals to previous.
-	    while (curr != null) {
-	        ListNode nextTemp = curr.next;
-	        curr.next = prev;
-	        prev = curr;
-	        curr = nextTemp;
-	    }
-	    return prev;
+		ListNode prev = null;
+		ListNode curr = head;
+
+		//very simple approach, go through each node and se next equals to previous.
+		while (curr != null) {
+			ListNode nextTemp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = nextTemp;
+		}
+		return prev;
 	}
 }

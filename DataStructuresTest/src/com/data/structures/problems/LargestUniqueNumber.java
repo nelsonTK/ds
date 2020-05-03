@@ -1,8 +1,14 @@
 package com.data.structures.problems;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import com.data.structures.performance.BenchMark;
+import com.data.structures.performance.FunctionInputIntArray;
+import com.data.structures.problems.ds.LeetCodeExercise;
 
 /**
  * https://leetcode.com/problems/largest-unique-number/
@@ -10,7 +16,7 @@ import java.util.TreeSet;
  * @author Nelson Costa
  *
  */
-public class LargestUniqueNumber {
+public class LargestUniqueNumber extends LeetCodeExercise{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,6 +25,17 @@ public class LargestUniqueNumber {
 		//				a = new int [] {9,9,8,8};
 		LargestUniqueNumber l = new LargestUniqueNumber();
 		System.out.println(l.largestUniqueNumber(a));
+		
+		
+		//benchmarking
+		FunctionInputIntArray f1 = x -> l.largestUniqueNumber(x);
+		FunctionInputIntArray f2 = x -> l.largestUniqueNumber2(x);
+		BenchMark b = new BenchMark();
+		
+		List<FunctionInputIntArray> list = new ArrayList<>();
+		list.add(f1);
+		list.add(f2);
+ 		b.BenchMarkFunctionInputIntArray(list, 0, 1000, 100000000, 10);
 	}
 	
 	/*********************************

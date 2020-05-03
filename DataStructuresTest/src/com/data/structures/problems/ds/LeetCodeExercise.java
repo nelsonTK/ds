@@ -15,15 +15,41 @@ public abstract class LeetCodeExercise {
 		return LeetcodeUtils.stringToArray(s);
 	}
 
+	/**
+	 * String to List Node
+	 * Not Implemented
+	 * @param s
+	 * @return
+	 */
+	public static ListNode stringToListNode(String s) {
+		return null;
+	}
+	
 	public static void printArray(int [] array) {
 		PrintHelper.printArray(array);
 	}
-	
+
 	public static void printArray(Object [] array) {
 		PrintHelper.printArray(array);
 	}
-	
+
 	public static void printMatrix(int [][] m) {
 		PrintHelper.printMatrix(m);
 	}
+
+	public static void printListNode(ListNode l) {
+		while (l != null)
+		{
+			System.out.print(l.val);
+
+			if (l.next != null)
+			{
+				System.out.print(" -> ");
+			}
+			
+			l = l.next;
+		}
+		
+		System.out.println();
+	}	
 }
