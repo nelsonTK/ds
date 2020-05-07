@@ -5,6 +5,12 @@ import com.data.structures.utils.PrintHelper;
 
 public abstract class LeetCodeExercise {
 
+	/**
+	 * Override to benchmark your code and evaluate different solutions, and how different timecomplexities behave
+	 */
+	public void benchMark() {
+	}
+	
 	public static int [][] stringToMatrix (String s)
 	{
 		return LeetcodeUtils.stringToMatrix(s);

@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.data.structures.performance.BenchMark;
+import com.data.structures.performance.BenchMarkInput;
+import com.data.structures.performance.BenchMarkInputFactory;
 import com.data.structures.performance.FunctionInputIntArray;
+import com.data.structures.problems.ds.LeetCodeExercise;
 
 /**
  * https://leetcode.com/problems/permutations/
@@ -36,21 +39,27 @@ import com.data.structures.performance.FunctionInputIntArray;
  *
  *	Faz real diferença quando estamos a fazer casts de int para Integer, neste caso ao passar essas operações para o final ganhei 1 ms
  */
-public class Permutations {
+public class Permutations extends LeetCodeExercise{
 	private static List<List<Integer>> list = new ArrayList<List<Integer>>();
 
 
 	public static void main(String[] args) {
 		
 		Permutations p = new Permutations();
-		p.permute(new int[] {1,2,3});
+//		p.permute(new int[] {1,2,3});
 		
+		p.benchMark();
+	}
+	
+	public void benchMark() {
+		Permutations p = new Permutations();
 		BenchMark b = new BenchMark();
+		BenchMarkInputFactory<FunctionInputIntArray> factory = new BenchMarkInputFactory<>();
+		List<BenchMarkInput<FunctionInputIntArray>> benchmarkList = new ArrayList<>();
 		
-		FunctionInputIntArray f1 = x-> p.permute(x);
-		List<FunctionInputIntArray> listOfFunctions = new ArrayList<FunctionInputIntArray> ();
-		listOfFunctions.add(f1);
-		b.BenchMarkFunctionInputIntArray(listOfFunctions, 0, 10, 16, 2);
+		benchmarkList.add(factory.create(p::permute, "permute"));
+		benchmarkList.add(factory.create(p::permute0, "permute0"));
+		b.benchMarkFunctionInputIntArray(benchmarkList, 0, 10, 10, 2);
 		
 	}
 	
@@ -140,8 +149,6 @@ public class Permutations {
 
 		if (start >= nums.size())
 		{
-			System.out.println(Arrays.toString(nums.toArray()));
-
 			list.add(copyList(nums));
 			return;
 		}

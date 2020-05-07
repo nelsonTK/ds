@@ -7,6 +7,8 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import com.data.structures.performance.BenchMark;
+import com.data.structures.performance.BenchMarkInput;
+import com.data.structures.performance.BenchMarkInputFactory;
 import com.data.structures.performance.FunctionInputIntArray;
 import com.data.structures.problems.ds.LeetCodeExercise;
 
@@ -17,25 +19,26 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  *
  */
 public class LargestUniqueNumber extends LeetCodeExercise{
+	static LargestUniqueNumber l = new LargestUniqueNumber();
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		int [] a = {5,7,3,9,4,9,8,3,9,1};
-		//				a = new int [] {9,9,8,8};
-		LargestUniqueNumber l = new LargestUniqueNumber();
+		int [] a = stringToArray("[5,7,3,9,4,9,8,3,9,1]");
 		System.out.println(l.largestUniqueNumber(a));
 		
+		l.benchMark();
 		
-		//benchmarking
-		FunctionInputIntArray f1 = x -> l.largestUniqueNumber(x);
-		FunctionInputIntArray f2 = x -> l.largestUniqueNumber2(x);
+	}
+	
+	@Override
+	public void benchMark() {
 		BenchMark b = new BenchMark();
+		BenchMarkInputFactory<FunctionInputIntArray> factory = new BenchMarkInputFactory<>();
 		
-		List<FunctionInputIntArray> list = new ArrayList<>();
-		list.add(f1);
-		list.add(f2);
- 		b.BenchMarkFunctionInputIntArray(list, 0, 1000, 100000000, 10);
+		List<BenchMarkInput<FunctionInputIntArray>> list = new ArrayList<>();
+		list.add(factory.create(l::largestUniqueNumber, "largestUniqueNumber"));
+//		list.add(factory.create(l::largestUniqueNumber2, "largestUniqueNumbe2"));
+		
+		b.benchMarkFunctionInputIntArray(list, 0, 1000, 100000000, 10);
 	}
 	
 	/*********************************

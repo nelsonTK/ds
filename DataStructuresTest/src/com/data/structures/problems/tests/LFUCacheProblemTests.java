@@ -1,4 +1,4 @@
-package com.data.structures.problemsTests;
+package com.data.structures.problems.tests;
 
 import org.junit.jupiter.api.Test;
 
