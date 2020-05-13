@@ -223,6 +223,7 @@ public class Graph2<T> {
 		Integer component;
 		ArrayList<Node<T>> nodes;
 
+		//Print only
 		for (Entry<Integer, ArrayList<Node<T>>>  entry: components.entrySet()) {
 			component = entry.getKey();
 			nodes = entry.getValue();
@@ -291,6 +292,9 @@ public class Graph2<T> {
 		return currLowLink;
 	}
 
+	/**
+	 * this is not thoroughly tested
+	 */
 	public void topologicalSort() {
 		Stack<Node<T>> topOrder = new Stack<Node<T>>();
 		HashSet<Node<T>> visited = new HashSet<>();

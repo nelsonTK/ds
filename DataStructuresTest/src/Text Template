@@ -1,0 +1,41 @@
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+		 My Attempts Separator
+	 
+	 /*********************
+	 * SHARED METHODS
+	 *********************/
+		 For methods shared between multiple attempts
+	 
+	 
+	 /*********************
+	 * OTHERS SOLUTIONS
+	 *********************/
+		 Other People Solutions Separator
+	 
+	 
+	 SOME WORDS ON THIS PROJECT
+	 
+	 Tests
+	 	ClassName - ExeciseTests
+	 	Has the various tests for my exercises
+	 	
+	 benchmark
+	 	Has Classes for benchmarking different solutions
+	 	
+	 	BenchMarkInput
+	 		input used for benchmarking
+	 		
+	 	BenchMarkOutput
+	 		output resulting from a benchmark
+	 		
+	 	BenchmakrInputFactory
+	 		factory for creating benchmarkinput objects
+	 		
+	 	BenchmakrOutputFactory
+	 		factory for creating benchmarkoutput objects
+	 		
+	 	FunctionInputIntArray
+	 		Is a specific Type of function that represents a function that receives a intArray
+	 		More functions like this should be created to support different types of methods

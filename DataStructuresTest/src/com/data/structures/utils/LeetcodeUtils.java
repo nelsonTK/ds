@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
 
-public class LeetcodeUtils {
+public final class LeetcodeUtils {
 
 	public static void main(String[] args) {
 		int [] a = LeetcodeUtils.stringToArray("[10,2]");
