@@ -213,6 +213,7 @@ public class CourseScheduleII extends LeetCodeExercise{
 		Queue<Integer> q = new ArrayDeque<Integer>();
 
 		ArrayList<Integer> neighbors;
+		//Set up indegree for each node
 		for (int [] edge : pReq) {
 
 			neighbors = graph.getOrDefault(edge[1], new ArrayList<Integer>());
@@ -278,10 +279,15 @@ public class CourseScheduleII extends LeetCodeExercise{
 }
 
 
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
+
 /**
  * Solution with in degree is very similar to mine but with subtle differences that make it more efficient
  * 
- * for instance using array instead of using hashmap  for indegre
+ * for instance using array instead of using hashmap  for indegree
  * this increases performance but also allows us not not having to iterate trying to find the missing elements of the graph
  * 
  * cycles are identifies by counting iterations performed on nodes (i var) vs the count of nodes
