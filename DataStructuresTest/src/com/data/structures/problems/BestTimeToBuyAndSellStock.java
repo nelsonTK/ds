@@ -67,26 +67,3 @@ public class BestTimeToBuyAndSellStock {
     	return profit;
     }
 }
-
-/**
- * Better solution in O(N) Time
- * The logic is simple the min is always behind and we update as we progress
- * My initial solution was diferent, 
- * the max is always at the front. and that subtle different led to a more complicate and less performant algorithm
- * 
- * @author Nelson Costa
- *
- */
-class BestTimeToBuyAndSellStockSolution {
-    public int maxProfit(int prices[]) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minprice)
-                minprice = prices[i];
-            else if (prices[i] - minprice > maxprofit)
-                maxprofit = prices[i] - minprice;
-        }
-        return maxprofit;
-    }
-}
