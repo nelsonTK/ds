@@ -48,7 +48,8 @@ public class NumberofConnectedComponentsinanUndirectedGraph extends LeetCodeExer
 				Memory Usage: 39.7 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
 
 	 
-	 * 
+	 * @time
+	 * @space
 	 * 
 	 * @param n
 	 * @param edges

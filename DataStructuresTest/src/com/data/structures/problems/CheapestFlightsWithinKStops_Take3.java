@@ -9,6 +9,12 @@ import java.util.PriorityQueue;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/cheapest-flights-within-k-stops/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class CheapestFlightsWithinKStops_Take3 extends LeetCodeExercise {
 
 	static CheapestFlightsWithinKStops_Take3 c = new CheapestFlightsWithinKStops_Take3();
@@ -77,7 +83,7 @@ public class CheapestFlightsWithinKStops_Take3 extends LeetCodeExercise {
 		pq.offer(new Node(src, 0, -1));
 		Node node;
 
-		while (!pq.isEmpty()) // VLog E
+		while (!pq.isEmpty()) // ELogV
 		{
 			node = pq.poll();
 

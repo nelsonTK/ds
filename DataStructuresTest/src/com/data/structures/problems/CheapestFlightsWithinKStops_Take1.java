@@ -12,9 +12,9 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  * @author Nelson Costa
  *
  */
-public class CheapestFlightsWithinKStops extends LeetCodeExercise{
+public class CheapestFlightsWithinKStops_Take1 extends LeetCodeExercise{
 
-	static CheapestFlightsWithinKStops c = new CheapestFlightsWithinKStops();
+	static CheapestFlightsWithinKStops_Take1 c = new CheapestFlightsWithinKStops_Take1();
 
 	public static void main(String[] args) {
 		int n = 3, src = 0, dst = 2, k = 1;
