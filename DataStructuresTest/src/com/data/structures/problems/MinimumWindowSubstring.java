@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class MinimumWindowSubstring {
@@ -134,20 +135,36 @@ public class MinimumWindowSubstring {
 
 		return maxDiff;
 	}
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
+
 
 	/**
 	 * 
-	 * [WRONG]
-	 I Cannot detect the error... so sad..
-	 get almost all cases wright but one
+	 @intuition
+	 	I create a map of T's characters and counts
+	 	than I create a compressed version of string s with only the characters in t string.
+	 	from there I start iterating, where I remove elements when we have a match, and I add elements when we don't have a match
 	 
-    	fail
-	        1)lacking verification on equality
-	        2) wrong index being passed to check Equality, 
-	        should have been the compresset.get(index) instead of left and right directly
-	        3) right side duplicating characters after the equals if condition runs
+	 @score
+		Runtime: 19 ms, faster than 25.29% of Java online submissions for Minimum Window Substring.
+		Memory Usage: 49.3 MB, less than 5.00% of Java online submissions for Minimum Window Substring.
+ 
 	        
+	 @comments
+		One of the annoying things with this solution is that I had to use a visited array 
+	    to prevent the right side elements to be processed twice.
+	    I believe I can solve it if I do another approach for this problem.
 	        
+	 @fail
+        1)lacking verification on equality
+        2) wrong index being passed to check Equality, 
+        should have been the compresset.get(index) instead of left and right directly
+        3) right side duplicating characters after the equals if condition runs
+        4) unforgivable mistake that was cause by me comparing two character objects with "=="
 	 * @param s
 	 * @param t
 	 * @return
@@ -167,9 +184,8 @@ public class MinimumWindowSubstring {
 		{
 			tMap.put(c, tMap.getOrDefault(c, 0) + 1);
 		}
+        
 		//2nd create compressed list
-
-
 		for (int i = 0; i < s.length(); i++)
 		{
 			ch = s.charAt(i);
@@ -179,13 +195,7 @@ public class MinimumWindowSubstring {
 			}
 		}
 
-
-		//3rd iterate compressed array
-		//increase right if not complete window
-		//decrease left if complete window
-		//update matchwindow and complete var
-		//update max indexes
-
+		//3rd find substring
 		int lettersCompleted = 0;
 		int left = 0, right = 0;
 		int [] distance = new int[]{-1, -1};
@@ -193,7 +203,6 @@ public class MinimumWindowSubstring {
 		HashMap<Character, Integer> windowMap = new HashMap<>();
 		Set<Integer> visited = new HashSet<>();
 
-		//for (int i = 0; right < compressed.size() && left < ; i++)
 		while (right < compressed.size() && left <= right)
 		{
 			if(lettersCompleted == tMap.size())
@@ -201,14 +210,10 @@ public class MinimumWindowSubstring {
 				ch = s.charAt(compressed.get(left));
 
 				//update completed
-				//we can have letter that overflow the minimal requirement
-
-				//if the letter at left has the exact match with the reference tMap then we know we have a letter less completed
-				if (windowMap.getOrDefault(ch, 0) == tMap.get(ch))
+				if (windowMap.getOrDefault(ch, 0).equals(tMap.get(ch)))
 				{
 					lettersCompleted--;
 				}
-
 
 				//update windowMap                
 				if(windowMap.get(ch) == 1)
@@ -227,14 +232,10 @@ public class MinimumWindowSubstring {
 				if(lettersCompleted == tMap.size())
 					max = checkEqual(compressed.get(right),compressed.get(left), max, distance);
 
-				//forward left
-
 			}
 			else
 			{
 				//update windowMap
-				//we can have letter that overflow the tMap minimal count
-
 				if (visited.contains(right))
 					right++;
 
@@ -245,45 +246,38 @@ public class MinimumWindowSubstring {
 
 					windowMap.put(ch, windowMap.getOrDefault(ch, 0) + 1);
 
-
-					//update completed
-					if (windowMap.getOrDefault(ch, 0) == tMap.get(ch))
+                    
+					if (windowMap.getOrDefault(ch, 0).equals(tMap.get(ch)))
 					{
 						lettersCompleted++;
 					}
+                    
 
 					//check if equal
 					if(lettersCompleted == tMap.size())
 					{
 						max = checkEqual(compressed.get(right),compressed.get(left), max, distance);
-						//                    System.out.printf("max: %d", max);
-						//                    System.out.printf(" - coordinates: %d %d | ", compressed.get(left), compressed.get(right));
+
 					}
 					else
 					{
 						right++;
 					}
-
 					//forward right
 				}
 			}
-
-
 		}
-
-		//4th create response
 
 		if(distance[0] == -1)
 			return "";
 
-		//        System.out.printf("distance: %d, %d", distance[0], distance[1]);
 
 
+		//4th create response
 		StringBuilder sb = new StringBuilder("");
 		for (int i = distance[0]; i <= distance[1]; i++)
 		{
 			sb.append(s.charAt(i));
-			//System.out.printf("charAt - %s", s.charAt(i));
 		}
 
 
@@ -297,10 +291,97 @@ public class MinimumWindowSubstring {
 			distance[0] = left;
 			distance[1] = right;
 			max = right - left;
-
-			//                    System.out.printf("update Dist - (%d, %d)", left, right);
 		}
 
 		return max;
 	}
+}
+
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
+
+/**
+ * The concept is the same as mine but implemented different than mine
+ * 
+ * @intuition
+ * 		Always add the next element and move forward (right++)
+ * 		check if we have a formed/completed match
+ * 		while that match is on reduce (left --) the substring size (they never remove elements from the array)
+ * 		
+ * 
+ * 
+ * @score
+		Runtime: 14 ms, faster than 43.87% of Java online submissions for Minimum Window Substring.
+		Memory Usage: 45.5 MB, less than 6.27% of Java online submissions for Minimum Window Substring.
+		
+ * @author Nelson Costa
+ *
+ */
+class MinimumWindowSubstringSolution3 {
+    public String minWindow(String s, String t) {
+
+        if (s.length() == 0 || t.length() == 0) {
+            return "";
+        }
+
+        Map<Character, Integer> dictT = new HashMap<Character, Integer>();
+
+        for (int i = 0; i < t.length(); i++) {
+            int count = dictT.getOrDefault(t.charAt(i), 0);
+            dictT.put(t.charAt(i), count + 1);
+        }
+
+        int required = dictT.size();
+
+        // Filter all the characters from s into a new list along with their index.
+        // The filtering criteria is that the character should be present in t.
+        List<Pair<Integer, Character>> filteredS = new ArrayList<Pair<Integer, Character>>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (dictT.containsKey(c)) {
+                filteredS.add(new Pair<Integer, Character>(i, c));
+            }
+        }
+
+        int l = 0, r = 0, formed = 0;
+        Map<Character, Integer> windowCounts = new HashMap<Character, Integer>();  
+        int[] ans = {-1, 0, 0};
+
+        // Look for the characters only in the filtered list instead of entire s.
+        // This helps to reduce our search.
+        // Hence, we follow the sliding window approach on as small list.
+        while (r < filteredS.size()) {
+            char c = filteredS.get(r).getValue();
+            int count = windowCounts.getOrDefault(c, 0);
+            windowCounts.put(c, count + 1);
+
+            if (dictT.containsKey(c) && windowCounts.get(c).intValue() == dictT.get(c).intValue()) {
+                formed++;
+            }
+
+            // Try and contract the window till the point where it ceases to be 'desirable'.
+            while (l <= r && formed == required) {
+                c = filteredS.get(l).getValue();
+
+                // Save the smallest window until now.
+                int end = filteredS.get(r).getKey();
+                int start = filteredS.get(l).getKey();
+                if (ans[0] == -1 || end - start + 1 < ans[0]) {
+                    ans[0] = end - start + 1;
+                    ans[1] = start;
+                    ans[2] = end;
+                }
+
+                windowCounts.put(c, windowCounts.get(c) - 1);
+                if (dictT.containsKey(c) && windowCounts.get(c).intValue() < dictT.get(c).intValue()) {
+                    formed--;
+                }
+                l++;
+            }
+            r++;   
+        }
+        return ans[0] == -1 ? "" : s.substring(ans[1], ans[2] + 1);
+    }
 }

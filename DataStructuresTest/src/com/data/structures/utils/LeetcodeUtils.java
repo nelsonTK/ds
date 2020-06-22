@@ -2,31 +2,13 @@ package com.data.structures.utils;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Queue;
 
+import com.data.structures.problems.ds.TreeNode;
+
 public final class LeetcodeUtils {
-
-	public static void main(String[] args) {
-		int [] a = LeetcodeUtils.stringToArray("[10,2]");
-		a = LeetcodeUtils.stringToArray("[3,30,34,5,9]");
-		a = LeetcodeUtils.stringToArray("[9,6,4,2,3,5,7,0,1]");
-		a = LeetcodeUtils.stringToArray("[3,0,1]");
-		a = LeetcodeUtils.stringToArray("[-1,-1]");
-
-		int [][] b = LeetcodeUtils.stringToMatrix("   [\r\n" + 
-				"  [1,   3,  5,  7],\r\n" + 
-				"  [10, 11, 16, 20],\r\n" + 
-				"  [23, 30, 34, 50]\r\n" + 
-				"]");
-
-		System.out.println("a");
-		System.out.println(Arrays.toString(a));
-
-		System.out.println("b");
-		for (int i = 0; i < b.length; i++) {
-			System.out.println(Arrays.toString(b[i]));
-		}
-	}
 
 	/**
 	 * given a string returns a Matrix
@@ -40,6 +22,7 @@ public final class LeetcodeUtils {
 		return array;
 	}
 
+	
 	/**
 	 * given a string returns an array
 	 * @param s
@@ -52,6 +35,7 @@ public final class LeetcodeUtils {
 		return array;
 	}
 
+	
 	private static Object parseArray(String s)
 	{
 		if (s == null || s.length() == 0)
@@ -60,6 +44,8 @@ public final class LeetcodeUtils {
 		return getInnerArray(s.trim(), 1)[0];
 	}
 
+	
+	
 	/**
 	 * @intuition
 	 * 		returns 2d array or 1d array
@@ -98,7 +84,7 @@ public final class LeetcodeUtils {
 				curDepth = (int) innerAns[innerDepth];
 				q.add(innerAns[array]);
 				break; 
-				
+
 			} else {
 				// spaces, comma
 				index++;
@@ -141,6 +127,7 @@ public final class LeetcodeUtils {
 
 	}
 
+	
 	/**
 	 * parse Array of String to Array of integers
 	 * 
@@ -171,4 +158,237 @@ public final class LeetcodeUtils {
 		return new Object[] {ints, index + 1, 0};
 	}
 
+
+	/**
+	 * Class with methods to deal with TreeNodes
+	 * @author Nelson Costa
+	 *
+	 */
+	public static class Tree
+	{
+		/**
+		 * @time	O(N*D) + O(T) N number of nodes, D size of Digits, T Diameter of tree.
+		 * 			O(T) is when the first element of the last from is not null and all the rest is null. 
+		 * 			you will remove T - 1 nulls.	 
+		 * @space	O(N)
+		 * 
+		 * @param root
+		 * @return
+		 */
+		public static  String treeNodeToString(TreeNode root) {
+			//guards
+			if (root == null)
+			{
+				return "[]";
+			}
+
+			Queue<Tuple> q = new ArrayDeque<>();
+			HashMap<Integer, Integer> levelToValueCount = new HashMap<>();
+			q.add(new Tuple(0, root));
+
+			StringBuilder sb = new StringBuilder("[");
+			Tuple cur;
+			while (!q.isEmpty())
+			{
+				cur = q.poll(); 
+
+				//check if null
+				//if null and level has zero values it means we are in the end of the tree, we should break
+				//before break, remove last comma
+				//if not in the end we just put null value in the string 
+				if(cur.node == null)
+				{
+					if (levelToValueCount.getOrDefault(cur.level, 0) != 0)
+					{
+						sb.append("null,");
+						continue;
+					}
+					else if (levelToValueCount.getOrDefault(cur.level, 0) == 0)
+					{
+						sb.setLength(sb.length() - 1);
+						sb.append("]"); //always ends up here
+						break;
+					}
+
+				}
+
+				//if not null add left and right nodes to queue
+				//if children not null increase level down + 1;
+				//add node value to the string
+				if (cur.node.left != null)
+				{
+					levelToValueCount.put(cur.level + 1, levelToValueCount.getOrDefault(cur.level + 1, 0) + 1);
+				}
+
+				if (cur.node.right != null)
+				{
+					levelToValueCount.put(cur.level + 1, levelToValueCount.getOrDefault(cur.level + 1, 0) + 1);
+				}
+
+				q.add(new Tuple(cur.level + 1, cur.node.left));
+				q.add(new Tuple(cur.level + 1, cur.node.right));
+
+				sb.append(cur.node.val + ",");
+			}
+
+			//remove last null
+			//occurs if the last level ends with nulls;
+			String nullEnding = "null]";
+			int start = sb.length() - 1 - nullEnding.length();
+			int end = sb.length();
+			while(start > 0 && sb.substring(start, end).equals(nullEnding))
+			{
+				sb.setLength(sb.length() - 1 - nullEnding.length());
+				sb.append("]");
+				start = sb.length() - nullEnding.length();
+				end = sb.length();
+			}
+
+			//remove eventual comma left
+			if(sb.length() - 2 > 0 && sb.charAt(sb.length() - 2) == ',')
+				sb.setLength(sb.length() - 1);
+
+
+			return sb.toString();
+		}
+		
+
+		/**
+		 * 
+		 * @time 	O(S) + O(N*D), N each node, S equals to string size, D digit size
+		 * @spacd	O(L) + O(N) L is hashmap with levels, N is nodes.
+		 * 
+		 * @optimizations
+		 * 		I believe using String[] would improve performance, but right now i dont want to change the code
+		 * 
+		 * @param s
+		 * @return
+		 */
+		public static TreeNode stringToTreeNode(String s) {  
+
+			if (s.equals("[]"))
+				return null;
+
+			List<String> list = Arrays.asList(s.substring(1, s.length() - 1).split(","));
+
+			//prepare answer
+			TreeNode preAns = new TreeNode(-1);
+			TreeNode root = new TreeNode(Integer.parseInt(list.get(0)));
+			preAns.right = root;
+
+			//set level zero with one element
+			HashMap<Integer, Integer> levelToNodesCount = new HashMap<>();
+			levelToNodesCount.put(0, 1);
+
+			//prepare queue
+			Queue<Tuple> q = new ArrayDeque<>();
+			q.add(new Tuple(0, 0, root));
+
+			Tuple cur;
+			TreeNode children;            
+			int loopLevel, nullsBehind, curPos;
+
+			while (!q.isEmpty())
+			{
+				loopLevel = q.peek().level;
+				nullsBehind = 0;
+				curPos = 0;
+
+				while (!q.isEmpty() && q.peek().level == loopLevel)
+				{
+					cur = q.poll();
+
+					if (cur.node == null)
+					{
+						nullsBehind++;
+						curPos++;
+						continue;
+					}
+
+					int left = getLeft(cur.index, nullsBehind, curPos, levelToNodesCount.get(cur.level));
+					int right = left + 1;
+
+					if (left < list.size() ) 
+					{
+						if (!list.get(left).equals("null"))
+						{
+							children = new TreeNode(Integer.parseInt(list.get(left)));
+							cur.node.left = children;
+							q.add(new Tuple(cur.level + 1, left, cur.node.left)); 
+						}
+						else
+						{
+							q.add(new Tuple(cur.level + 1, left, null)); 
+						}
+
+						levelToNodesCount.put(cur.level + 1, levelToNodesCount.getOrDefault(cur.level + 1, 0) + 1);											
+					}
+
+					if (right < list.size()) 
+					{
+						if (!list.get(right).equals("null"))
+						{
+							children = new TreeNode(Integer.parseInt(list.get(right)));
+							cur.node.right = children;
+							q.add(new Tuple(cur.level + 1, right, cur.node.right)); 
+						}
+						else
+						{
+							q.add(new Tuple(cur.level + 1, right, null));
+						}
+						levelToNodesCount.put(cur.level + 1, levelToNodesCount.getOrDefault(cur.level + 1, 0) + 1);											
+					}		
+
+					curPos++;
+
+				}
+			}
+
+			return preAns.right;
+		}
+
+		/**
+		 * Get left node children
+		 * @param parent
+		 * @param nullsBehind
+		 * @param positionInCurrentLevel
+		 * @param totalElementsInLevel
+		 * @return
+		 */
+		private static int getLeft(int parent, int nullsBehind, int positionInCurrentLevel, int totalElementsInLevel){
+
+			if(parent == 0)
+				return 1;
+
+			//elements in front we need to jump to get to the end of the level
+			int elementsInFront = totalElementsInLevel - (positionInCurrentLevel + 1); 
+			//elements that we need to jump after reaching the end of the level
+			int elementsBehind = positionInCurrentLevel - nullsBehind; 
+
+			//to move to the end of the level we need to jump all elements in front
+			//after getting to the last element in the level we need to jump for each non-null element behind 2 positions
+			//once null elements will not produce more children
+			int leftChildrenPosition = parent + (elementsInFront) + (2 * elementsBehind) + 1;
+
+			return leftChildrenPosition;
+		}
+
+		static class Tuple{
+			int level;
+			int index;
+			TreeNode node;
+
+			public Tuple(int l, TreeNode n)
+			{
+				level = l;
+				node = n;
+			}
+			public Tuple(int l, int i,  TreeNode n)
+			{
+				level = l;
+				index = i;
+				node = n;
+			}
+		}
+	}
 }
