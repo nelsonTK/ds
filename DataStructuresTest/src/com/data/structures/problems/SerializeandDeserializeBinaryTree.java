@@ -10,12 +10,17 @@ import java.util.Queue;
 
 import com.data.structures.problems.ds.TreeNode;
 
+/***
+ * https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class SerializeandDeserializeBinaryTree {
 
 	static SerializeandDeserializeBinaryTree s = new SerializeandDeserializeBinaryTree();
 	static SerializeandDeserializeBinaryTreeSolution1 s2 = new SerializeandDeserializeBinaryTreeSolution1();
 	public static void main(String[] args) {
-		//Your Codec object will be instantiated and called as such:
 		Codec codec = s.new Codec();	
 		//		TreeNode n = codec.deserialize("[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9,null,10,null,11,null,12,null,13,null,14,null,15,null,16,null,17,null,18,null,19,null,20,null,21]"); 
 
@@ -23,10 +28,6 @@ public class SerializeandDeserializeBinaryTree {
 		TreeNode n = codec.deserialize("[5,2,3,4,5,null,null,null,null,6,3,null,null,8]"); 
 		String s = codec.serialize(n);
 		System.out.println(s);
-
-		//		SerializeandDeserializeBinaryTreeSolution1.Codec codec2 = s2.new Codec();
-		//		TreeNode n2 = codec2.deserialize("1,2,3,null,null,4,null,null,5,null,null,");
-		//		String s2 = codec2.serialize(n);
 
 
 	}
@@ -334,7 +335,18 @@ public class SerializeandDeserializeBinaryTree {
 	}
 }
 
-
+/**
+ * Elegant solution with DFS
+ * 
+ * put the values in dfs manner in the string for serialization
+ * 
+ * and removes the values from the string and goes dfs again
+ * 
+ * I prefered doing bfs because it was harder and I could reuse in my leetcodeUtils
+ * 
+ * @author Nelson Costa
+ *
+ */
 class SerializeandDeserializeBinaryTreeSolution1 {
 	class Codec {
 		public String rserialize(TreeNode root, String str) {
