@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * https://leetcode.com/problems/integer-to-english-words/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class IntegertoEnglishWords {
 
 	static IntegertoEnglishWords i = new IntegertoEnglishWords();
