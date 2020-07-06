@@ -8,8 +8,8 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  * @author Nelson Costa
  *
  */
-public class FirstMissingPositive extends LeetCodeExercise{
-	static FirstMissingPositive f = new FirstMissingPositive();
+public class FirstMissingPositive_Take1 extends LeetCodeExercise{
+	static FirstMissingPositive_Take1 f = new FirstMissingPositive_Take1();
 	
 	public static void main(String[] args) {
 		int [] nums = stringToArray("[1,2,0]");

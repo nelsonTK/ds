@@ -22,13 +22,12 @@ public abstract class LeetCodeExercise {
 	}
 
 	/**
-	 * String to List Node
-	 * Not Implemented
+	 * String to TreeNode
 	 * @param s
 	 * @return
 	 */
-	public static ListNode stringToListNode(String s) {
-		return null;
+	public static TreeNode stringToTreeNode(String s) {
+		return LeetcodeUtils.Tree.stringToTreeNode(s);
 	}
 	
 	public static void printArray(int [] array) {

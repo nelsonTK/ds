@@ -3,6 +3,12 @@ package com.data.structures.problems;
 import java.util.HashMap;
 import java.util.Random;
 
+/**
+ * https://leetcode.com/problems/encode-and-decode-tinyurl/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class EncodeAndDecodeTinyURL {
 
 	static EncodeAndDecodeTinyURL e = new EncodeAndDecodeTinyURL ();
@@ -19,13 +25,29 @@ public class EncodeAndDecodeTinyURL {
 	/***
 	 * 
 	 * @intuition
-	 * 		There were several ways I could do this faster, one of them would be to just code or decode and integer for each new id.
+	 * 		There were several ways I could do this faster, one of them would be to just code or decode an integer for each new id.
 	 * 		But I decided to performe something more structured.
 	 * 
 	 * 		I would love to have something stateless but I've not!
 	 * 
+	 * 		My Encoding Structure
+	 * 			My code is a variable size code.
+	 * 			it is composed by a fixed base size code
+	 * 			and a variable size code which represents the number of urls that share that base code.
+	 * 			
+	 * 		Encode
+	 * 			I get 2 elements from each domain, from there I get only random 5
+	 * 			I had the counter to the front of the basecode
+	 * 
+	 * 		Decode is just to get the element from the hashmap.
+	 * 
+	 * 		With this solution I can have a very big number of supported codes.
+	 * 		
+	 * 		like 2*10^31 per each possible 5 character code.
+	 * 
 	 * @optimizations
-	 * 		Forgot to use StringBuilder...
+	 * 		1) Forgot to use StringBuilder...
+	 * 		1) I could do the basecode with a set of all possible characters
 	 * 
 	 * 
 	 * @score
@@ -51,7 +73,7 @@ public class EncodeAndDecodeTinyURL {
 	    /*
 	    
 	    @time   O(L + N)
-	    @space  O()
+	    @space  O(N)
 	    
 	    */
 	    public String encode(String longUrl) {
@@ -111,3 +133,49 @@ public class EncodeAndDecodeTinyURL {
 	    }
 	}
 }
+
+
+
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
+/**
+ * I dont like the fact that they are looping and trying to find a code when encoding. it does not make sense to me.
+ * 
+ * But it is a very concise way of writing this problem
+ * 
+ * @score
+ 		Runtime: 6 ms, faster than 45.99% of Java online submissions for Encode and Decode TinyURL.
+		Memory Usage: 39.6 MB, less than 52.89% of Java online submissions for Encode and Decode TinyURL.
+ * 
+ * @author Nelson Costa
+ *
+ */
+class EncodeAndDecodeTinyURLSolution5 {
+    String alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    HashMap<String, String> map = new HashMap<>();
+    Random rand = new Random();
+    String key = getRand();
+
+    public String getRand() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 6; i++) {
+            sb.append(alphabet.charAt(rand.nextInt(62)));
+        }
+        return sb.toString();
+    }
+
+    public String encode(String longUrl) {
+        while (map.containsKey(key)) {
+            key = getRand();
+        }
+        map.put(key, longUrl);
+        return "http://tinyurl.com/" + key;
+    }
+
+    public String decode(String shortUrl) {
+        return map.get(shortUrl.replace("http://tinyurl.com/", ""));
+    }
+}
+
