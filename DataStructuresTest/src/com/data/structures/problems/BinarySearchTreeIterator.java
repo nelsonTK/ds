@@ -29,44 +29,39 @@ public class BinarySearchTreeIterator extends LeetCodeExercise{
 	/**
 	 * 
 	 * 
-
-	@intuition
-	 	I had a Linked List with the always the most immediate smaller element
-	 	I had a getSmaller method that always update my list
-
-	 	next 	
-	 		would return the first element of the linkedlist and remove that first element, 
-	 		and then check if there is a right element to explore
-	 		I had troubles indicating the average TC of this case.
-	 	hasnext
-	 		I would check if the next linkedlist node is null, if it is than I would return false;
-
-
-	@score
-		Runtime: 28 ms, faster than 14.43% of Java online submissions for Binary Search Tree Iterator.
-		Memory Usage: 56.5 MB, less than 5.02% of Java online submissions for Binary Search Tree Iterator.
-
-	@optimization
-		I could do this iteratively
-
-	@fail
-
+	 * 
+	 * 	@intuition
+	 * 	 	I had a Linked List with the always the most immediate smaller element
+	 * 	 	I had a getSmaller method that always update my list
+	 * 
+	 * 	 	next 	
+	 * 	 		would return the first element of the linkedlist and remove that first element, 
+	 * 	 		and then check if there is a right element to explore
+	 * 	 		I had troubles indicating the average TC of this case.
+	 * 	 	hasnext
+	 * 	 		I would check if the next linkedlist node is null, if it is than I would return false;
+	 * 
+	 * 
+	 * 	@score
+	 * 		Runtime: 28 ms, faster than 14.43% of Java online submissions for Binary Search Tree Iterator.
+	 * 		Memory Usage: 56.5 MB, less than 5.02% of Java online submissions for Binary Search Tree Iterator.
+	 * 
+	 * 	@optimization
+	 * 		I could do this iteratively
+	 * 
+	 * 	@fail
+	 * 
 	 **/
 
 	class BSTIterator {
 
 
 		TreeNode root;
-		//int min;
 		LNode next;
 
 		public BSTIterator(TreeNode r) {
 			root = r;
 			getSmallest(root);
-			//min = Integer.MIN_VALUE;
-
-
-
 		}
 
 		/** @return the next smallest number */
@@ -134,13 +129,9 @@ public class BinarySearchTreeIterator extends LeetCodeExercise{
 }
 
 
-
-
 /*********************
  * OTHERS SOLUTIONS
  *********************/
-
-
 
 /**
  * This is the exact same approach then mine but with stack implementation4

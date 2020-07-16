@@ -23,38 +23,35 @@ public class FindMedianFromDataStream {
 		 
 	}
 
-	/*
-
-
-
-	*/
-	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	/**
-
-	@intuition
-		Very simple intuition, You just keep the priority queues balanced, 
-		a pq never has more than one item more than another.
-			
-
-	@score
-		Runtime: 41 ms, faster than 94.17% of Java online submissions for Find Median from Data Stream.
-		Memory Usage: 50.9 MB, less than 39.82% of Java online submissions for Find Median from Data Stream.
-
-
-	@fail
-	    1) bad first interpretation
-	    2) null pointers unsafe peeks and polls
-	    3) error don't know why
-	    4) I switched the min heap for the max heap
-	    5) failed on guards... I had placeholder value there
-	    
-	@debug
-	    yes contest style
-	    
-	@time
-		findMedian 	O(1)
-		addNum( 	O(Log n)
-		
+	 * 
+	 * @intuition
+	 * 		Very simple intuition, You just keep the priority queues balanced, 
+	 * 		a pq never has more than one item more than another.
+	 * 			
+	 * 
+	 * 	@score
+	 * 		Runtime: 41 ms, faster than 94.17% of Java online submissions for Find Median from Data Stream.
+	 * 		Memory Usage: 50.9 MB, less than 39.82% of Java online submissions for Find Median from Data Stream.
+	 * 
+	 * 
+	 * 	@fail
+	 * 	    1) bad first interpretation
+	 * 	    2) null pointers unsafe peeks and polls
+	 * 	    3) error don't know why
+	 * 	    4) I switched the min heap for the max heap
+	 * 	    5) failed on guards... I had placeholder value there
+	 * 	    
+	 * 	@debug
+	 * 	    yes contest style
+	 * 	    
+	 * 	@time
+	 * 		findMedian 	O(1)
+	 * 		addNum( O(Log n)
+	 * 		
 	 * @author Nelson Costa
 	 *
 	 */

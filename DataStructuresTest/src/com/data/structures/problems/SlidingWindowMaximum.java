@@ -20,38 +20,37 @@ public class SlidingWindowMaximum extends LeetCodeExercise{
 		s.maxSlidingWindow(nums, k);
 	}
 	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
     /**
-    
-    [WRONG]
-    @intuition
-    	This was my first trial to solve the problem with dp
-    	The logic was almost there but I there where bits I was not able to solve.
-    	it fails to address some cases.
-
-    	the logic here is to greedly put the biggest element if it is in the range of k in the first pass
-    	than on the second pass this time right to leftcompare the first element of the window with the last element of the window and assign the maximal
-    	
-    @alternatives
-    	I also have thought in a Priority Solution
-    
-    @fail
-        1) array out of bounds
-        2) forgot about negative numbers
-        3) I was not updating dp in the first pass
-        4) when k equals to arraysize, I had set max variable with MAX_VALUE instead of MIN_VALUE
-        5) wrong algorithm
-        
-    @time   O(3N)
-    @space  O(N)
-    
-    **/
+     *
+     *    [WRONG]
+     *    @intuition
+     *    	This was my first trial to solve the problem with dp
+     *    	The logic was almost there but I there where bits I was not able to solve.
+     *    	it fails to address some cases.
+     *
+     *    	the logic here is to greedly put the biggest element, if it is in the range of k, in the first pass
+     *    	thEn on the second pass, this time right to left, compare the first element of the window with the last element of the window and assign the maximal
+     *    	
+     *    @alternatives
+     *    	I also have thought in a Priority Solution
+     *    
+     *    @fail
+     *        1) array out of bounds
+     *        2) forgot about negative numbers
+     *        3) I was not updating dp in the first pass
+     *        4) when k equals to arraysize, I had set max variable with MAX_VALUE instead of MIN_VALUE
+     *        5) wrong algorithm
+     *        
+     *    @time   O(3N)
+     *    @space  O(N)
+     *    
+     **/
     public int[] maxSlidingWindow0(int[] nums, int k) {
         
         //ans size() equals to => nums - k + 1
-        //guards
-            //size 0, size 1;
-            //k = nums.size
-            //k = 1;
         if (nums.length == 0)
             return new int[0];
         
@@ -119,21 +118,22 @@ public class SlidingWindowMaximum extends LeetCodeExercise{
     }
     
     
-    
-    
-    
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
     /**
-    
-    @score
-		Runtime: 3 ms, faster than 95.70% of Java online submissions for Sliding Window Maximum.
-		Memory Usage: 52.1 MB, less than 49.64% of Java online submissions for Sliding Window Maximum.
-    
-    @fail
-        1) increment was wrong
-        2) index of ans was wrong
-        3) error found, it was in the implementation of the right side, the k containers were not sinchronous
-    	4) parentheses missing in modulo operation
+     *    @intuition
+     *    	
+     *    
+     *    @score
+     *		Runtime: 3 ms, faster than 95.70% of Java online submissions for Sliding Window Maximum.
+     *		Memory Usage: 52.1 MB, less than 49.64% of Java online submissions for Sliding Window Maximum.
+     *    
+     *    @fail
+     *        1) increment was wrong
+     *        2) index of ans was wrong
+     *        3) error found, it was in the implementation of the right side, the k containers were not sinchronous
+     *    	4) parentheses missing in modulo operation
     **/
     public int[] maxSlidingWindow(int[] nums, int k) {
         
@@ -190,6 +190,9 @@ public class SlidingWindowMaximum extends LeetCodeExercise{
 
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * @intuition
  * 		Separate array in k blocks

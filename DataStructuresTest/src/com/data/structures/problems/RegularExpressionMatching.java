@@ -24,42 +24,41 @@ public class RegularExpressionMatching {
 
 
 
-		System.out.println(r.isMatch(s, p));
+		System.out.println(r.isMatch0(s, p));
 	}
 
 	/*********************************
 	 * SOLUTION 1
 	 ********************************/
 	/**
-
-	@intuition
-		the intuition here was to greedly solve the string until process all string characters and mark them as true.
-		at the same time I should mark as true elements in the array of the expression.
-
-		if I process the string array before all elements in the expression being mark 
-		true I have to clean the leftover of the expression against an empty string.
-
-		this was greedy and wrong and caused by a miss interpretation of the expression symbols
-
-
-
-	@comments
-		Works for many cases but, I think the design was fundamentally wrong.
-		I designed a Greedy solution, should have think in a gready solution.
-		But this mistake was created because of a miss interpretation of how star should behave.
-		But still I can see many good things in this solution.
-
-    @fail
-        1) 
-        2) did not treat the case where the last element is dot, after ".*"
-		3) arrayoutofbounds, wrong guard I hadd <= length
-        4) fundamental erro in interpretation.. * works alone.. I think
-    @time
-        O(M + N)
-    @space
-        O()
-        aaabaa
-        .*.*.*b*.*.*
+	 *  [TIME EXCEEDED/WRONG]
+	 *  
+	 * 	@intuition
+	 * 		the intuition here was to greedly solve the string until process all string characters and mark them as true.
+	 * 		at the same time I should mark as true elements in the array of the expression.
+	 * 
+	 * 		if I process the string array before all elements in the expression being mark 
+	 * 		true I have to clean the leftover of the expression against an empty string.
+	 * 
+	 * 		this was greedy and wrong and caused by a miss interpretation of the expression symbols
+	 * 
+	 * 	@comments
+	 * 		Works for many cases but, I think the design was fundamentally wrong.
+	 * 		I designed a Greedy solution, should have think in a gready solution.
+	 * 		But this mistake was created because of a miss interpretation of how star should behave.
+	 * 		But still I can see many good things in this solution.
+	 * 
+	 *     @fail
+ 	 *        1) 
+ 	 *        2) did not treat the case where the last element is dot, after ".*"
+	 * 		3) arrayoutofbounds, wrong guard I hadd <= length
+	 *         4) fundamental erro in interpretation.. * works alone.. I think
+	 *     @time
+	 *         O(M + N)
+	 *     @space
+	 *         O()
+	 *         aaabaa
+	 *         .*.*.*b*.*.*
 	 **/
 	boolean [] dpe;
 	boolean [] dp;
@@ -202,13 +201,13 @@ public class RegularExpressionMatching {
 	 * @param s
 	 * @param p
 	 * @return
-	 *//**
-@fail
-    array out of bounds
-    bad initial dp value
-    issue with for loop condition
-
-	  **/
+	 *
+	 * @fail
+	 *     1) array out of bounds
+	 *     2) bad initial dp value
+	 *     3) issue with for loop condition
+	 * 
+	 **/
 	public boolean isMatch1(String s, String p) {
 
 		//guards

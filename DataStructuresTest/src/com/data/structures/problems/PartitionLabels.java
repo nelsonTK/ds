@@ -29,27 +29,29 @@ public class PartitionLabels extends LeetCodeExercise {
 
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
-
-		@intuition
-			Union Find.
-			Create HashMap
-			Create UnionFind Data structure
-			
-		
-		@score
-			Runtime: 13 ms, faster than 8.42% of Java online submissions for Partition Labels.
-			Memory Usage: 39.3 MB, less than 39.85% of Java online submissions for Partition Labels.
-		
-		@fail
-		    1) didn't updated the visited element when counting the elements
-		    2) forgot to add clause for stoping the chainUnion
-		    	2.1) mistake a second time becau of nothing much about the comparision
-		    	2.2) again I miss the correct comparision
-		    3) null pointer exception because I was trying to access the map hashmap with a int instead of a char
-	    	4) accidentally removed the first element of the array
+	 * 
+	 * 	@intuition
+	 * 		Union Find.
+	 * 		Create HashMap
+	 * 		Create UnionFind Data structure
+	 * 			
+	 * 		
+	 * 	@score
+	 * 			Runtime: 13 ms, faster than 8.42% of Java online submissions for Partition Labels.
+	 * 			Memory Usage: 39.3 MB, less than 39.85% of Java online submissions for Partition Labels.
+	 * 		
+	 * 	@fail
+	 * 		    1) didn't updated the visited element when counting the elements
+	 * 		    2) forgot to add clause for stoping the chainUnion
+	 * 		    	2.1) mistake a second time becau of nothing much about the comparision
+	 * 		    	2.2) again I miss the correct comparision
+	 * 		    3) null pointer exception because I was trying to access the map hashmap with a int instead of a char
+	 * 	    	4) accidentally removed the first element of the array
 	 */
 	class Solution {
 		HashMap<Character, Integer> map;
@@ -184,6 +186,9 @@ public class PartitionLabels extends LeetCodeExercise {
 }
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
 
 	@intuition

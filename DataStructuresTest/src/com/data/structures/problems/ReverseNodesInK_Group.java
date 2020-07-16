@@ -9,6 +9,10 @@ import com.data.structures.problems.ds.ListNode;
  *
  */
 public class ReverseNodesInK_Group {
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
     /** 
      * @intuition
      * 		It is like just to count for the groups and revert them.

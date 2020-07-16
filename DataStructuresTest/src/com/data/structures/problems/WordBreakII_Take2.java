@@ -7,6 +7,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/problems/word-break-ii/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class WordBreakII_Take2 {
 	static WordBreakII_Take2 w = new WordBreakII_Take2();
 	public static void main(String[] args) {
@@ -16,6 +22,10 @@ public class WordBreakII_Take2 {
 	}
 
 	List<List<String>> memo;
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 	@intuition
 	 * 		this is a memoization solution where I go to the bottom and them from the bottom I build my solution.
@@ -51,11 +61,11 @@ public class WordBreakII_Take2 {
 	 * 
 	 *  @score
 	 *  	Runtime: 13 ms, faster than 31.59% of Java online submissions for Word Break II.
-			Memory Usage: 43.9 MB, less than 7.87% of Java online submissions for Word Break II.
-		
-		@fail
-	        1) I failed to know that lists do not have a size in its constructor
-
+	 *			Memory Usage: 43.9 MB, less than 7.87% of Java online submissions for Word Break II.
+	 *		
+	 *	@fail
+	 *	        1) I failed to know that lists do not have a size in its constructor
+	 *
 	 * @param s
 	 * @param wordDict
 	 * @return
@@ -123,9 +133,9 @@ public class WordBreakII_Take2 {
 }
 
 
-
-
-
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 class WordBreakII_Take2Solution1 {
     protected Set<String> wordSet;
     protected HashMap<String, List<List<String>>> memo;

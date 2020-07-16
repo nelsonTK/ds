@@ -19,36 +19,36 @@ public class ConcatenatedWords {
 	 * SOLUTION 1
 	 ********************************/
 	/**
-	@intuition
-		I always match the smallest word possible
-
-		from there I check for the the rest of the string for another word match.
-
-		before testing a complete word I test if there is any word starting with that first character.
-
-		if there is, I continue for full verification. If there is not, I cut the investigation there. 
-
-		And go back to the previous word and increase the length of the word until we finish it.
-
-		I return the length of words used to completion
-
-
-	@optimization
-		An optimization could be to have a record of the shortest word, and then we always start from that size
-
-
-    @score
-        Runtime: 74 ms, faster than 63.12% of Java online submissions for Concatenated Words.
-        Memory Usage: 46.2 MB, less than 65.61% of Java online submissions for Concatenated Words.
-
-    @time
-        O(N) + O(N*M^2)
-    @space
-    	O(N)
-
-    @fail
-        1) failed for empty strings, i did not think of it in the algorithm
-        2) there where more places where the empty string was screwing the algorithm
+	 * @intuition
+	 *		I always match the smallest word possible
+	 *
+	 *		from there I check for the the rest of the string for another word match.
+	 *
+	 *		before testing a complete word I test if there is any word starting with that first character.
+	 *
+	 *		if there is, I continue for full verification. If there is not, I cut the investigation there. 
+	 *
+	 *		And go back to the previous word and increase the length of the word until we finish it.
+	 *
+	 *		I return the length of words used to completion
+	 *
+	 *
+	 * @optimization
+	 *		An optimization could be to have a record of the shortest word, and then we always start from that size
+	 *
+	 *
+	 * @score
+	 *        Runtime: 74 ms, faster than 63.12% of Java online submissions for Concatenated Words.
+	 *        Memory Usage: 46.2 MB, less than 65.61% of Java online submissions for Concatenated Words.
+	 *
+	 * @time
+ 	 *      O(N) + O(N*M^2)
+ 	 * @space
+ 	 *   	O(N)
+	 *
+ 	 * @fail
+	 *        1) failed for empty strings, i did not think of it in the algorithm
+	 *        2) there where more places where the empty string was screwing the algorithm
 	 */
 	public List<String> findAllConcatenatedWordsInADict0(String[] words) {
 
@@ -123,12 +123,12 @@ public class ConcatenatedWords {
 	 ********************************/
 	/**
 	 * @score
-		    Runtime: 63 ms, faster than 71.36% of Java online submissions for Concatenated Words.
-		    Memory Usage: 46.5 MB, less than 61.53% of Java online submissions for Concatenated Words.     
-				    
-		    Small optimization to the algorithm above where I introduce the minimum size of a word
-		    to have the best chances wright from the start.
-		    
+	 * 	   Runtime: 63 ms, faster than 71.36% of Java online submissions for Concatenated Words.
+	 * 	   Memory Usage: 46.5 MB, less than 61.53% of Java online submissions for Concatenated Words.     
+	 * 				    
+	 * 	   Small optimization to the algorithm above where I introduce the minimum size of a word
+	 * 	   to have the best chances wright from the start.
+	 * 		    
 	 * @param words
 	 * @return
 	 */

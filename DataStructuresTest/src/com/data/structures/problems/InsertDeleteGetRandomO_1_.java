@@ -25,28 +25,21 @@ public class InsertDeleteGetRandomO_1_ {
 
 	}
 
-	/*
-@fail
-    1) didnt took care of the case where the set is 1. (because of Random.nextInt())
-    2) forgot to switch the hashmap value of the swaped element
-    3) situation on remove when removing was not coverage
-    
-    
-    
-	 */
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
-	 
-	 
-	 @score
-	 	Runtime: 8 ms, faster than 84.34% of Java online submissions for Insert Delete GetRandom O(1).
-		Memory Usage: 43.6 MB, less than 96.15% of Java online submissions for Insert Delete GetRandom O(1).
-	 
-	 @fail
-	    1) didnt took care of the case where the set is 1. (because of Random.nextInt())
-	    2) forgot to switch the hashmap value of the swaped element
-	    3) situation on remove when removing was not coverage
-	    
+	 * 
+	 * @score
+	 * 	 	Runtime: 8 ms, faster than 84.34% of Java online submissions for Insert Delete GetRandom O(1).
+	 * 		Memory Usage: 43.6 MB, less than 96.15% of Java online submissions for Insert Delete GetRandom O(1).
+	 * 	 
+	 * @fail
+	 * 	    1) didnt took care of the case where the set is 1. (because of Random.nextInt())
+	 * 	    2) forgot to switch the hashmap value of the swaped element
+	 * 	    3) situation on remove when removing was not coverage
+	 * 	    
 	 * @author Nelson Costa
 	 *
 	 */

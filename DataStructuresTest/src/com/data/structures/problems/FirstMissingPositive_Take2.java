@@ -15,56 +15,52 @@ public class FirstMissingPositive_Take2 {
     
     /**
      *
-    @intuition
-    	The intuition here was based on some principles that require a good analysis to the problem.
-    	
-    	This are the premises:
-    	
-    	if all numbers are present, than you return n + 1
-    	
-    	if not all numbers are present you to traverse the collection only once you'll need to use each number as index.
-    	
-    	and mark that index as filled. 
-    	
-    	so I broke this problem in tree steps.
-    	
-    	1) remove from equation elements that are out of range
-    	
-    	2) mark elements that are inside range
-    	
-    	3) traverse the array searching for the first unmarked position, which will be -2 or positive number.
-    	
-    	so I mark with -1 elements that are filled
-    	I mark with -2 elements that are out of range
-    	if an index is not filled it will stay with the original array's value or the out of range placeholder (-2)
-    	
-    	[1,5,2,3]
-    	[1,-2, 2,3]
-    	[-1,-1,-1,3]
-    			  ^
-    			  3 + 1 is our answer.
-    	
-    
-    @score
-     	Runtime: 1 ms, faster than 45.26% of Java online submissions for First Missing Positive.
-		Memory Usage: 38.8 MB, less than 19.58% of Java online submissions for First Missing Positive.
-		
-    @fail
-        1) the logic to return the index was wrong, I should return at -2 or above zero, that would be the first, but looks like there is another problems.
-        2) I had a bad condition in the if statement
-    
-    
-    @time   O(N) => 2N
-    @space  O(1)
-    
+     * @intuition
+     *    	The intuition here was based on some principles that require a good analysis to the problem.
+     *    	
+     *    	This are the premises:
+     *    	
+     *    	if all numbers are present, than you return n + 1
+     *    	
+     *    	if not all numbers are present you to traverse the collection only once you'll need to use each number as index.
+     *    	
+     *   	and mark that index as filled. 
+     *    	
+     *    	so I broke this problem in tree steps.
+     *    	
+     *   	1) remove from equation elements that are out of range
+     *    	
+     *    	2) mark elements that are inside range
+     *    	
+     *    	3) traverse the array searching for the first unmarked position, which will be -2 or positive number.
+     *    	
+     *    	so I mark with -1 elements that are filled
+     *    	I mark with -2 elements that are out of range
+     *    	if an index is not filled it will stay with the original array's value or the out of range placeholder (-2)
+     *    	
+     *    	[1,5,2,3]
+     *    	[1,-2, 2,3]
+     *    	[-1,-1,-1,3]
+     *    			  ^
+     *    			  3 + 1 is our answer.
+     *    	
+     *    
+     * @score
+     *    	Runtime: 1 ms, faster than 45.26% of Java online submissions for First Missing Positive.
+     *		Memory Usage: 38.8 MB, less than 19.58% of Java online submissions for First Missing Positive.
+     *		
+     * @fail
+     *        1) the logic to return the index was wrong, I should return at -2 or above zero, that would be the first, but looks like there is another problems.
+     *        2) I had a bad condition in the if statement
+     *    
+     *    
+     * @time   O(N) => 2N
+     * @space  O(1)
+     *    
     **/
     public int firstMissingPositive(int[] nums) {
-        //edge cases
-            //no missing elements
-            //start missing
-            //middle missing
-            //end missing
-        
+    	
+        //edge cases        
         if(nums == null || nums.length == 0)
             return 1;
         

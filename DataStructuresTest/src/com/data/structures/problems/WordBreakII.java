@@ -7,6 +7,12 @@ import java.util.List;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/word-break-ii/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class WordBreakII extends LeetCodeExercise{
 
 	static WordBreakII w = new WordBreakII();
@@ -21,21 +27,21 @@ public class WordBreakII extends LeetCodeExercise{
 	List<String> ans;
 
 	/**
-    [Time Limit Exceeded] 
-    	It looks like it works, I also created a new data structure which I called Statefull Tree. but the algorithm by itself is still costly
-		That's why it timesout
-
-    @intuition
-        created the concept of stateful trie but if fails at the worst cases because I use no cache.
-        We some changes this concept might work
-    
-    @comments
-    	I use no cache, and I calculate the same values again and again
-        
-    @fail
-        1) null pointer exception, forgot to initialize children in TrieNode
-        2) forgot to remove the final space
-
+     * [Time Limit Exceeded] 
+     *    	It looks like it works, I also created a new data structure which I called Statefull Tree. but the algorithm by itself is still costly
+     *		That's why it timesout
+     *
+     * @intuition
+     *        created the concept of stateful trie but if fails at the worst cases because I use no cache.
+     *        We some changes this concept might work
+     *    
+     * @comments
+     *    	I use no cache, and I calculate the same values again and again
+     *        
+     * @fail
+     *        1) null pointer exception, forgot to initialize children in TrieNode
+     *        2) forgot to remove the final space
+     *
 	 **/
 	public List<String> wordBreak(String s, List<String> wordDict) {
 		ans = new ArrayList<String>();
@@ -59,11 +65,7 @@ public class WordBreakII extends LeetCodeExercise{
 
 	private void breakWord(Trie trie, StringBuilder sb, int start, String s)
 	{
-		/*
-        if (index >= lenght)
-            add stringbuilder
-            return;
-		 */
+
 		//if we got to the end of the string we should add to the answers
 		if (start >= s.length())
 		{

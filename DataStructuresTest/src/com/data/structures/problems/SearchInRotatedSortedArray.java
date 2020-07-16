@@ -17,34 +17,37 @@ public class SearchInRotatedSortedArray extends LeetCodeExercise{
 		int target = 3;
 		System.out.println(s.search(nums, target));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
     /**
      * 
      * 
-    @intuition
-     	It is a binary search heavily base in invariants
-     	
-     	using the first element as reference to understand if I need to move right or left
-     	
-     	the trickiest invariant was the last one where I specifically target an edge case where the array is size two [1,3] where the answer can only be at right.
-     	if it was in the first position it would be caught by the first invariant.
-     
-     
-    @score
-     	Runtime: 1 ms, faster than 24.22% of Java online submissions for Search in Rotated Sorted Array.
-		Memory Usage: 39.5 MB, less than 30.42% of Java online submissions for Search in Rotated Sorted Array.
-     
-    @comments
-    	Very tough question
-    	insane to find the pattern of this
-    	used the usual notebook to find the pattern but was not easy at all
-    
-    @fail
-        1) when first and mid are equals to one
-    
-    @time	O(log N)
-    @space	O(1)
-    
+     * @intuition
+     *  	It is a binary search heavily base in invariants
+     *  	
+     *  	using the first element as reference to understand if I need to move right or left
+     *  	
+     *  	the trickiest invariant was the last one where I specifically target an edge case where the array is size two [1,3] where the answer can only be at right.
+     *  	if it was in the first position it would be caught by the first invariant.
+     * 
+     *  
+     *  @score
+     *  	Runtime: 1 ms, faster than 24.22% of Java online submissions for Search in Rotated Sorted Array.
+	 * 	Memory Usage: 39.5 MB, less than 30.42% of Java online submissions for Search in Rotated Sorted Array.
+     *  
+     * @comments
+     * 	Very tough question
+     * 	insane to find the pattern of this
+     * 	used the usual notebook to find the pattern but was not easy at all
+     * 
+     * @fail
+     *     1) when first and mid are equals to one
+     * 
+     * @time	O(log N)
+     * @space	O(1)
+     * 
     */
     public int search(int[] nums, int target) {
         
@@ -107,6 +110,9 @@ public class SearchInRotatedSortedArray extends LeetCodeExercise{
     }
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Binary Search, in very simple terms
  * 

@@ -18,7 +18,10 @@ public class BinaryTreeRightSideView {
 	public static void main(String[] args) {
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * @intuition
@@ -38,13 +41,13 @@ public class BinaryTreeRightSideView {
 			  	
 			  	
 	 * 
-		@score
-		    Runtime: 3 ms, faster than 5.39% of Java online submissions for Binary Tree Right Side View.
-		    Memory Usage: 39.6 MB, less than 11.77% of Java online submissions for Binary Tree Right Side View.
+	 *	@score
+	 *	    Runtime: 3 ms, faster than 5.39% of Java online submissions for Binary Tree Right Side View.
+	 *	    Memory Usage: 39.6 MB, less than 11.77% of Java online submissions for Binary Tree Right Side View.
 	 * 
-		@time   O(N)
-		@space  O(2^Log2N) or O(D) Where D is the diameter but the worst case is O(N)
-		
+	 *	@time   O(N)
+	 *	@space  O(2^Log2N) or O(D) Where D is the diameter but the worst case is O(N)
+	 *	
 	 *  @param root
 	 *  @return
 	 */
@@ -97,6 +100,9 @@ public class BinaryTreeRightSideView {
 }
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * DFS Solution
  * 

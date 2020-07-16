@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/problems/minimum-window-substring/
+ * HARD	
+ * @author Nelson Costa
+ *
+ */
 public class MinimumWindowSubstring {
 
 	static MinimumWindowSubstring m = new MinimumWindowSubstring();
@@ -22,20 +28,24 @@ public class MinimumWindowSubstring {
 		s = "";;
 		System.out.println(m.minWindow(s, t));
 	}
+
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
-	 [WRONG]
-	 It is not told anywhere that T supports duplicates, so I assumed it was not supported, I made a mistake.
-	 but well this is a solution for no duplicates in T.
-
-    @fail
-        1) I was putting the wrong content in the queue, was putting index of curated list instead of its content
-        2) the for loop is badly writen, it ends up before expected
-        3) missing final validation for maximum value
-        4) increase index was wrong
-		5) Miss interpretation blew up the algorithm, T can have duplicates....
-    @time   O(N)
-    @space  O(N)
-
+	 * [WRONG]
+	 *	 It is not told anywhere that T supports duplicates, so I assumed it was not supported, I made a mistake.
+	 *	 but well this is a solution for no duplicates in T.
+	 *
+ 	 * @fail
+	 *        1) I was putting the wrong content in the queue, was putting index of curated list instead of its content
+	 *        2) the for loop is badly writen, it ends up before expected
+	 *        3) missing final validation for maximum value
+	 *        4) increase index was wrong
+	 *		5) Miss interpretation blew up the algorithm, T can have duplicates....
+	 * @time   O(N)
+	 *  @space  O(N)
+	 *
 	 **/
 	public String minWindow0(String s, String t) {
 
@@ -137,34 +147,32 @@ public class MinimumWindowSubstring {
 	}
 	
 	/*********************************
-	 * SOLUTION 1
+	 * SOLUTION 2
 	 ********************************/
-	
-
 
 	/**
 	 * 
-	 @intuition
-	 	I create a map of T's characters and counts
-	 	than I create a compressed version of string s with only the characters in t string.
-	 	from there I start iterating, where I remove elements when we have a match, and I add elements when we don't have a match
-	 
-	 @score
-		Runtime: 19 ms, faster than 25.29% of Java online submissions for Minimum Window Substring.
-		Memory Usage: 49.3 MB, less than 5.00% of Java online submissions for Minimum Window Substring.
- 
-	        
-	 @comments
-		One of the annoying things with this solution is that I had to use a visited array 
-	    to prevent the right side elements to be processed twice.
-	    I believe I can solve it if I do another approach for this problem.
-	        
-	 @fail
-        1)lacking verification on equality
-        2) wrong index being passed to check Equality, 
-        should have been the compresset.get(index) instead of left and right directly
-        3) right side duplicating characters after the equals if condition runs
-        4) unforgivable mistake that was cause by me comparing two character objects with "=="
+	 *	 @intuition
+	 *	 	I create a map of T's characters and counts
+	 *	 	than I create a compressed version of string s with only the characters in t string.
+	 *	 	from there I start iterating, where I remove elements when we have a match, and I add elements when we don't have a match
+	 *	 
+	 *	 @score
+	 *		Runtime: 19 ms, faster than 25.29% of Java online submissions for Minimum Window Substring.
+	 *		Memory Usage: 49.3 MB, less than 5.00% of Java online submissions for Minimum Window Substring.
+	 * 
+	 *	        
+	 *	 @comments
+	 *		One of the annoying things with this solution is that I had to use a visited array 
+	 *	    to prevent the right side elements to be processed twice.
+	 *	    I believe I can solve it if I do another approach for this problem.
+	 *	        
+	 *	 @fail
+	 *        1)lacking verification on equality
+ 	 *       2) wrong index being passed to check Equality, 
+	 *        should have been the compresset.get(index) instead of left and right directly
+	 *        3) right side duplicating characters after the equals if condition runs
+	 *        4) unforgivable mistake that was cause by me comparing two character objects with "=="
 	 * @param s
 	 * @param t
 	 * @return

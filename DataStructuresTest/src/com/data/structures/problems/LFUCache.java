@@ -27,7 +27,10 @@ public class LFUCache {
 	int capacity;
 	HashMap<Integer, Pair> valToFreq = new HashMap<>();
 	HashMap<Integer, LL> freqToList = new HashMap<>();
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		The main line of though is to use hashmaps and linked lists to achieve O(1) for get and put.

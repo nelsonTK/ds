@@ -32,7 +32,9 @@ public class SerializeandDeserializeBinaryTree {
 
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		serialize
@@ -93,24 +95,24 @@ public class SerializeandDeserializeBinaryTree {
 	 * 		Very Tough question if performed with bfs to work exactly like leetcode
 	 * 		way easier if doing dfs with any format
 	 * 
-
-		@score
-			Runtime: 27 ms, faster than 27.08% of Java online submissions for Serialize and Deserialize Binary Tree.
-			Memory Usage: 41.1 MB, less than 82.39% of Java online submissions for Serialize and Deserialize Binary Tree.
-
-	    @fail
-	        1) I didnt split the string
-	        2) forgot about overflow
-	        3) serialization is wrong not separating numbers
-	        4) forgot to add level count
-	        5) there was a case I was not expecting, which was ending in null, 
-	        it resulted in a null pointer exception because I was using get instead of getOrDefault.
-	        6) forgot empty case
-	        7) didn't though in many edge cases where the tree is unbalanced
-			//after changing deserialization
-	        8) I was not adding nulls to the hashmap
-	        9) I was not updating the curentPosition when dealing with nulls
-
+	 *
+	 * @score
+	 *			Runtime: 27 ms, faster than 27.08% of Java online submissions for Serialize and Deserialize Binary Tree.
+	 *			Memory Usage: 41.1 MB, less than 82.39% of Java online submissions for Serialize and Deserialize Binary Tree.
+	 *
+	 * @fail
+	 *	        1) I didnt split the string
+	 *	        2) forgot about overflow
+	 *	        3) serialization is wrong not separating numbers
+	 *	        4) forgot to add level count
+	 *	        5) there was a case I was not expecting, which was ending in null, 
+	 *	        it resulted in a null pointer exception because I was using get instead of getOrDefault.
+	 *	        6) forgot empty case
+	 *	        7) didn't though in many edge cases where the tree is unbalanced
+	 *			//after changing deserialization
+	 *	        8) I was not adding nulls to the hashmap
+	 *	        9) I was not updating the curentPosition when dealing with nulls
+	 *
 	 **/
 	class Codec {
 
@@ -335,6 +337,9 @@ public class SerializeandDeserializeBinaryTree {
 	}
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Elegant solution with DFS
  * 

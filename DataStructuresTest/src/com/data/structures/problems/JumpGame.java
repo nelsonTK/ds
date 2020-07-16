@@ -1,5 +1,11 @@
 package com.data.structures.problems;
 
+/**
+ * https://leetcode.com/problems/jump-game/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class JumpGame {
 
 	public static void main(String[] args) {
@@ -7,34 +13,26 @@ public class JumpGame {
 
 	}
 
-    /*
-    @intuition
-        Brute force
-    
-    @fail
-        1) logic mistac in invariant
-        2) for invariant was wrong too
-        
-    @time   O(N^2)
-    @space  O(N)
-    */
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
-	 *  @intuition
-        	kinda Brute force
-        	dynamic programing
-    
-    	@score
-    		Runtime: 398 ms, faster than 18.96% of Java online submissions for Jump Game.
-			Memory Usage: 41 MB, less than 96.47% of Java online submissions for Jump Game.
-    
-	    @fail
-	        1) logic mistac in invariant
-	        2) for invariant was wrong too
-	    
-	    
-	    @time   O(N^2)
-	    @space  O(N)  
-	      
+	 * @intuition
+     *     	kinda Brute force
+     *     	dynamic programing
+     * 
+     * @score
+     * 		Runtime: 398 ms, faster than 18.96% of Java online submissions for Jump Game.
+	 * 		Memory Usage: 41 MB, less than 96.47% of Java online submissions for Jump Game.
+     * 
+	 * @fail
+	 *     1) logic mistac in invariant
+	 *     2) for invariant was wrong too
+	 *     
+	 *     
+	 * @time   O(N^2)
+	 * @space  O(N)  
+	 *       
 	 * @param nums
 	 * @return
 	 */

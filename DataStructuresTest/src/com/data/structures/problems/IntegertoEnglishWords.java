@@ -62,7 +62,10 @@ public class IntegertoEnglishWords {
 		nums.put(90, "Ninety");
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Break the number in buckets and solve from there.

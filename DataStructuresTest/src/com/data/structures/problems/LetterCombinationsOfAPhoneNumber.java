@@ -6,6 +6,12 @@ import java.util.List;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class LetterCombinationsOfAPhoneNumber extends LeetCodeExercise{
 
 	static LetterCombinationsOfAPhoneNumber l = new LetterCombinationsOfAPhoneNumber();
@@ -26,27 +32,30 @@ public class LetterCombinationsOfAPhoneNumber extends LeetCodeExercise{
         loadMap();
     }
     
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/    
     /**
-    
-    @intuition
-    	It's a combination/Permutation exercise
-    	pretty strait forward
-    	I loaded the map with the combinations of letters per number 
-    	so that I can reuse it if the object is called multiple times
-    	
-    	used stringbuilder to avoid rewriting all the time the string
-    	
-    	and that's it
-    
-    
-    @score
-    	Runtime: 1 ms, faster than 81.99% of Java online submissions for Letter Combinations of a Phone Number.
-		Memory Usage: 38.3 MB, less than 76.12% of Java online submissions for Letter Combinations of a Phone Number.
-    
-    @time   O(3^L)
-    @space  O(1)
-    
-    **/
+     *    
+     * @intuition
+     *  	It's a combination/Permutation exercise
+     *  	pretty strait forward
+     *  	I loaded the map with the combinations of letters per number 
+     *  	so that I can reuse it if the object is called multiple times
+     *  	
+     *  	used stringbuilder to avoid rewriting all the time the string
+     *  	
+     *  	and that's it
+     *  
+     *  
+     * @score
+     *   	Runtime: 1 ms, faster than 81.99% of Java online submissions for Letter Combinations of a Phone Number.
+     *  	Memory Usage: 38.3 MB, less than 76.12% of Java online submissions for Letter Combinations of a Phone Number.
+     *  
+     * @time   O(3^L)
+     * @space  O(1)
+     *  
+     **/
     public List<String> letterCombinations(String digits) {
         
         //guards 

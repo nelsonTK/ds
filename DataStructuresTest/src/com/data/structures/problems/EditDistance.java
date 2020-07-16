@@ -8,30 +8,32 @@ public class EditDistance {
 		e.minDistance(word1, word2);
 	}
 
-	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
     /**
-     
-     	@intuition
-     		This is a DP problem with matrix, 
-     		where we pre fill the dp array with the distance of each element from "" string to full word
-			than the current edit distance is the minimal of the x-1, y-1| x,y-1|x-1,y| plus one.
-			
-			when a character is equals to the we are comparing we subtract 1 to the previous element (x-1, y-1)
-			this is to maintain the minimal distance equals to the previous one. because we then sum one.
-			
-			dp [i] = 1 + min (dp[x - 1, y - 1],dp[x, y - 1],dp[x - 1, y]]
-			or 
-			dp [i] = 1 + min (dp[x - 1, y - 1] - 1,dp[x, y - 1],dp[x - 1, y]] (if characters are equals)
-     		
-     		
-	    @score
-			Runtime: 5 ms, faster than 66.74% of Java online submissions for Edit Distance.
-			Memory Usage: 39.8 MB, less than 23.00% of Java online submissions for Edit Distance.
-     
-	    @fail
-	        1) array out of bounds
-	        2) wrong limit for column traversal
-    **/
+     *    
+     * @intuition
+     *    	This is a DP problem with matrix, 
+     *    	where we pre fill the dp array with the distance of each element from "" string to full word
+     * 		than the current edit distance is the minimal of the x-1, y-1| x,y-1|x-1,y| plus one.
+     * 			
+     * 		when a character is equals to the we are comparing we subtract 1 to the previous element (x-1, y-1)
+     * 		this is to maintain the minimal distance equals to the previous one. because we then sum one.
+     * 			
+     * 		dp [i] = 1 + min (dp[x - 1, y - 1],dp[x, y - 1],dp[x - 1, y]]
+     * 		or 
+     * 		dp [i] = 1 + min (dp[x - 1, y - 1] - 1,dp[x, y - 1],dp[x - 1, y]] (if characters are equals)
+     *      		
+     *      		
+     * @score
+     * 		Runtime: 5 ms, faster than 66.74% of Java online submissions for Edit Distance.
+     * 		Memory Usage: 39.8 MB, less than 23.00% of Java online submissions for Edit Distance.
+     *      
+     * @fail
+     * 	    1) array out of bounds
+     * 	    2) wrong limit for column traversal
+     **/
     public int minDistance(String word1, String word2) {
         
         //guards
@@ -92,6 +94,10 @@ public class EditDistance {
 }
 
 
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 class EditDistanceSolution1 {
 	  public int minDistance(String word1, String word2) {
 	    int n = word1.length();

@@ -21,51 +21,53 @@ public class SearchSuggestionsSystem {
 	}
 
 	public static final int MAX_SUGGESTIONS = 3;
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
-	 @intuition
-	 		The intuition for this exercise was pretty simple.
-
-	 		It was to just use a trie and count the number of ocurrences of words found.
-
-	 		to fill the lexicographically order requirement 
-
-	 		is just to search in the array in ascending order everytime I'm searching for a word.
-
-	 		The most weird thing I did was to get always the element I want to start the search from.
-
-	 		if I'm searching for "MO" I want to start mysearch in "O" not in the root.
-
-	 		the consequence of this is that I need to put a prefix in the  searchWord Method in order to not loose the start bit of the word
-
-	 		this episode could be prevented If I searched for all the word inside my method search.
-
-	 		It was a design fault/Mistake.
-
-	 @alternatives
-	 		1) use TreeMap instead of HashMap or Array
-
-	 		2) sort and resolve
-
-	 		3) binary search
-
-
-
-	@score
-			Runtime: 66 ms, faster than 22.45% of Java online submissions for Search Suggestions System.
-			Memory Usage: 45 MB, less than 61.38% of Java online submissions for Search Suggestions System.
-
-
-    @fail
-        1) Forgot to add prefix to the answer
-
-	@time
-		O(N + L* (L + L*M))
-
-	@space
-		O(N + L*M + L) third L would be recursion
-
+	 * 	 @intuition
+	 * 	 		The intuition for this exercise was pretty simple.
+	 * 
+	 * 	 		It was to just use a trie and count the number of ocurrences of words found.
+	 * 
+	 * 	 		to fill the lexicographically order requirement 
+	 * 
+	 * 	 		is just to search in the array in ascending order everytime I'm searching for a word.
+	 * 
+	 * 	 		The most weird thing I did was to get always the element I want to start the search from.
+	 * 
+	 * 	 		if I'm searching for "MO" I want to start mysearch in "O" not in the root.
+	 * 
+	 * 	 		the consequence of this is that I need to put a prefix in the  searchWord Method in order to not loose the start bit of the word
+	 * 
+	 * 	 		this episode could be prevented If I searched for all the word inside my method search.
+	 * 
+	 * 	 		It was a design fault/Mistake.
+	 * 
+	 * 	 @alternatives
+	 * 	 		1) use TreeMap instead of HashMap or Array
+	 * 
+	 * 	 		2) sort and resolve
+	 * 
+	 * 	 		3) binary search
+	 * 
+	 * 
+	 * 
+	 * 	@score
+	 * 			Runtime: 66 ms, faster than 22.45% of Java online submissions for Search Suggestions System.
+	 * 			Memory Usage: 45 MB, less than 61.38% of Java online submissions for Search Suggestions System.
+	 * 
+	 * 
+	 *     @fail
+	 *         1) Forgot to add prefix to the answer
+	 * 
+	 * 	@time
+	 * 		O(N + L* (L + L*M))
+	 * 
+	 * 	@space
+	 * 		O(N + L*M + L) third L would be recursion
+	 * 
 	 * @param products
 	 * @param s
 	 * @return

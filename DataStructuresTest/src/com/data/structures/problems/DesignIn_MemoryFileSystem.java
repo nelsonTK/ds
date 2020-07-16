@@ -24,7 +24,10 @@ public class DesignIn_MemoryFileSystem {
 		String param_4 = obj.readContentFromFile(path);
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		What I tried to do was to create a N-ary tree using hashmaps
@@ -39,36 +42,36 @@ public class DesignIn_MemoryFileSystem {
 	 * 
 	 * 		I Intentionally avoided using recursion
 	 * 	
-	 * 	@Optimizations
+	 * @Optimizations
 	 * 		1) I could have some cache, and invalidate cache on change
 	 * 		2) Also believe I could improve space complexity O(1), if I had a sliding window to traverse the path variable
 	 * 		
 	 * 
 	 * 
 	 * @score
-		 		Runtime: 57 ms, faster than 18.77% of Java online submissions for Design In-Memory File System.
-				Memory Usage: 40.1 MB, less than 96.57% of Java online submissions for Design In-Memory File System.
-	    
-	    		Runtime: 41 ms, faster than 67.11% of Java online submissions for Design In-Memory File System.
-				Memory Usage: 40.6 MB, less than 41.02% of Java online submissions for Design In-Memory File System.
-	    @fail
-	        1) null pointer, forgot initialize root
-	        2) split returned empty space
-	        3) forgot to append content to file
-	        4) I didn't knew but it the pah is a file you should print the file name
-	        
-	     @time   
-	        ls  				O(NLogN) where N is the number of files in the path
-	        mkdir 				O(N) where N is the number of files in the path 
-	        addcontentToFile 	O(N)
-	        readFile 			O(N)
-	        
-	     @space
-	        ls					O(N)
-	        mkdir				O(N)
-	        addcontentTofile	O(N)
-	        ReadFile			O(N)
-
+	 * 		 		Runtime: 57 ms, faster than 18.77% of Java online submissions for Design In-Memory File System.
+	 * 				Memory Usage: 40.1 MB, less than 96.57% of Java online submissions for Design In-Memory File System.
+	 * 	    
+	 * 	    		Runtime: 41 ms, faster than 67.11% of Java online submissions for Design In-Memory File System.
+	 * 				Memory Usage: 40.6 MB, less than 41.02% of Java online submissions for Design In-Memory File System.
+	 * @fail
+	 * 	        1) null pointer, forgot initialize root
+	 * 	        2) split returned empty space
+	 * 	        3) forgot to append content to file
+	 * 	        4) I didn't knew but it the pah is a file you should print the file name
+	 * 	        
+	 * @time   
+	 * 	        ls  				O(NLogN) where N is the number of files in the path
+	 * 	        mkdir 				O(N) where N is the number of files in the path 
+	 * 	        addcontentToFile 	O(N)
+	 * 	        readFile 			O(N)
+	 * 	        
+	 * @space
+	 * 	        ls					O(N)
+	 * 	        mkdir				O(N)
+	 * 	        addcontentTofile	O(N)
+	 * 	        ReadFile			O(N)
+	 * 
 	 **/
 	class FileSystem {
 		File root;
@@ -212,6 +215,9 @@ public class DesignIn_MemoryFileSystem {
 	}
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Solution homologoes to mine
  * @author Nelson Costa

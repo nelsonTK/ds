@@ -24,35 +24,38 @@ public class WordSearch {
 		System.out.println(w.exist(board, word));
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
-    @fail 
-        1) forgot to set elements to true
-        2) (misjudgement)I had the mark of visited in the wrong place, this was a bad trap ahahah and I failed like a duck 
-        3) the trap was that I needed to restore the original state after exausting one element
-
-	@comments 
+	 * @fail 
+     *     1) forgot to set elements to true
+     *     2) (misjudgement)I had the mark of visited in the wrong place, this was a bad trap ahahah and I failed like a duck 
+     *     3) the trap was that I needed to restore the original state after exausting one element
+	 *
+	 * @comments 
 		this one was tricky in the sense I forgot that I needed to revert the state of visited nodes...
 		I should not forget that in backtracking and can change and revert my move...
 		this would allow me to go faster and also to avoid using extra space...
-		
-
-	@score
-	
-		Same code..
-		
-			Runtime: 32 ms, faster than 13.22% of Java online submissions for Word Search.
-			Memory Usage: 53.9 MB, less than 5.01% of Java online submissions for Word Search.
-			
-			Runtime: 11 ms, faster than 29.85% of Java online submissions for Word Search.
-			Memory Usage: 42.2 MB, less than 17.93% of Java online submissions for Word Search.
-			
-		
-	
-    @time   O(N*4^L) or O(r*c*4^L) r - rows, c - cols, L word size.
-    @space  O(N) or  O(r*c)
-
+	 * 		
+	 * 
+	 * @score
+	 * 	
+	 *	Same code..
+	 * 		
+	 *		Runtime: 32 ms, faster than 13.22% of Java online submissions for Word Search.
+	 *		Memory Usage: 53.9 MB, less than 5.01% of Java online submissions for Word Search.
+	 * 			
+	 *		Runtime: 11 ms, faster than 29.85% of Java online submissions for Word Search.
+	 *		Memory Usage: 42.2 MB, less than 17.93% of Java online submissions for Word Search.
+	 * 			
+	 * 		
+	 * 	
+     * @time   O(N*4^L) or O(r*c*4^L) r - rows, c - cols, L word size.
+     * @space  O(N) or  O(r*c)
+	 * 
 	 * @param board
 	 * @param word
 	 * @return
@@ -137,7 +140,9 @@ public class WordSearch {
 }
 
 
-
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Cleaver solution that works in O(1) Space complexity and works by using backtracting and the input matrix
  * 

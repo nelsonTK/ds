@@ -57,29 +57,26 @@ public class LowestCommonAncestorofaBinaryTree {
 	TreeNode ans = null;
 	Set<TreeNode> set;
 
-	/*
-
-	 */
 	
 	/**
 	 * 
-	@score
-  		Runtime: 7 ms, faster than 34.32% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
-		Memory Usage: 41 MB, less than 91.40% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
-
-	@fail
-        1) nullPointer exception
-        2) logic issue, caused by messing up with references, I was not changing p and q properly
-		3) I was not returning properly when finding the second element
-		4) I was not updating the answer after running the right side traversal
-		5) Did't knew the common ancestor could be the first... this led to some approaches in the code which was not valid
-    
-    @debug
-        yes
-
-    @time   O(N)
-    @space  O(N)
-    
+     * @score
+     *    		Runtime: 7 ms, faster than 34.32% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
+     *  		Memory Usage: 41 MB, less than 91.40% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
+     *  
+     * @fail
+     *         1) nullPointer exception
+     *         2) logic issue, caused by messing up with references, I was not changing p and q properly
+     *  	   3) I was not returning properly when finding the second element
+     *  	   4) I was not updating the answer after running the right side traversal
+     *  	   5) Did't knew the common ancestor could be the first... this led to some approaches in the code which was not valid
+     *      
+     * @debug
+     *       yes
+     *  
+     * @time   O(N)
+     * @space  O(N)
+     *      
 	 * 
 	 * @param root
 	 * @param p
@@ -189,7 +186,9 @@ public class LowestCommonAncestorofaBinaryTree {
 
 
 
-
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Non Official Solution
  * 

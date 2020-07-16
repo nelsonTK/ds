@@ -19,24 +19,27 @@ public class FindFirstAndLastPositionOfElementInSortedArray extends LeetCodeExer
 		 printArray(f.searchRange(nums, target));
 	}
 	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * 
-	 	@intuition
-	 		No particularlay intrincated intuition. just two binary search performed
-	 
-	 	@score
-	 		Runtime: 0 ms, faster than 100.00% of Java online submissions for Find First and Last Position of Element in Sorted Array.
-			Memory Usage: 43 MB, less than 27.76% of Java online submissions for Find First and Last Position of Element in Sorted Array.
-	 
-	    @fail
-	        1) forgot to put the binary search exactly as I wanted with length -1 var
-	        2) didn't pay attenction that I should put the right element at right and the left element at left
-	        3) lack of attention and the cost of copy and paste, I didnt configured right and left move correctly for the getLeftMost method.
-        
-        @time 	O(2.Log n)
-        @space 	O(1)
-        
+	 * @intuition
+	 * 		No particularlay intrincated intuition. just two binary search performed
+	 * 	 
+	 * @score
+	 * 		Runtime: 0 ms, faster than 100.00% of Java online submissions for Find First and Last Position of Element in Sorted Array.
+	 * 		Memory Usage: 43 MB, less than 27.76% of Java online submissions for Find First and Last Position of Element in Sorted Array.
+	 * 	 
+	 * @fail
+	 * 	       1) forgot to put the binary search exactly as I wanted with length -1 var
+	 * 	       2) didn't pay attenction that I should put the right element at right and the left element at left
+	 * 	       3) lack of attention and the cost of copy and paste, I didnt configured right and left move correctly for the getLeftMost method.
+ 	 *        
+	 * @time 	O(2.Log n)
+	 * @space 	O(1)
+	 *         
 	 * @param nums
 	 * @param target
 	 * @return

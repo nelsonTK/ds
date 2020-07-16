@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/candy/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class Candy extends LeetCodeExercise{
 
 	static Candy c = new Candy();
@@ -14,9 +20,10 @@ public class Candy extends LeetCodeExercise{
 		System.out.println(c2.candy(rates));
 
 	}
-	/*
-
-	 */
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		I just count the the elements
@@ -24,18 +31,18 @@ public class Candy extends LeetCodeExercise{
 	 * 		if next is smaller and current candies is 1 than we need to increase current candy and eventually elements back.
 	 * 	
 	 * @score
-	 		Runtime: 441 ms, faster than 6.17% of Java online submissions for Candy.
-			Memory Usage: 39.9 MB, less than 90.02% of Java online submissions for Candy.
-
-			
-		@fail
-	        1) wrong initialization value. -1 instead of 1;
-	        2) I was not passing the candy
-	        3) sign missing it was <= instead of just <
-	        4) missing situation on items update, which is in a slop and we dont need to update backwards
-
-        @time O(N^2)
-        @space O(N)	
+	 *		Runtime: 441 ms, faster than 6.17% of Java online submissions for Candy.
+	 *		Memory Usage: 39.9 MB, less than 90.02% of Java online submissions for Candy.
+	 *
+	 *			
+	 * @fail
+	 *       1) wrong initialization value. -1 instead of 1;
+	 *       2) I was not passing the candy
+	 *       3) sign missing it was <= instead of just <
+	 *       4) missing situation on items update, which is in a slop and we dont need to update backwards
+	 *
+     * @time O(N^2)
+     * @space O(N)	
 	 * 
 	 * @param rates
 	 * @return

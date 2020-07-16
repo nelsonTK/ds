@@ -34,6 +34,9 @@ public class AlienDictionary extends LeetCodeExercise{
 		System.out.println(a.alienOrder(words));
 	}
 
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	int white = 0;
 	int grey = 1;
 	int black = 2;
@@ -54,11 +57,11 @@ public class AlienDictionary extends LeetCodeExercise{
 	 * 		4) when using set to control duplicates, I forgot to add a for loop
 	 * 		5) forgot to add nodes as visited... 
 	 * 		6) I failed an edge case where single letter only and all the same "z", "z"
-            7) I was lacking another edge case which is when Is when one words still have elements but the one which we compare don't on this cases the letter was not added, the solution was on
-            8) another edge case when prefix is equal but a letter comes before a space
-			9) I was not covering another edge case which was when we only had one word which they wanted to return all letters...
-			
-			
+     *      7) I was lacking another edge case which is when Is when one words still have elements but the one which we compare don't on this cases the letter was not added, the solution was on
+     *      8) another edge case when prefix is equal but a letter comes before a space
+	 *		9) I was not covering another edge case which was when we only had one word which they wanted to return all letters...
+	 *		
+	 *		
 	 *  @time	O(n*m) n = words and m = word size (all the same size)
 	 *  @space	O(E + V)
 	 * 

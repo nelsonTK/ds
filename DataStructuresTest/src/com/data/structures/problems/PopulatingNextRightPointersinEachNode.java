@@ -33,20 +33,23 @@ public class PopulatingNextRightPointersinEachNode {
 		
 		p.connect(n1);
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
-	 @score
-		Runtime: 0 ms, faster than 100.00% of Java online submissions for Populating Next Right Pointers in Each Node.
-		Memory Usage: 39.6 MB, less than 76.53% of Java online submissions for Populating Next Right Pointers in Each Node.	 
-	 
-	 @fail
-        1) null pointer exception
-        2) forgot to reset the cur node
-        
-        
-     @time	O() ???
-     @space	O(1) / O(N)
+	 * @score
+	 * 	Runtime: 0 ms, faster than 100.00% of Java online submissions for Populating Next Right Pointers in Each Node.
+	 *	Memory Usage: 39.6 MB, less than 76.53% of Java online submissions for Populating Next Right Pointers in Each Node.	 
+	 * 
+	 *  @fail
+     *    1) null pointer exception
+     *    2) forgot to reset the cur node
+     *    
+     *  
+     * @time	O() ???
+     * @space	O(1) / O(N)
 	 */
 	public Node connect(Node root) {
 
@@ -139,6 +142,9 @@ public class PopulatingNextRightPointersinEachNode {
 
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 
 /**
  * Optimal solution

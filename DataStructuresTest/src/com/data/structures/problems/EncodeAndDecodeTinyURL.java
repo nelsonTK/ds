@@ -21,7 +21,9 @@ public class EncodeAndDecodeTinyURL {
 		 System.out.println(codec.encode(url));
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/***
 	 * 
 	 * @intuition
@@ -69,13 +71,13 @@ public class EncodeAndDecodeTinyURL {
 	        hashToFullUrl = new HashMap<>();
 	        base = new HashMap<>();
 	    }
-	    
-	    /*
-	    
-	    @time   O(L + N)
-	    @space  O(N)
-	    
-	    */
+
+	    /**
+	     * @time   O(L + N)
+	     * @space  O(N)
+	     * @param longUrl
+	     * @return
+	     */
 	    public String encode(String longUrl) {
 	        	        
 	        String [] domains = longUrl.trim().split("/"); //O(L), L string size
@@ -118,11 +120,12 @@ public class EncodeAndDecodeTinyURL {
 	        return baseUrl + baseCode + id;
 	    }
 
-	    /*
-	    
-	    @time   O(L)
-	    @space  O(N)
-	    */
+	    /**
+	     * @time   O(L)
+	     * @space  O(N)
+	     * @param shortUrl
+	     * @return
+	     */
 	    public String decode(String shortUrl) {
 	        shortUrl.split("/");
 	        String [] domains = shortUrl.split("/"); // O(L), L equals to string Size

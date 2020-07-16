@@ -42,7 +42,10 @@ public class EmployeeFreeTime extends LeetCodeExercise{
 		System.out.println(Arrays.toString(e3.employeeFreeTime(input).toArray()));
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Sort the intervals by start date and work from there
@@ -197,6 +200,9 @@ class Job {
     }
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * One of the top solutions
  * 

@@ -16,9 +16,11 @@ public class BasicCalculator {
 	static final int SUBTRACTION = -1; 
 	static final int INVALID_OPERATOR = -3; 
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
-	 * 	@intuition
+	 * @intuition
 	 * 		Just a recursive problem where I parse the string into single elements and sum them in the end.
 	 * 
 	 * 		every time I find parentheses I do dfs and return its value, 
@@ -29,33 +31,33 @@ public class BasicCalculator {
 	 * 		nothing fancy
 	 * 		
 	 * 
-	 * 	@optimizations
+	 * @optimizations
 	 * 		I believe that I could have avoided extra space, with the list of math expressions
 	 * 		I could have avoided Integer.parseInt by using the char trick
-	 * 	@score
+	 * @score
 	 * 		Runtime: 28 ms, faster than 17.12% of Java online submissions for Basic Calculator.
-			Memory Usage: 53.5 MB, less than 8.01% of Java online submissions for Basic Calculator.
-
-
-	 		WITH CHAR TRICK OPTIMIZATION
-				Runtime: 19 ms, faster than 26.32% of Java online submissions for Basic Calculator.
-				Memory Usage: 45.4 MB, less than 13.53% of Java online submissions for Basic Calculator.
-
-	 			Runtime: 6 ms, faster than 71.98% of Java online submissions for Basic Calculator.
-				Memory Usage: 40.9 MB, less than 38.14% of Java online submissions for Basic Calculator.
-
-        @fail)
-            1) Index out of bounds in first while for parsing numbers
-            2) Index out of bounds in second while for spaces
-            3) NumberFormat exception when there are leading and trailling spaces, resolve with triming the string
-
-
-		@time	O(N + M) 
-			where N is the number characters. and M is the number of final elements after reducing the parentheses
-
-		@space	O(N) => O(N) + O(N)
-			Case where no parentheses exists
-		@space	
+	 * 		Memory Usage: 53.5 MB, less than 8.01% of Java online submissions for Basic Calculator.
+	 * 
+	 * 
+	 * 	 		WITH CHAR TRICK OPTIMIZATION
+	 * 				Runtime: 19 ms, faster than 26.32% of Java online submissions for Basic Calculator.
+	 * 				Memory Usage: 45.4 MB, less than 13.53% of Java online submissions for Basic Calculator.
+	 * 
+	 * 	 			Runtime: 6 ms, faster than 71.98% of Java online submissions for Basic Calculator.
+	 * 				Memory Usage: 40.9 MB, less than 38.14% of Java online submissions for Basic Calculator.
+	 * 
+	 * @fail)
+	 *             1) Index out of bounds in first while for parsing numbers
+	 *             2) Index out of bounds in second while for spaces
+	 *             3) NumberFormat exception when there are leading and trailling spaces, resolve with triming the string
+	 * 
+	 * 
+	 * 	@time	O(N + M) 
+	 * 			where N is the number characters. and M is the number of final elements after reducing the parentheses
+	 * 
+	 * @space	O(N) => O(N) + O(N)
+	 * 			Case where no parentheses exists
+	 * @space	
 	 * @param s
 	 * @return
 	 */
@@ -175,8 +177,9 @@ public class BasicCalculator {
 }
 
 
-
-
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * 
  * 	@intuition

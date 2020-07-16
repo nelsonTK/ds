@@ -21,10 +21,9 @@ public class WordLadder {
 
 
 
-	/*
-    @time O(W^2*L)
-	 */
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * @intuition
@@ -34,7 +33,7 @@ public class WordLadder {
 	 * 
 	 * @score
 	 * 		Runtime: 2493 ms, faster than 5.01% of Java online submissions for Word Ladder.
-			Memory Usage: 41.4 MB, less than 59.76% of Java online submissions for Word Ladder.
+	 *		Memory Usage: 41.4 MB, less than 59.76% of Java online submissions for Word Ladder.
 	 * 
     	@time 	O(W^2*L)
     	@space 	O(V + E)
@@ -150,6 +149,10 @@ public class WordLadder {
 
 }
 
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * solution with bidirectional breadth first search
  * 

@@ -221,6 +221,9 @@ public class CoinChange extends LeetCodeExercise{
 }
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 
 /**
  * DP Solution almost equals to mine, the min diference is the max value

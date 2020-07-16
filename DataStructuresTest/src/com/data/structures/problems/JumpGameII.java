@@ -2,6 +2,12 @@ package com.data.structures.problems;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode.com/problems/jump-game-ii/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class JumpGameII {
 
 	public static void main(String[] args) {
@@ -76,19 +82,19 @@ public class JumpGameII {
      * 
      * 
      * @score
-     		Runtime: 2 ms, faster than 55.82% of Java online submissions for Jump Game II.
-			Memory Usage: 43.5 MB, less than 13.79% of Java online submissions for Jump Game II.
-    @fail
-        1) my jumps where wrong there were situations that I was not counting
-        2) calculus of the jump end was wrong, I was mistakenly using the maxreach
-        
-        @debug
-            contest
-            
-        @time 
-        	O(N)
-        @space
-        	O(N)
+     *     		Runtime: 2 ms, faster than 55.82% of Java online submissions for Jump Game II.
+     *			Memory Usage: 43.5 MB, less than 13.79% of Java online submissions for Jump Game II.
+     * @fail
+     *       1) my jumps where wrong there were situations that I was not counting
+     *       2) calculus of the jump end was wrong, I was mistakenly using the maxreach
+     *        
+     * @debug
+     *      contest
+     *           
+     * @time 
+     *     	O(N)
+     * @space
+     *     	O(N)
     **/
      public int jump(int[] nums) {
          

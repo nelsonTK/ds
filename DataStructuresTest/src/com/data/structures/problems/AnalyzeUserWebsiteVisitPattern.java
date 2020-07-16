@@ -71,52 +71,52 @@ public class AnalyzeUserWebsiteVisitPattern extends LeetCodeExercise{
 	//however it only counts if 3 sequence was met, and it is garanteed that exists a user with a tree sequence
 	//sliding windows do not count because we care about all possible combinations going forward
 	/**
-		@intuition
-			the intuition for this question was to:
-				1) create tuples with user, website and timestamp.
-				2) sort by user and sequence to ease the sequence check 
-				3) check all possible combinations for each user and store the 3-sequences in an TreeMap
-				4) go through the treemap and get the lexicographically smalles combination with the maximum count
-
-			I found it a tough question.
-
-		@problemaClarification
-			1) No repeated sequences from users counts. e.g. A, A, A, B, A, C. there is only one sequence count for A,A,A, one ABA, AAB, ABC, etc...
-			2) Is a Sequence but not contiguous sequence only, values may be spread. e.g. A, B, C
-			3) we want the smallest lexicographically answer in case of multiple candidates
-			4) we can have sequences with the same website
-
-
-		@optimizations one think to notice compating to other solutions is that I sort by time and user, it is part of my algorithm.
-			Other users just sort by time. and create hashmaps with user journeys
-
-		@score
-			Runtime: 54 ms, faster than 11.60% of Java online submissions for Analyze User Website Visit Pattern.
-			Memory Usage: 46.3 MB, less than 5.78% of Java online submissions for Analyze User Website Visit Pattern.
-
-        @debug
-            1) contest style
-
-        @fail
-            1) array out of bounds, I was using i instead of j, I was using j instead of count
-            2) class cast exception, I was casting TreeMap for Triplet
-            3) nullPointerException, I mistakenly took default of string for "", what a shame
-            4) I was comparing the wrong tupple guy, and I was using equals to compare strings
-            5) my compare was wrong, and it was causing a very strange behavior
-            6) the transition for the next element was wrong, because in the end of the for i gets incremented
-			the fix was so reduce j before assign to i.
-			7) max variable was not being assigned in the answer construction
-			8) I didnt too into account that the solution might not be contiguous, which might invalidate sliding windows solution
-			9) Heavy problems with references, I was chinging references without noticing and messing up all the results
-			10) I think for the same user, each sequence only counts once, what a communication shame
-			11) failed because of not having hashcode in the object definition, only equals and I was missing the bucket in the set.
-
-		@time
-			O(N) + O(NLogN) + O(N^3LogN) + O(N)
-
-		@space
-			O(N)
-
+	 *		@intuition
+	 *			the intuition for this question was to:
+	 *				1) create tuples with user, website and timestamp.
+	 *				2) sort by user and sequence to ease the sequence check 
+	 *				3) check all possible combinations for each user and store the 3-sequences in an TreeMap
+	 *				4) go through the treemap and get the lexicographically smalles combination with the maximum count
+	 *
+	 *			I found it a tough question.
+	 *
+	 *		@problemaClarification
+	 *			1) No repeated sequences from users counts. e.g. A, A, A, B, A, C. there is only one sequence count for A,A,A, one ABA, AAB, ABC, etc...
+	 *			2) Is a Sequence but not contiguous sequence only, values may be spread. e.g. A, B, C
+	 *			3) we want the smallest lexicographically answer in case of multiple candidates
+	 *			4) we can have sequences with the same website
+	 *
+	 *
+	 *		@optimizations one think to notice compating to other solutions is that I sort by time and user, it is part of my algorithm.
+	 *			Other users just sort by time. and create hashmaps with user journeys
+	 *
+	 *		@score
+	 *			Runtime: 54 ms, faster than 11.60% of Java online submissions for Analyze User Website Visit Pattern.
+	 *			Memory Usage: 46.3 MB, less than 5.78% of Java online submissions for Analyze User Website Visit Pattern.
+	 *
+ 	 *       @debug
+ 	 *           1) contest style
+	 *
+ 	 *       @fail
+	 *            1) array out of bounds, I was using i instead of j, I was using j instead of count
+	 *           2) class cast exception, I was casting TreeMap for Triplet
+	 *           3) nullPointerException, I mistakenly took default of string for "", what a shame
+	 *           4) I was comparing the wrong tupple guy, and I was using equals to compare strings
+	 *           5) my compare was wrong, and it was causing a very strange behavior
+	 *           6) the transition for the next element was wrong, because in the end of the for i gets incremented
+	 *			   the fix was so reduce j before assign to i.
+	 *		  	 7) max variable was not being assigned in the answer construction
+	 *			 8) I didnt too into account that the solution might not be contiguous, which might invalidate sliding windows solution
+	 *			 9) Heavy problems with references, I was chinging references without noticing and messing up all the results
+	 *			 10) I think for the same user, each sequence only counts once, what a communication shame
+	 *			 11) failed because of not having hashcode in the object definition, only equals and I was missing the bucket in the set.
+	 *
+	 *		@time
+	 *			O(N) + O(NLogN) + O(N^3LogN) + O(N)
+	 *
+	 *		@space
+	 *			O(N)
+	 *
 	 **/
 	public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
 
