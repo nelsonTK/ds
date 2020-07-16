@@ -5,6 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
+/**
+ * https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class MinimumRemovetoMakeValidParentheses {
 
 	static MinimumRemovetoMakeValidParentheses m = new MinimumRemovetoMakeValidParentheses();
@@ -19,7 +25,10 @@ public class MinimumRemovetoMakeValidParentheses {
 		System.out.println(m.minRemoveToMakeValid(s));
 		System.out.println(m2.minRemoveToMakeValid(s));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * [WRONG]
 	 * 		
@@ -195,19 +204,20 @@ public class MinimumRemovetoMakeValidParentheses {
 
 
 
-
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	/**
 	 * 
 	 * 
 	 *     
-    @score
-        Runtime: 35 ms, faster than 20.12% of Java online submissions for Minimum Remove to Make Valid Parentheses.
-        Memory Usage: 52.4 MB, less than 5.05% of Java online submissions for Minimum Remove to Make Valid Parentheses.        
-
-    @fail
-        1) forgot to put a more specific parentheses because its not only parenteses also letter play a role
-
+     * @score
+     *    Runtime: 35 ms, faster than 20.12% of Java online submissions for Minimum Remove to Make Valid Parentheses.
+     *    Memory Usage: 52.4 MB, less than 5.05% of Java online submissions for Minimum Remove to Make Valid Parentheses.        
+	 *
+     * @fail
+     *    1) forgot to put a more specific parentheses because its not only parenteses also letter play a role
+     *
 	 * @param s
 	 * @return
 	 */

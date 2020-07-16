@@ -25,12 +25,11 @@ public class SubarraySumEqualsK extends LeetCodeExercise {
 
 		printArray(a);
 		System.out.println(s.subarraySum(a, k));
-
-
-
-
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Prefix sum problem I discover this kind of problemms in a w188 contest
@@ -90,7 +89,9 @@ public class SubarraySumEqualsK extends LeetCodeExercise {
 		return ans;
 	}
 
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Nothing fancy applied
@@ -140,6 +141,10 @@ public class SubarraySumEqualsK extends LeetCodeExercise {
 
 }
 
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Solution with HashMap
  * 

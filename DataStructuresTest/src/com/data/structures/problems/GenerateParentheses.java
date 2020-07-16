@@ -22,7 +22,9 @@ public class GenerateParentheses {
 		}
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	List<String> ans;
 	int expectedSize;
 	public GenerateParentheses (){
@@ -44,36 +46,35 @@ public class GenerateParentheses {
 
 	/**
 	 * 
+	 * @intuition
+	 * 	Initially I thought this could be something like a permutation problem, and I though to solve this using a permutation algo.
+	 * 	combined with a way of validating if the parentesis count.
 	 * 
-	@intuition
-		Initially I thought this could be something like a permutation problem, and I though to solve this using a permutation algo.
-		combined with a way of validating if the parentesis count.
-
-		As I progress in the problem I try to see what could be a valid parentesis string and a invalid parentisis.
-		and how to come up with all combinations.
-
-		And I finally came up with a solution.
-
-		Permutation
-			1) I construct the answer as I go, rather than trying out all combinations
-
-		Validation
-			2) I validate parentheses not in the and but also as I go
-
-		Stop conditions
-			3) I defined when to stop the generation of parentheses, which is when valid and the size is the expected
-
-		This was a backtracking problem
-
-    @score
-        Runtime: 1 ms, faster than 83.78% of Java online submissions for Generate Parentheses.
-		Memory Usage: 39.3 MB, less than 90.58% of Java online submissions for Generate Parentheses.
-
-    @fail
-        NO FAIL AH AH, NO MISTAKES
-
-	@time	??
-    @space 	O(N) N = string size
+	 * 	As I progress in the problem I try to see what could be a valid parentesis string and a invalid parentisis.
+	 * 	and how to come up with all combinations.
+	 * 
+	 * 	And I finally came up with a solution.
+	 * 
+	 * 	Permutation
+	 * 		1) I construct the answer as I go, rather than trying out all combinations
+	 * 
+	 * 	Validation
+	 * 		2) I validate parentheses not in the and but also as I go
+	 * 
+	 * 	Stop conditions
+	 * 		3) I defined when to stop the generation of parentheses, which is when valid and the size is the expected
+	 * 
+	 * 	This was a backtracking problem
+	 * 
+	 *  @score
+	 *      Runtime: 1 ms, faster than 83.78% of Java online submissions for Generate Parentheses.
+	 * 	   Memory Usage: 39.3 MB, less than 90.58% of Java online submissions for Generate Parentheses.
+	 * 
+	 *  @fail
+	 *     NO FAIL AH AH, NO MISTAKES
+	 *     
+	 * @time	??
+	 * @space 	O(N) N = string size
 	 **/
 	private void generate(int n, int curCount, int valid, String s)
 	{
@@ -139,33 +140,33 @@ class GenerateParenthesesSolution2 {
  *
  */
 class GenerateParenthesesSolution1 {
-    public List<String> generateParenthesis(int n) {
-        List<String> combinations = new ArrayList();
-        generateAll(new char[2 * n], 0, combinations);
-        return combinations;
-    }
+	public List<String> generateParenthesis(int n) {
+		List<String> combinations = new ArrayList();
+		generateAll(new char[2 * n], 0, combinations);
+		return combinations;
+	}
 
-    public void generateAll(char[] current, int pos, List<String> result) {
-        if (pos == current.length) {
-            if (valid(current))
-                result.add(new String(current));
-        } else {
-            current[pos] = '(';
-            generateAll(current, pos+1, result);
-            current[pos] = ')';
-            generateAll(current, pos+1, result);
-        }
-    }
+	public void generateAll(char[] current, int pos, List<String> result) {
+		if (pos == current.length) {
+			if (valid(current))
+				result.add(new String(current));
+		} else {
+			current[pos] = '(';
+			generateAll(current, pos+1, result);
+			current[pos] = ')';
+			generateAll(current, pos+1, result);
+		}
+	}
 
-    public boolean valid(char[] current) {
-        int balance = 0;
-        for (char c: current) {
-            if (c == '(') balance++;
-            else balance--;
-            if (balance < 0) return false;
-        }
-        return (balance == 0);
-    }
+	public boolean valid(char[] current) {
+		int balance = 0;
+		for (char c: current) {
+			if (c == '(') balance++;
+			else balance--;
+			if (balance < 0) return false;
+		}
+		return (balance == 0);
+	}
 }
 
 
@@ -186,7 +187,7 @@ class GenerateParenthesesUnofficialSolution1 {
 		backtracking(res, new StringBuilder(), n, n);
 		return res;
 	}
-    
+
 	private void backtracking(List<String> res, StringBuilder sb, int left, int right) {
 		if (left < 0 || right < 0 || right < left) {
 			return;
@@ -195,13 +196,13 @@ class GenerateParenthesesUnofficialSolution1 {
 			res.add(sb.toString());
 			return;
 		}
-        
-        sb.append("(");
+
+		sb.append("(");
 		backtracking(res, sb, left - 1, right);
 		sb.setLength(sb.length() - 1);
-        
-        sb.append(")");
-        backtracking(res, sb, left, right - 1);
-        sb.setLength(sb.length() - 1);
+
+		sb.append(")");
+		backtracking(res, sb, left, right - 1);
+		sb.setLength(sb.length() - 1);
 	}
 }

@@ -31,7 +31,10 @@ public class GroupAnagrams extends LeetCodeExercise {
 			
 		}
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**[WRONG]
 	 * @fail
 	 * 		1) outofbounds, because I add the length limited by the array and not individual words
@@ -100,7 +103,9 @@ public class GroupAnagrams extends LeetCodeExercise {
 		return ans == 0 ? true : false;
 	}
 	
-	
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/	
 	/**
 	 * 
 	/**
@@ -165,6 +170,9 @@ public class GroupAnagrams extends LeetCodeExercise {
 		return ans;
 	}
 	
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/
 	int [] prims = {2, 3, 5, 7, 11, 13, 17, 19, 23, 
 					29, 31, 37, 41, 43, 47, 53, 59, 61,
 					67, 71, 73, 79, 83, 89, 97, 101};
@@ -236,6 +244,9 @@ public class GroupAnagrams extends LeetCodeExercise {
 }
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * This solution is not from leetcode but from the top resolution
  * 

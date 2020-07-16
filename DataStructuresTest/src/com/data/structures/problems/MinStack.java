@@ -24,7 +24,10 @@ public class MinStack {
 		int param_4 = obj.getMin();
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 	@fail
 	 * 		1) compiling errors

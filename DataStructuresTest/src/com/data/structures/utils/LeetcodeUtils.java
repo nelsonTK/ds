@@ -35,7 +35,11 @@ public final class LeetcodeUtils {
 		return array;
 	}
 
-	
+	/**
+	 * Given a Leetcode serialized array, returns the array object
+	 * @param s
+	 * @return
+	 */
 	private static Object parseArray(String s)
 	{
 		if (s == null || s.length() == 0)
@@ -47,11 +51,16 @@ public final class LeetcodeUtils {
 	
 	
 	/**
+	 * 
+	 * This method parses a leetcode array string into 1D array or 2D array
+	 * 
 	 * @intuition
 	 * 		returns 2d array or 1d array
-	 * 		depending on the depth of the array that is evaluated based on 
-	 * 		the base case which is zero (the content of a 1d array) and from there the depth is increased
+	 * 		depending on the depth of the array that is evaluated
+	 * 		The base case is when  (the content of a 1d array) and from there the depth is increased
 	 * 		
+	 * 
+	 * 
 	 * @time  O(N), each char is processed only once
 	 * @space O(N)
 	 * @param s
@@ -67,17 +76,21 @@ public final class LeetcodeUtils {
 		Queue<Object> q = new ArrayDeque<Object>();
 		int curDepth = 0;
 		Object [] innerAns;
+		
+		//while not in the end of the string and not in the in the end of the current array
 		while (index < s.length() && s.charAt(index) != ']')
 		{
+			//if new parentheses found we need to dig deeper
 			if(s.charAt(index) == '[')
 			{
 				innerAns =  getInnerArray(s, index + 1);
-				index = (int) innerAns[nextIndex];
-				curDepth = (int) innerAns[innerDepth];
+				index = (int) innerAns[nextIndex];		//update index
+				curDepth = (int) innerAns[innerDepth]; 	//update Depth
 				q.add(innerAns[array]);
 			}
 			//positive and negative numbers (base case)
-			else if (s.charAt(index) == '-' ||Character.isDigit(s.charAt(index)))
+			//process the array
+			else if (s.charAt(index) == '-' || Character.isDigit(s.charAt(index)))
 			{
 				innerAns = parseArrayContent(s, index);	
 				index = (int) innerAns[nextIndex]; //not needed
@@ -124,12 +137,14 @@ public final class LeetcodeUtils {
 		{
 			throw new IllegalArgumentException(" >>>>  Depth not supported");
 		}
-
 	}
 
 	
 	/**
 	 * parse Array of String to Array of integers
+	 * 
+	 * @space
+	 * 		I didn't needed to use extra space
 	 * 
 	 * @time 	O(N + N + N*C) => O(NC) C is the length of the integers
 	 * @space 	O(2N)
@@ -160,16 +175,23 @@ public final class LeetcodeUtils {
 
 
 	/**
-	 * Class with methods to deal with TreeNodes
+	 * Class with methods to serialize and deserialize TreeNodes
 	 * @author Nelson Costa
 	 *
 	 */
 	public static class Tree
 	{
 		/**
-		 * @time	O(N*D) + O(T) N number of nodes, D size of Digits, T Diameter of tree.
-		 * 			O(T) is when the first element of the last from is not null and all the rest is null. 
-		 * 			you will remove T - 1 nulls.	 
+		 * Serialize Tree to String
+		 * 
+		 * 
+		 * @time	O(N*D) + O(T) 
+		 * 				N number of nodes, 
+		 * 				D size of Digits, 
+		 * 				T Diameter of tree.
+		 * 			O(T) is max when the first element of the last level is not null and all the rest is null. 
+		 * 				you will remove T - 1 nulls.
+		 *  
 		 * @space	O(N)
 		 * 
 		 * @param root
@@ -253,9 +275,15 @@ public final class LeetcodeUtils {
 		}
 		
 
+
 		/**
+		 * Deserialize Tree to String
 		 * 
-		 * @time 	O(S) + O(N*D), N each node, S equals to string size, D digit size
+		 * 
+		 * @time 	O(S) + O(N*D), 
+		 * 				N each node, 
+		 * 				S equals to string size, 
+		 * 				D digit size
 		 * @spacd	O(L) + O(N) L is hashmap with levels, N is nodes.
 		 * 
 		 * @optimizations

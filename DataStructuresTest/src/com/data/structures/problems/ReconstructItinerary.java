@@ -8,6 +8,12 @@ import java.util.Stack;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/reconstruct-itinerary/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class ReconstructItinerary extends LeetCodeExercise{
 
 	static ReconstructItinerary r = new ReconstructItinerary();
@@ -27,7 +33,10 @@ public class ReconstructItinerary extends LeetCodeExercise{
 		
 		
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 *  @fail

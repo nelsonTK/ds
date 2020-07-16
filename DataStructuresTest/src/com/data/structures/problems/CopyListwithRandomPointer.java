@@ -13,6 +13,10 @@ public class CopyListwithRandomPointer {
 	public static void main(String[] args) {
 
 	}
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		The intuition is to maintain a copy of nodes in a hashmap.
@@ -80,7 +84,6 @@ public class CopyListwithRandomPointer {
 /*********************
  * OTHERS SOLUTIONS
  *********************/
-
 
 /**
  * @intuition

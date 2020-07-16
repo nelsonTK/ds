@@ -7,6 +7,12 @@ import java.util.stream.Collectors;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/triangle/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class Triangle extends LeetCodeExercise{
 
 	static Triangle t = new Triangle();
@@ -26,34 +32,36 @@ public class Triangle extends LeetCodeExercise{
 		System.out.println(t.minimumTotal(list));
 	}
 	
-	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 *
 	 *
-    @intuition
-		I start from top and end in the bottom.
-		
-			dp[r][c] = dp[r][c] + Min (dp[r - 1][c-1], dp[r - 1][c]);
-			
-			but in this case I use the input as dp matrix.
-			
-		I didn't try the solution from the bottom because I had a misconception that I only solved later in the problem.
-		
-    @score
-		Runtime: 5 ms, faster than 21.66% of Java online submissions for Triangle.
-		Memory Usage: 39.1 MB, less than 8.16% of Java online submissions for Triangle.
-		
-    @fail
-    	1) very tough, the question wasn't clear about what they wanted and therefore I invested energy in something that was not asked. this is my second attempt
-        2) bad interpretation, Initially I was creating a triangle using 3 positions. but only two were allowed.
-        no many bad interpretations. It's a good question for interviewers
-		
-    @time   O(MxN)
-    	
-    @space  O(1)
-    	
-    @bcr    O(MxN)
-		
+     * @intuition
+     * 	I start from top and end in the bottom.
+     * 	
+     * 		dp[r][c] = dp[r][c] + Min (dp[r - 1][c-1], dp[r - 1][c]);
+     * 	
+     * 		but in this case I use the input as dp matrix.
+     * 			
+     * 	I didn't try the solution from the bottom because I had a misconception that I only solved later in the problem.
+     * 		
+     * @score
+			Runtime: 5 ms, faster than 21.66% of Java online submissions for Triangle.
+			Memory Usage: 39.1 MB, less than 8.16% of Java online submissions for Triangle.
+	 *
+     * @fail
+     * 		1) very tough, the question wasn't clear about what they wanted and therefore I invested energy in something that was not asked. this is my second attempt
+     * 		2) bad interpretation, Initially I was creating a triangle using 3 positions. but only two were allowed.
+	 *		no many bad interpretations. It's a good question for interviewers
+	 *
+     * @time   O(MxN)
+     * 
+     * @space  O(1)
+     * 
+     * @bcr    O(MxN)
+     * 	
 	 **/
 	public int minimumTotal(List<List<Integer>> triangle) {
 

@@ -18,7 +18,10 @@ public class WordBreak_Take2 {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * @score

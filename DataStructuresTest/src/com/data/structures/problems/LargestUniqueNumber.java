@@ -83,6 +83,7 @@ public class LargestUniqueNumber extends LeetCodeExercise{
 	 ********************************/
 	
 	/**
+	 * @score
 	 * 		Runtime: 7 ms, faster than 5.91% of Java online submissions for Largest Unique Number.
 			Memory Usage: 39.7 MB, less than 33.33% of Java online submissions for Largest Unique Number.
 	 * 
@@ -121,12 +122,12 @@ public class LargestUniqueNumber extends LeetCodeExercise{
 	 * SOLUTION 3
 	 ********************************/
 	/**
-	 * 
+	 * @score
 	 	Runtime: 3 ms, faster than 58.39% of Java online submissions for Largest Unique Number.
 		Memory Usage: 38.9 MB, less than 33.33% of Java online submissions for Largest Unique Number.
 
-	 * @time O(N)
-	 * @space O(N)
+	 * @time 	O(N)
+	 * @space 	O(N)
 	 * @param a
 	 * @return
 	 */
@@ -162,12 +163,13 @@ public class LargestUniqueNumber extends LeetCodeExercise{
 	/**
 	 * its constant because of the input restrictions
 	 * 
+	 * @score
 	 * 		Runtime: 0 ms, faster than 100.00% of Java online submissions for Largest Unique Number.
 			Memory Usage: 39.1 MB, less than 33.33% of Java online submissions for Largest Unique Number.
 	 * 
 	 * 
-	 * @time O(1)
-	 * @space O(1)
+	 * @time 	O(1)
+	 * @space 	O(1)
 	 * @param a
 	 * @return
 	 */

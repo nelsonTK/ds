@@ -23,7 +23,10 @@ public class FriendCircles extends LeetCodeExercise{
 		System.out.println(f.findCircleNum(m));
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	
 	/**
 	 * @intuition
 	 * 		1) I used union find to union direct friends and indirect friends in single group.

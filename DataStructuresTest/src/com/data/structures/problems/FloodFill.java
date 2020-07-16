@@ -11,7 +11,10 @@ public class FloodFill {
 	public static void main(String[] args) {
 		//May Challenge
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	int sourceColor = 0;
 	boolean [][] visited;
 

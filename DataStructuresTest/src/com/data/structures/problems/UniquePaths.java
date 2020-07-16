@@ -23,42 +23,42 @@ public class UniquePaths {
 	 * SOLUTION 1
 	 ********************************/
 	/**
-    @intuition 
-        The intuition is that the number of unique paths are given by the number of ways of bottom element and right element.
+	 * @intuition 
+	 * 		The intuition is that the number of unique paths are given by the number of ways of bottom element and right element.
 
-	        No need to create a matrix, and DP only needs to be n length long, we dont need to have a full matrix.
+	 * 		No need to create a matrix, and DP only needs to be n length long, we dont need to have a full matrix.
 
-	        I tried to think in a solution with only variables but I was not capable of it.
+	 * 		I tried to think in a solution with only variables but I was not capable of it.
 
-        Base case:
-        	The base case is m*n = 0. because it is the targe source.
-
-        	When you hit a element outside the range then you know that it's cost is 1.
-
-        Initial State:
-        	fill the array with 1's but the last position
-
-        Subproblem:		
-        	The subproblem is dp[c] = dp[c + 1] + dp[c];
-
-        Return 
-        	first element of dp will have my answer
-
-    @comments
-        I believe I could have done it a little bit different, by providing 1 to the last position instead of zero.
-        I believe that it would reduce the number of validations.
-
-    @score
+	 *	Base case:
+	 * 		The base case is m*n = 0. because it is the targe source.
+	 *
+	 * 		When you hit a element outside the range then you know that it's cost is 1.
+	 *
+	 * 	Initial State:
+	 * 		fill the array with 1's but the last position
+	 *
+	 * Subproblem:		
+	 * 		The subproblem is dp[c] = dp[c + 1] + dp[c];
+	 *
+	 * Return 
+	 * 		first element of dp will have my answer
+	 *
+     * @comments
+     *   I believe I could have done it a little bit different, by providing 1 to the last position instead of zero.
+     *   I believe that it would reduce the number of validations.
+	 *
+	 * @score
      	Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Paths.
 		Memory Usage: 35.8 MB, less than 5.10% of Java online submissions for Unique Paths.
-
-    @fail   
-        1) array out of bounds, I switch m per n, for the columns and rows
-        1) forgot the case where array is size 1...
-
-    @time   O(N)
-    @space  O(N)
-    @bcr    O(1) - Some mathematical Formula
+	 *
+     * @fail   
+     *   1) array out of bounds, I switch m per n, for the columns and rows
+     *   1) forgot the case where array is size 1...
+     *   
+     * @time   O(N)
+     * @space  O(N)
+     * @bcr    O(1) - Some mathematical Formula
 
 	 */
 	public int uniquePaths0(int m, int n) {
@@ -105,29 +105,29 @@ public class UniquePaths {
 	 * @intuition
 	 * 
 	 * @comments
-     		Simplification of the code above
+     *		Simplification of the code above
 	 * 
-	   @alternativesw
-	   		Recusion with Backtracking
-	   		DP with Matrix
-	   		DP with array
-
-
+	 *  @alternativesw
+	 *  		Recusion with Backtracking
+	 *  		DP with Matrix
+	 *  		DP with array
+	 *  
 	 * @score
 			Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Paths.
 			Memory Usage: 36 MB, less than 5.10% of Java online submissions for Unique Paths.
 
-	    @fail   
-	        1) array out of bounds, I switch m per n, for the columns and rows
-	        1) forgot the case where array is size 1...
-
-	    @time   O(N*M)
-	    @space  O(N)
-	    @bcr    O(1) - Some mathematical Formula
-
+	 *   @fail   
+	 *       1) array out of bounds, I switch m per n, for the columns and rows
+	 *       1) forgot the case where array is size 1...
+	 *       
+	 *   @time   O(N*M)
+	 *   @space  O(N)
+	 *   @bcr    O(1) - Some mathematical Formula
+	 *  
 	 * @param m
 	 * @param n
 	 * @return
+	 * 
 	 */
 	public int uniquePaths(int m, int n) {
 

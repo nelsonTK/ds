@@ -5,7 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
-
+/**
+ * https://leetcode.com/problems/cheapest-flights-within-k-stops/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class CheapestFlightsWithinKStops_Take2 extends LeetCodeExercise {
 
 	static CheapestFlightsWithinKStops_Take2 c = new CheapestFlightsWithinKStops_Take2();
@@ -33,6 +38,9 @@ public class CheapestFlightsWithinKStops_Take2 extends LeetCodeExercise {
 		System.out.println(c.findCheapestPrice(n, flights, src, dst, k));
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	HashMap<Integer, List<Node>> graph;
 	boolean [] visited;
 	int k;

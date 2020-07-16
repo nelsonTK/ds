@@ -15,19 +15,19 @@ public class MaximumProductSubarray {
 	 *[WRONG]
 	 *	There are few steps that were not too into account
 	 *
-    @intuition
-
-
-    @score
-
-
-    @fail
-        1) didn't saw the case where the highest value comes from negative
-
-    @time   O(N)
-    @space  O(1) because its constant
-    @bcr    O(N) ??
-
+     * @intuition
+     * 
+     * 
+     * @score
+	 * 
+	 *
+     * @fail
+     *   1) didn't saw the case where the highest value comes from negative
+	 *
+     * @time   O(N)
+     * @space  O(1) because its constant
+     * @bcr    O(N) ??
+	 *
 	 **/
 	public int maxProduct0(int[] nums) {
 
@@ -86,20 +86,20 @@ public class MaximumProductSubarray {
 	 *
 	 *
 	 *
-    @intuition
-        Garbage solution
-
-    @score
+     * @intuition
+     *   Garbage solution
+     *
+     * @score
         Runtime: 90 ms, faster than 6.21% of Java online submissions for Maximum Product Subarray.
         Memory Usage: 39.3 MB, less than 9.76% of Java online submissions for Maximum Product Subarray.
-
-    @fail
-        1) I was not updating the max value at every iteration
-
-    @time   O(N^2)
-    @space  O(1)
-    @bcr    O(N)
-
+	 *
+     * @fail
+     *     	1) I was not updating the max value at every iteration
+	 *
+     * @time   O(N^2)
+     * @space  O(1)
+     * @bcr    O(N)
+     * 
 	 */
 	public int maxProduct1(int[] nums) {
 
@@ -135,29 +135,30 @@ public class MaximumProductSubarray {
 	 ********************************/
 
 	/**
-
-	  @intuition
-		  	in each iteration we save the min and the maximum value. to save those values we compare
-			  	PreviousMax = Max(previousMax * current, previousMin * current, current);
-			  	PreviousMin = Min(previousMax * current, previousMin * current, current);
-
-		  	The Importance of saving the previous max and min is for negative numbers.
-		  	because a negative number can turn positive if multiplied by a negative number, and it will be bigger if the negative numbers are smallest.
-		  	for positive numbers the biggest is always the biggest, no big deal about it.
-
-	 *@score
-			Runtime: 1 ms, faster than 93.86% of Java online submissions for Maximum Product Subarray.
-			Memory Usage: 39.5 MB, less than 9.76% of Java online submissions for Maximum Product Subarray.
-
+	 * 
+	 * 
+	 * @intuition
+	 *	  	in each iteration we save the min and the maximum value. to save those values we compare
+	 *		  	PreviousMax = Max(previousMax * current, previousMin * current, current);
+	 *		  	PreviousMin = Min(previousMax * current, previousMin * current, current);
 	 *
-	 *@fail
-	       1) forgot about comparing the answer with itself
-
-
-	 @time	O(N)
-	 @space O(1)
-
-
+	 *	  	The Importance of saving the previous max and min is for negative numbers.
+	 *	  	because a negative number can turn positive if multiplied by a negative number, and it will be bigger if the negative numbers are smallest.
+	 *	  	for positive numbers the biggest is always the biggest, no big deal about it.
+ 	 *
+	 * @score
+	 *		Runtime: 1 ms, faster than 93.86% of Java online submissions for Maximum Product Subarray.
+	 *		Memory Usage: 39.5 MB, less than 9.76% of Java online submissions for Maximum Product Subarray.
+	 *
+	 *
+	 * @fail
+	 *      1) forgot about comparing the answer with itself
+	 *
+ 	 *
+	 * @time	O(N)
+	 * @space O(1)
+	 *
+	 *
 	 **/
 	public int maxProduct(int[] nums) {
 

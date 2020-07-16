@@ -6,6 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * https://leetcode.com/problems/connecting-cities-with-minimum-cost/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class ConnectingCitiesWithMinimumCost {
 
 	public static void main(String[] args) {

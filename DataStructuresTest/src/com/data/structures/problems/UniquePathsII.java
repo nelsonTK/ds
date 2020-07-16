@@ -18,35 +18,36 @@ public class UniquePathsII extends LeetCodeExercise{
 		System.out.println(u.uniquePathsWithObstacles(grid));
 	}
 
-	   
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	   
     /**
-    @intuition
-       the goal was filling the last line with 1's and 0's according it was previous or after a obstacle.
-       because starting from the end in the last line after an obstacle is impossible to get to the target, because you can only move right
-       the rest the same principles aplies the sum of
-       
-        dp[r][c] = dp[r + 1][c] and dp[r][c + 1];
-        
-        However I use only one row to achieve this result.
-        
-    @score
-		Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Paths II.
-		Memory Usage: 37.3 MB, less than 100.00% of Java online submissions for Unique Paths II.
-
-    @fail
-        1) bad variable attributed to r, I attributed n instead of m
-        2) assign dp with n-1 instead of real size
-        3) order of invariant wrong in the wrile....basic stuff
-        4) forgot to assign zero to the 1's in the dp solution
-        5) false assumptions, that I can add blindly 1 on the edges. didn't thought on the case where the end is missing
-   
-    @debug
-        yes (2)
-        
-    @time   O(M*N)
-    @space  O(N)
-    @bcr    
-    
+    * @intuition
+    *   the goal was filling the last line with 1's and 0's according it was previous or after a obstacle.
+    *   because starting from the end in the last line after an obstacle is impossible to get to the target, because you can only move right
+    *   the rest the same principles aplies the sum of
+    *   
+    *    dp[r][c] = dp[r + 1][c] and dp[r][c + 1];
+    *    
+    *    However I use only one row to achieve this result.
+    *    
+    * @score
+	*	Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Paths II.
+	*	Memory Usage: 37.3 MB, less than 100.00% of Java online submissions for Unique Paths II.
+	*
+    * @fail
+    *    1) bad variable attributed to r, I attributed n instead of m
+    *    2) assign dp with n-1 instead of real size
+    *    3) order of invariant wrong in the wrile....basic stuff
+    *    4) forgot to assign zero to the 1's in the dp solution
+    *    5) false assumptions, that I can add blindly 1 on the edges. didn't thought on the case where the end is missing
+    *
+    * @debug
+    *    yes (2)
+    *    
+    * @time  	O(M*N)
+    * @space  	O(N)
+    * @bcr  	
     *
     */
     public int uniquePathsWithObstacles(int[][] grid) {

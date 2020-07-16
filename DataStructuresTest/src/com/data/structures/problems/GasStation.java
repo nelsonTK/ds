@@ -21,6 +21,9 @@ public class GasStation extends LeetCodeExercise{
 		System.out.println(g.canCompleteCircuit(gas, cost));
 	}
 	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	/**
 	 * @intuition
 	 * 		Nothing fancy was applied at all
@@ -71,6 +74,9 @@ public class GasStation extends LeetCodeExercise{
 	}
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Very cleaver solution
  * 

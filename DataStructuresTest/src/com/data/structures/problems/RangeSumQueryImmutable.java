@@ -45,9 +45,9 @@ public class RangeSumQueryImmutable {
 		 * 		Runtime: 8 ms, faster than 35.54% of Java online submissions for Range Sum Query - Immutable.
 				Memory Usage: 44.3 MB, less than 19.51% of Java online submissions for Range Sum Query - Immutable.
 
-		 	@time  O(1)
-		 	@space O(N)
-
+		 * @time  O(1)
+		 * @space O(N)
+		 * 
 		 *
 		 */
 		int [] nums;
@@ -73,19 +73,17 @@ public class RangeSumQueryImmutable {
 		public int sumRange0(int i, int j) { //O(1)
 			//i = i >= nums.length? nums.length-1 : i < 0? 0: i;
 			// j = j >= nums.length? nums.length-1 : j < 0? 0: j;
-
-
 			return map.get(i) - map.get(j) + nums[j];
 		}
 		
-		/*********************************
-		 * SOLUTION 2
-		 ********************************/
 	}
 
 
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * DP Solution
  * but the logic is very similar to mine but with different math

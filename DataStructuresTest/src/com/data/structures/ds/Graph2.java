@@ -14,18 +14,20 @@ import java.util.Stack;
  *
  * @param <T> WARNING: <p>
  * 
- * IMPLEMENT TO STRING FOR T <p>
- * 	in order for different objects to be compared the same we need to override the classes' toString() 
+ * MUST DO:
+ * 
+ * IMPLEMENT TOSTRING() FOR T <p>
+ * 	in order for different objects to be compared the same we need to override the classes' toString() [Yes, for this case it is needed, keep reading]
  * 	so that we can get the same string for different objects with same property values. 
  * 	this string will later be hashed and that's what makes possible different objects be hashed the same.
  * 	Ideally we would need to Override hashcode, but some objects like 'Integer' would require a special treatment because we cannot Override it's hashcode function.
  * 
- * IMPLEMENT EQUALS
+ * IMPLEMENT EQUALS()
  * 	If you are using Objects, and don't want to save references of objects you insert in the graph 
  * 	you can create a new object with the same properties and used it as input to get its adjacent nodes.
- * 	But this requires you to override equals method, because by default diferent objects have different references. 
- * 	if you don't want this to be the equals comparison you have to override it and define your own rules for equality. 
- * 	You need to implement equals so that when create a new object with the same properties that
+ * 	But this requires you to override equals method, because different objects have different references and thus are different. 
+ * 	if you don't want this to be the equals comparison behavior you have to override it and define your own rules for equality. 
+ * 	You need to implement equals so that when create a new object with the same properties they are compared the same
  */
 public class Graph2<T> {
 

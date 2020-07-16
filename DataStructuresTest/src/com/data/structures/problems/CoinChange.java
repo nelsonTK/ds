@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/coin-change/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class CoinChange extends LeetCodeExercise{
 
 	static CoinChange c = new CoinChange();
@@ -21,7 +27,10 @@ public class CoinChange extends LeetCodeExercise{
 
 		System.out.println(c.coinChange(coins, amount));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	        @fail
 	            1) stackoverflow
@@ -99,7 +108,9 @@ public class CoinChange extends LeetCodeExercise{
 		return -1;
 	}
 
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	/**
 	 * 
 	 * @intuition
@@ -112,16 +123,16 @@ public class CoinChange extends LeetCodeExercise{
 	 * @score
 	  		Runtime: 25 ms, faster than 29.39% of Java online submissions for Coin Change.
 			Memory Usage: 39.1 MB, less than 61.89% of Java online submissions for Coin Change.
-
-	    @fail
-	        1) Arrays out of bounds, I was using coins array intead of dp's array
-	        2) forgot to update the coin variable
-	        3) putter the wrong amount of coins in the first element
-	        4) I was not initiallizing dp values for coin indexes properly
-	        5) array of of bounts wen coins are bigger than the amount
-
-       @debug
-       		yes
+	 *
+	 *  @fail
+	 *       1) Arrays out of bounds, I was using coins array intead of dp's array
+	 *       2) forgot to update the coin variable
+	 *       3) putter the wrong amount of coins in the first element
+	 *       4) I was not initiallizing dp values for coin indexes properly
+	 *       5) array of of bounts wen coins are bigger than the amount
+	 *
+     *  @debug
+     *  		yes
 	 **/
 	public int coinChange1(int[] coins, int amount) {
 		//guards
@@ -164,7 +175,10 @@ public class CoinChange extends LeetCodeExercise{
 
 		return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
 	}
-
+	
+	/*********************************
+	 * SOLUTION 3
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		proper implementation of dp solution

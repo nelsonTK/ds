@@ -20,34 +20,35 @@ public class ProductofArrayExceptSelf extends LeetCodeExercise {
 		System.out.println(Arrays.toString(p.productExceptSelf(nums)));
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	 /**
-	  * 
-	  * 
-    	@intuition 
-    		if zero is not took into account, a trivial solution would be multiply all elements and save in a variable.
-    		and then for each element divide the total by the element.
-    		
-    		but as we cannot use division this is not quite the answer, but we can do something similar with some adjestments.
-    		
-    		what I did was to use exponential to get the division done. so I still divide but in a different manner.
-    		3^-1 equals to 1/3. so this is the basis for me to solve this question.
-    		
-    		what's left is the zeros. which are exceptions. and what's worthy here is that if we have one zero, than all the elements have zeros as multiplication result but the zero element.
-    		if we have more than one zero, than all elements will have zero.
-    		
-    		That's it
-    		
-    		
-    	
-    	@score
+
+      * 	@intuition 
+      * 		if zero is not took into account, a trivial solution would be multiply all elements and save in a variable.
+      *  		and then for each element divide the total by the element.
+      *     		
+      *  		but as we cannot use division this is not quite the answer, but we can do something similar with some adjestments.
+      *   		
+      *  		what I did was to use exponential to get the division done. so I still divide but in a different manner.
+      * 		3^-1 equals to 1/3. so this is the basis for me to solve this question.
+      *   		
+      * 		what's left is the zeros. which are exceptions. and what's worthy here is that if we have one zero, than all the elements have zeros as multiplication result but the zero element.
+      *  		if we have more than one zero, than all elements will have zero.
+      *  
+      * 		That's it
+      * 
+      * 
+      * @score
 			Runtime: 3 ms, faster than 12.47% of Java online submissions for Product of Array Except Self.
 			Memory Usage: 48.5 MB, less than 12.44% of Java online submissions for Product of Array Except Self.    	
 			
-    	@fail
+      * @fail
         	1)	
         
-        @time  O(N)
-        @space O(1) except answer
+      * @time  O(N)
+      * @space O(1) except answer
     **/
     public int[] productExceptSelf(int[] nums) {
         

@@ -23,7 +23,10 @@ public class MinimumPathSum extends LeetCodeExercise {
 		
 		System.out.println(m.minPathSum(grid));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		DP problem where I start filling the dp matrix which will be the input
@@ -42,9 +45,10 @@ public class MinimumPathSum extends LeetCodeExercise {
 	 * @fail
 	 * 		1) I forgot to subtract 1 to cLen variable
 	 *      2) I forgot about the case where one of right and bottom is zero and doesnt count to the sum, and in those cases as it is zero, it will be used instead of the correct value.
-            2.1) One case was missing in my correction
-	 * @time
-	 * @space
+     *      2.1) One case was missing in my correction
+     *      
+	 * @time	
+	 * @space	
 	 * 
 	 * @param grid
 	 * @return

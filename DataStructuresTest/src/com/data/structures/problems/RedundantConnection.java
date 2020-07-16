@@ -18,25 +18,25 @@ public class RedundantConnection extends LeetCodeExercise{
 
     
     /**
-    @intuition
-    	the order is given by the input, not by the matrix, we will not traverse a matrix.
-    	so the last redundant connection is the last connection where both elements have the same root
-    	ultimately this is a exercise to find a cycle which you can perform with union find for undirected graphs...
-    	
-    	A detail I've missed is that, eventually the cyclic edge is only the first one we find in the 2D array.
-    	But it's okay.
-    	
-    @score
-        Runtime: 1 ms, faster than 68.44% of Java online submissions for Redundant Connection.
-        Memory Usage: 39.9 MB, less than 63.64% of Java online submissions for Redundant Connection.
-    
-    @time   O(N) amortized O(N)
-    @space  O(N)
-    
-    @fail
-        1) the calculation of union array size was wrong
-        2) forgot to add the root to itself...
-        
+     * @intuition
+     *	the order is given by the input, not by the matrix, we will not traverse a matrix.
+     *	so the last redundant connection is the last connection where both elements have the same root
+     *	ultimately this is a exercise to find a cycle which you can perform with union find for undirected graphs...
+     *	
+     *	A detail I've missed is that, eventually the cyclic edge is only the first one we find in the 2D array.
+     *	But it's okay.
+     *	
+     * @score
+     *    Runtime: 1 ms, faster than 68.44% of Java online submissions for Redundant Connection.
+     *    Memory Usage: 39.9 MB, less than 63.64% of Java online submissions for Redundant Connection.
+     *
+     * @time   O(N) amortized O(N)
+     * @space  O(N)
+     * 
+     * @fail
+     *    1) the calculation of union array size was wrong
+     *    2) forgot to add the root to itself...
+     *    
     **/
     public int[] findRedundantConnection(int[][] edges) {
         

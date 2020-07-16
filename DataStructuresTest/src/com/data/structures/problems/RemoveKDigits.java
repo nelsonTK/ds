@@ -37,20 +37,8 @@ public class RemoveKDigits {
 	 */
 	public String removeKdigits0(String num, int k) {
 
-		//Guards
-		//        try
-		//        {
-		//            Integer.parseInt(num);
-		//        }
-		//        catch(Exception e)
-		//        {
-		//            return "0";
-		//        }
-
 		if (num.length() <= k || num.length() == 0)
 			return "0";
-
-
 
 		boolean [] excluded = new boolean [num.length()];
 		int first = 0, second = first + 1, n = num.length() - 1;
@@ -180,10 +168,10 @@ public class RemoveKDigits {
 	 	Runtime: 4 ms, faster than 86.57% of Java online submissions for Remove K Digits.
 		Memory Usage: 39.4 MB, less than 9.09% of Java online submissions for Remove K Digits.
 	 * 
- @fail
-     1) forgot to add k to the equation
-     2) Always forgot to add return type when not using IDE
-     3) somehow I'm printing the values wrongly I was not putting exclude in the second invariant
+ 	 * @fail
+	     1) forgot to add k to the equation
+	     2) Always forgot to add return type when not using IDE
+	     3) somehow I'm printing the values wrongly I was not putting exclude in the second invariant
 	 */
 	public String removeKdigits2(String num, int k) {
 
@@ -261,11 +249,11 @@ public class RemoveKDigits {
 	 ********************************/
 	/**
 	 * 
-	 @score
+	 * @score
 	 		Runtime: 4 ms, faster than 86.57% of Java online submissions for Remove K Digits.
 			Memory Usage: 39.5 MB, less than 9.09% of Java online submissions for Remove K Digits.
 	 
-	 @comments
+	 * @comments
 	 	 This solution of mine is the embodiment of my weakenesses.
 		 I Struggle a lot with greedy problems.
 		 This was the best I could do after trying for 4 hours
@@ -274,16 +262,16 @@ public class RemoveKDigits {
 		 The pattern of this solution was not easy to spot for me.
 		 
 	
-	 @fail
-	     1) forgot to add k to the equation
-	     2) Always forgot to add return type when not using IDE
-	     3) somehow I'm printing the values wrongly I was not putting exclude in the second invariant
-	     4) Dozens of mistakes
-	     5) design bad solution and have not did proper tests
-	     
-	@time  O(N + k)
-	@space	O(N)
-	
+	 * @fail
+	 *    1) forgot to add k to the equation
+	 *    2) Always forgot to add return type when not using IDE
+	 *    3) somehow I'm printing the values wrongly I was not putting exclude in the second invariant
+	 *    4) Dozens of mistakes
+	 *    5) design bad solution and have not did proper tests
+	 *
+	 * @time  	O(N + k)
+	 * @space	O(N)
+	 * 
 	 */
 	public String removeKdigits(String num, int k) {
 

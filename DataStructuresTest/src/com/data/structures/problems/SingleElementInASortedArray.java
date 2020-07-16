@@ -18,15 +18,13 @@ public class SingleElementInASortedArray extends LeetCodeExercise{
 		a = stringToArray("[1,1,2,3,3,4,4,8,8]");
 		System.out.println(s.singleNonDuplicate(a));
 	}
-	/*
 
-	 */
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
-	 * 
-	 * 
-	 * 
-	  
-	   @intuition
+	 *
+	 * @intuition
 	   		I found out a pattern that indicates where to search the single element
 	   		and it was related with the size of the array(or subarray).
 	   		
@@ -48,19 +46,19 @@ public class SingleElementInASortedArray extends LeetCodeExercise{
 	   		 that's why on even size we jump 2 elements instead of one.
 	   		 
 	   		 Very very tricky question.
-	 	
-       @fail
+	 *
+     * @fail
         1) the invariant consequences were wrong, they were switched
         2) the same error but I had a bad signal - 1 instead of + 1.
         3) forgot the protections
-        	 
+     * 
 	 * @score
 	  		Runtime: 0 ms, faster than 100.00% of Java online submissions for Single Element in a Sorted Array.
 			Memory Usage: 40 MB, less than 8.00% of Java online submissions for Single Element in a Sorted Array.
-	
-		@time 	O(log N)
-		@space	O(1)
-	
+	 *
+	 * @time 	O(log N)
+	 * @space	O(1)
+	 * 
 	 * @param a
 	 * @return
 	 */
@@ -114,6 +112,10 @@ public class SingleElementInASortedArray extends LeetCodeExercise{
 	}
 }
 
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Very elegant solution
  * 	Only searches on even indexes, and relies on the pattern of what appens to the even indexes before and after the single element

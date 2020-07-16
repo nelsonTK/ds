@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
-import com.data.structures.utils.PrintHelper;
 
 public class WordBreakII extends LeetCodeExercise{
 
@@ -27,8 +26,13 @@ public class WordBreakII extends LeetCodeExercise{
 		That's why it timesout
 
     @intuition
-        created the concept of stateful trie but if fails at the worst case
-    fail
+        created the concept of stateful trie but if fails at the worst cases because I use no cache.
+        We some changes this concept might work
+    
+    @comments
+    	I use no cache, and I calculate the same values again and again
+        
+    @fail
         1) null pointer exception, forgot to initialize children in TrieNode
         2) forgot to remove the final space
 
@@ -107,28 +111,6 @@ public class WordBreakII extends LeetCodeExercise{
 			sb.setLength(sb.length() - 1); //remove space
 
 		trie.removeSearchStateNode();    
-		/*
-        //break word
-        //break trie, stringBuilder, int string index, string 
-
-        start
-
-        for i = index; i < length;
-            trie.statefulStartsWith(char(i)) && trie.statefultIsFinal()
-            if (startswith)
-                add char to string builder
-
-                if statefulIsFinal
-                    add space to string builder 
-                    call break (  break (trie, string builder, index + 1, s))
-
-            if not starts with
-                remove from string builder
-                removeStatefulNode
-
-        sb.setlength(sb.lenght - trie.getStatefulNodeLength() + 1);
-        trie.removeStatefulNode();
-		 */
 	}
 
 	class Trie {

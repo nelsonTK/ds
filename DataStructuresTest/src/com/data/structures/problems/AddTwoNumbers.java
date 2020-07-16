@@ -15,6 +15,9 @@ public class AddTwoNumbers extends LeetCodeExercise{
 
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		I just added the result of the sum to one of the lists
@@ -23,7 +26,7 @@ public class AddTwoNumbers extends LeetCodeExercise{
 	 * @score
 	 * 		Runtime: 1 ms, faster than 100.00% of Java online submissions for Add Two Numbers.
 			Memory Usage: 39.3 MB, less than 99.69% of Java online submissions for Add Two Numbers.
-			
+
 			I believe that If I remove the heavy logic of verifying nulls I can achieve 0ms
 	 * 
 	 * @fail
@@ -104,6 +107,10 @@ public class AddTwoNumbers extends LeetCodeExercise{
 	}
 }
 
+
+/*********************
+ * OTHERS SOLUTIONS
+ *********************/
 /**
  * Very similar aproach to mine but it subtle differences
  * 

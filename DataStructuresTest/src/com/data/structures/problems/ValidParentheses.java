@@ -13,29 +13,30 @@ public class ValidParentheses {
 
 	public static void main(String[] args) {
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
-	 * 
-	 * 
-     @intuition
-		closed parentisis are the key here.
-		we always compare de close parentises with the top of the stack, if it matches then we are good, if not we are not and the string is invalid.
-		besides all this comparision in the end if the stack is empty the string is good, else it is invalid.
-
-    @score
-        Runtime: 2 ms, faster than 29.20% of Java online submissions for Valid Parentheses.
-        Memory Usage: 37.6 MB, less than 49.56% of Java online submissions for Valid Parentheses.
-
-    @optimization
-        I could put the hashmap in the class
-        I could have used and array of characters
-
-    @alternative
-        I think I can do this with pointer instead of stack, reducing space complexity but not sure
+     * @intuition
+	 *	closed parentisis are the key here.
+	 *	we always compare de close parentises with the top of the stack, if it matches then we are good, if not we are not and the string is invalid.
+	 *	besides all this comparision in the end if the stack is empty the string is good, else it is invalid.
+	 *
+     * @score
+     *     Runtime: 2 ms, faster than 29.20% of Java online submissions for Valid Parentheses.
+     *    Memory Usage: 37.6 MB, less than 49.56% of Java online submissions for Valid Parentheses.
+	 *
+     * @optimization
+     *    I could put the hashmap in the class
+     *    I could have used and array of characters
+     *
+     * @alternative
+     *   I think I can do this with pointer instead of stack, reducing space complexity but not sure
 
 
-        @time O(N)
-        @space O(N)
+     *   @time O(N)
+     *   @space O(N)
 	 **/
 	public boolean isValid(String s) {
 

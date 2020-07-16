@@ -63,7 +63,7 @@ public class HouseRobber extends LeetCodeExercise{
 
 
 	/*********************************
-	 * SOLUTION 1
+	 * SOLUTION 2
 	 ********************************/
 
 	/**
@@ -128,7 +128,7 @@ public class HouseRobber extends LeetCodeExercise{
 
 
 	/*********************************
-	 * SOLUTION 2
+	 * SOLUTION 3
 	 ********************************/
 
 	/**

@@ -26,30 +26,29 @@ public class NumberofConnectedComponentsinanUndirectedGraph extends LeetCodeExer
 
 	/**
 	 * @score
-			Path Compression optimization With constant space(Best)
-				Runtime: 3 ms, faster than 70.66% of Java online submissions for Number of Connected Components in an Undirected Graph.
-				Memory Usage: 39.9 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
-	
-
-	 		Path Compression optimization With Set<Integer>
-				Runtime: 6 ms, faster than 42.38% of Java online submissions for Number of Connected Components in an Undirected Graph.
-				Memory Usage: 40.3 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
-
-
-	 		Path Compression Otimization with List<Integer>
-	 			Runtime: 5 ms, faster than 50.53% of Java online submissions for Number of Connected Components in an Undirected Graph.
-				Memory Usage: 39.5 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
-
-				Runtime: 4 ms, faster than 57.39% of Java online submissions for Number of Connected Components in an Undirected Graph.
-				Memory Usage: 39.6 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
-	
-	 		Without Path Compression
-	 			Runtime: 8 ms, faster than 26.60% of Java online submissions for Number of Connected Components in an Undirected Graph.
-				Memory Usage: 39.7 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
-
-	 
-	 * @time
-	 * @space
+	 *		Path Compression optimization With constant space(Best)
+	 *			Runtime: 3 ms, faster than 70.66% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *			Memory Usage: 39.9 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *
+	 *
+	 * 		Path Compression optimization With Set<Integer>
+	 *			Runtime: 6 ms, faster than 42.38% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *			Memory Usage: 40.3 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *
+	 *
+	 * 		Path Compression Otimization with List<Integer>
+	 * 			Runtime: 5 ms, faster than 50.53% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *			Memory Usage: 39.5 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *
+	 *			Runtime: 4 ms, faster than 57.39% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *			Memory Usage: 39.6 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *
+	 * 		Without Path Compression
+	 * 			Runtime: 8 ms, faster than 26.60% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *			Memory Usage: 39.7 MB, less than 100.00% of Java online submissions for Number of Connected Components in an Undirected Graph.
+	 *
+	 * @time	
+	 * @space	
 	 * 
 	 * @param n
 	 * @param edges

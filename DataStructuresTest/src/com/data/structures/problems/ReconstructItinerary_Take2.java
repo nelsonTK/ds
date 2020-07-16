@@ -40,6 +40,9 @@ public class ReconstructItinerary_Take2 extends LeetCodeExercise{
 		printArray(r.findItinerary(tickets).toArray());
 	}
 	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	private int itinerarySize;
 	private HashMap<String, List<String>> graph;
 	private HashMap<String, boolean[]> visited;
@@ -135,6 +138,9 @@ public class ReconstructItinerary_Take2 extends LeetCodeExercise{
 	}
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * @intuition
  * 		

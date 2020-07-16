@@ -22,18 +22,19 @@ public class DecodeWays {
 	 * 			DP Approach.
 	 * 			The current possible combinations for a digit depends on the number of combinations 
 	 * 			of the two past digits positions (i - 1, i - 2).
-
-    	@score
+	 *
+     *	@score
     		Runtime: 2 ms, faster than 66.36% of Java online submissions for Decode Ways.
 			Memory Usage: 40.1 MB, less than 5.66% of Java online submissions for Decode Ways.
-
-
-        @fail
-            1) Array out of bounds
-
-    	@time	O(N)
-    	@space	O(N)
-    	@bcr	
+	 *
+	 *
+     *  @fail
+     *       1) Array out of bounds
+	 *
+     *	@time	O(N)
+     *	@space	O(N)
+     *	@bcr	
+     *
 	 **/
 	public int numDecodings0(String s) {
 

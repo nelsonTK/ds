@@ -5,6 +5,11 @@ import java.util.List;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+	/**
+	 * https://leetcode.com/problems/build-an-array-with-stack-operations/
+	 * EASY
+	 * @param args
+	 */
 public class BuildAnArrayWithStackOperations extends LeetCodeExercise{
 
 	/**
@@ -16,7 +21,9 @@ public class BuildAnArrayWithStackOperations extends LeetCodeExercise{
 
 	}
 	
-	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * My First Contest Question
 	 * 

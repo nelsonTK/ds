@@ -38,7 +38,9 @@ public class CheapestFlightsWithinKStops_Take1 extends LeetCodeExercise{
 		System.out.println(c.findCheapestPrice(n, flights, src, dst, k));
 	}
 
-
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * [Time Out, it's missing some cache, I forgot about that]
 	 * @fail
@@ -117,7 +119,9 @@ public class CheapestFlightsWithinKStops_Take1 extends LeetCodeExercise{
 		}
 	}
 
-
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	int [] memo;
 	/**
 	 * [Time Out, it's missing some cache, I forgot about that]

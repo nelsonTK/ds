@@ -3,10 +3,10 @@ package com.data.structures.ds;
 import java.util.HashMap;
 
 /**
- * Elements evicted can still be searched and they are added to the 
- * linkedlist with the updated usage (MRU) as well as the tail
- * This might not be the expected behavior of LRU. (I Should reimplement this)
- * Equals should be used instead of "==" for node comparision
+ * Elements evicted can still be searched in Hashmap 
+ * and they are added to the linkedlist with the updated usage (MRU)
+ * 
+ * This is not the expected behavior of LRU. (I Should reimplement this)
  * 
  * @author Nelson Costa
  *
@@ -90,7 +90,7 @@ public class LRUCache<K, V> {
 	private DoublyLinkedListNode<V> getNode(K key) {
 		DoublyLinkedListNode<V> node = map.get(key);
 
-		if(node == usage.getHead())
+		if(node.equals(usage.getHead()))
 			return usage.getHead();
 
 		if(node != null)
@@ -113,7 +113,7 @@ public class LRUCache<K, V> {
 
 	private void setMostFrenquetlyUsedNode(DoublyLinkedListNode<V> node) {
 
-		if (usage.getHead() == node)
+		if (usage.getHead().equals(node))
 			return;
 
 		DoublyLinkedListNode<V> prev = node.prev;

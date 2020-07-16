@@ -26,7 +26,10 @@ public class MaximalSquare extends LeetCodeExercise{
 		
 		System.out.println(m.maximalSquare(matrix));
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
     /**
      * @intuition
      * 		My intuition is:
@@ -49,20 +52,20 @@ public class MaximalSquare extends LeetCodeExercise{
 			Runtime: 5 ms, faster than 23.92% of Java online submissions for Maximal Square.
 			Memory Usage: 42.8 MB, less than 100.00% of Java online submissions for Maximal Square.
      * 
-    @debug
+     * @debug
         yes, contest like debug
     
-    @fail
-        1) the for loop was incrementing instead of decrementing
-        2) I was not adding one to the square size. just the minimum of right, diagonal and bottom
-        3) the for loop signals were wrong, I had them right in the paper though.
-        4) dp size were wrong by one value
-        5) forgot to multiply the max by 2, inorder to return the area
-        5.1) the area was badly calculared it was max * max and not times 2. what a dumb error.
-        6) failed for array of length 1. I put a too strick guard
+     * @fail
+     *   1) the for loop was incrementing instead of decrementing
+     *   2) I was not adding one to the square size. just the minimum of right, diagonal and bottom
+     *   3) the for loop signals were wrong, I had them right in the paper though.
+     *   4) dp size were wrong by one value
+     *   5) forgot to multiply the max by 2, inorder to return the area
+     *   5.1) the area was badly calculared it was max * max and not times 2. what a dumb error.
+     *   6) failed for array of length 1. I put a too strick guard
 
-    @time 	O(mn)
-    @space	O(mn)
+     * @time 	O(mn)
+     * @space	O(mn)
     */
     public int maximalSquare(char[][] matrix) {
         

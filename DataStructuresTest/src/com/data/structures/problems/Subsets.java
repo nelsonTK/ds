@@ -21,14 +21,14 @@ public class Subsets extends LeetCodeExercise {
 			printArray(l.toArray());
 		}
 	}
-	
+
 	/*********************************
 	 * SOLUTION 1
 	 ********************************/
-	
+
 	List<List<Integer>> ans = new ArrayList<List<Integer>>(); // answer
 	int [] a;//inputArray
-	
+
 	/**
 	 * 
 	 * @intuition
@@ -49,48 +49,48 @@ public class Subsets extends LeetCodeExercise {
 	 * @param nums
 	 * @return
 	 */
-    public List<List<Integer>> subsets0(int[] nums) {
-        a = nums;
-    	
-    	if (a == null || a.length == 0)
-    	{
-    		return new ArrayList<List<Integer>>();
-    	}
-    	
-    	
-    	int setLength = 1;
-    	
-    	while (setLength <= a.length)
-    	{
-    		
-    		getPowerSet0(0, new ArrayList<Integer>(), setLength);
-    		
-    		setLength++;
-    	}
-    	
-    	ans.add(new ArrayList<Integer>());
-    	
-    	return ans;
-    }
+	public List<List<Integer>> subsets0(int[] nums) {
+		a = nums;
+
+		if (a == null || a.length == 0)
+		{
+			return new ArrayList<List<Integer>>();
+		}
+
+
+		int setLength = 1;
+
+		while (setLength <= a.length)
+		{
+
+			getPowerSet0(0, new ArrayList<Integer>(), setLength);
+
+			setLength++;
+		}
+
+		ans.add(new ArrayList<Integer>());
+
+		return ans;
+	}
 
 	private void getPowerSet0(int start, ArrayList<Integer> row, int setLength) {
-		
+
 		if (setLength == 0)
 		{
 			ans.add(row);
 			return;
 		}
-		
+
 		ArrayList<Integer> newRow;
 		for (int i = start; i <= a.length - setLength; i++)
 		{
 			newRow = new ArrayList<>(row);
 			newRow.add(a[i]);
-			
+
 			getPowerSet(i + 1, newRow, setLength - 1);
 		}
 	}
-	
+
 	/*********************************
 	 * SOLUTION 2
 	 ********************************/	
@@ -104,7 +104,7 @@ public class Subsets extends LeetCodeExercise {
 	 * @score
 			Runtime: 0 ms, faster than 100.00% of Java online submissions for Subsets.
 			Memory Usage: 39.9 MB, less than 5.74% of Java online submissions for Subsets.
-			
+
 	 * @fail
 	 * 		1) forgot the subset of full size it was a bad clause in the while invariant
 	 * 
@@ -114,44 +114,44 @@ public class Subsets extends LeetCodeExercise {
 	 * @param nums
 	 * @return
 	 */
-    public List<List<Integer>> subsets(int[] nums) {
-        a = nums;
-    	
-    	if (a == null || a.length == 0)
-    	{
-    		return new ArrayList<List<Integer>>();
-    	}
-    	
-    	
-    	int setLength = 1;
-    	
-    	while (setLength <= a.length)
-    	{
-    		
-    		getPowerSet(0, new ArrayList<Integer>(), setLength);
-    		
-    		setLength++;
-    	}
-    	
-    	ans.add(new ArrayList<Integer>());
-    	
-    	return ans;
-    }
+	public List<List<Integer>> subsets(int[] nums) {
+		a = nums;
+
+		if (a == null || a.length == 0)
+		{
+			return new ArrayList<List<Integer>>();
+		}
+
+
+		int setLength = 1;
+
+		while (setLength <= a.length)
+		{
+
+			getPowerSet(0, new ArrayList<Integer>(), setLength);
+
+			setLength++;
+		}
+
+		ans.add(new ArrayList<Integer>());
+
+		return ans;
+	}
 
 	private void getPowerSet(int start, ArrayList<Integer> row, int setLength) {
-		
+
 		if (setLength == 0)
 		{
 			ans.add(new ArrayList<Integer>(row));
 			return;
 		}
-		
+
 		for (int i = start; i <= a.length - setLength; i++)
 		{
-            row.add(a[i]);
-			
+			row.add(a[i]);
+
 			getPowerSet(i + 1, row, setLength - 1);
-            row.remove(row.size() - 1);
+			row.remove(row.size() - 1);
 		}
 	}
 }

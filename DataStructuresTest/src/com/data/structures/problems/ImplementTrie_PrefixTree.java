@@ -21,7 +21,10 @@ public class ImplementTrie_PrefixTree {
 		trie.insert("app");   
 		trie.search("app");     // returns true
 	}
-
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @fail
 	 * 		1) Forgot to initialize the the TrieNode Hashmap
@@ -29,10 +32,10 @@ public class ImplementTrie_PrefixTree {
 	 * @score
 	 * 		Runtime: 36 ms, faster than 40.92% of Java online submissions for Implement Trie (Prefix Tree).
 			Memory Usage: 50.7 MB, less than 100.00% of Java online submissions for Implement Trie (Prefix Tree).
-
-	   @optimizations
-	   		I believe I could have used a 26 character array, but I decided to use an Hashmap.
-
+	 *
+	 *  @optimizations
+	 * 		I believe I could have used a 26 character array, but I decided to use an Hashmap.
+	 *
 	 * @author Nelson Costa
 	 *
 	 */

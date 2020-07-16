@@ -25,7 +25,7 @@ public class MergeIntervals extends LeetCodeExercise{
 	/**
 	 * 
 	 * 
-	 	@intuition
+	 *	@intuition
 	 		sort the intervals by final date
 	 		check if the next element has a final date inside the previous
 
@@ -42,30 +42,29 @@ public class MergeIntervals extends LeetCodeExercise{
 	 		3 intervals
 
 
-	   @comments
+	 * @comments
 	   		This is a tough question, a lot of details have to be took into account.
 	   		there are a lot of possibilities that I have to take into account.
-
-	   @improvements
+	 *
+	 * @improvements
 	   		I could have improved how to create the final answer
-
+     *
 	 * @score
 	 		Runtime: 6 ms, faster than 53.05% of Java online submissions for Merge Intervals.
 			Memory Usage: 42.5 MB, less than 47.83% of Java online submissions for Merge Intervals.
-
-	  @debug
+	 *
+	 * @debug
 	  		yes
-
-	  @fail
-	  	1) lack of merge, current was being added always
-    	2) didn't think in the case where the start of the following interval is below the previous, so I only updated the end and forgot about the start
-    	3) didnt thought in the case where there is a umberella interval
-    	4) again I have done very little test cases and ended up with de solution desing
+	 *
+	 * @fail
+	 * 		1) lack of merge, current was being added always
+     *		2) didn't think in the case where the start of the following interval is below the previous, so I only updated the end and forgot about the start
+     *		3) didnt thought in the case where there is a umberella interval
+     *		4) again I have done very little test cases and ended up with de solution desing
     		more precisely the sorting part
-
-
-	  @time  O(NLogN)
-	  @space O(N)
+     *
+	 * @time  O(NLogN)
+	 * @space O(N)
 	 * 
 	 * @param intervals
 	 * @return
@@ -126,6 +125,7 @@ public class MergeIntervals extends LeetCodeExercise{
 		return ans;
 	}
 }
+
 /*********************
  * OTHERS SOLUTIONS
  *********************/

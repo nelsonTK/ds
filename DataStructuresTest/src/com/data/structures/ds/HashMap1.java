@@ -2,6 +2,14 @@ package com.data.structures.ds;
 
 import java.util.HashSet;
 
+/**
+ * Current Bugs:
+ * 		Rehashing after resize is not happening like it was expecting
+ * @author Nelson Costa
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class HashMap1<K, V> {
 
 	Entry<K,V> [] entry;
@@ -343,26 +351,6 @@ public class HashMap1<K, V> {
 		return Math.abs((o.hashCode()*7) % capacity);
 	}
 	
-	/**
-	 * Less performant hash algo
-	 * @param o
-	 * @param capacity
-	 * @return
-	 */
-	@SuppressWarnings("unused")
-	private int hashAlgo1(Object o, int capacity) {
-		if (o == null) {
-			return 0;
-		}
-
-		//Há quem defenda que seria suficiente fazer o módulo do hashcode por capacity/ hashcode % capacity. experimentar
-		int code = Math.abs(o.hashCode());
-		while(code >= capacity) {
-			code /= 7;
-		}
-
-		return code;
-	}
 	
 	/**
 	 * Gera o hashcode adaptado à capacidade do array

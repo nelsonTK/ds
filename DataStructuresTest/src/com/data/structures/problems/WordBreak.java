@@ -10,6 +10,12 @@ import java.util.Set;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/word-break/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class WordBreak extends LeetCodeExercise {
 
 	static WordBreak b = new WordBreak();
@@ -37,16 +43,19 @@ public class WordBreak extends LeetCodeExercise {
 		System.out.println(b.wordBreak(s, wordDict));
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @fail
 	 * 		1) the return of the result was not going right. I was not handling well when the string is in fact a valid word break
 	 * 		2) I was not finalizing well when the last word was right. as i could not solve it (i + 1 > s.length - 1) it return the default false value;
-	 		3) Timeout very slow
-	 		4) Timeout very slow, I tried hashmaps and stoping the search earlier but failed too, another idea would be to perform binary search instead of linear search
-
-	   @comments
-	   		I clearly need some caching here and optimizations
-	   		I'm thinking in a HashMap or an HashSet
+	 *		3) Timeout very slow
+	 *		4) Timeout very slow, I tried hashmaps and stoping the search earlier but failed too, another idea would be to perform binary search instead of linear search
+	 *
+	 *  @comments
+	 * 		I clearly need some caching here and optimizations
+	 * 		I'm thinking in a HashMap or an HashSet
 	 * @time	O(N^2*W)
 	 * @space	N*W
 	 * @bcr		
@@ -94,41 +103,6 @@ public class WordBreak extends LeetCodeExercise {
 		return false;
 	}
 
-//	Set<String> memo = new HashSet<>();
-//	private boolean solve(String s, int start, Trie trie) {
-//
-//		if (!trie.startsWith(s.charAt(start)))
-//		{
-//			return false;
-//		}
-//
-//		String word = "";
-//
-//		for (int i = start; i < s.length(); i++)
-//		{
-//			word+=s.charAt(i);
-//
-//			if (!trie.startsWith(word))
-//				return false;
-//
-//
-//			if (memo.contains(word) || trie.search(word))
-//			{
-//				memo.add(word);
-//
-//				if (i + 1 < s.length() && solve(s, i+1, trie))
-//				{
-//					return true;
-//				}
-//				else if (i == s.length() - 1)
-//				{	
-//					return true;
-//				}
-//			}
-//		}
-//
-//		return false;
-//	}
 
 	private Trie listToTrie(List<String> s) {
 

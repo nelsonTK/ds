@@ -2,6 +2,12 @@ package com.data.structures.problems.contest;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class CountTripletsThatCanFormTwoArraysofEqualXOR extends LeetCodeExercise {
 	static CountTripletsThatCanFormTwoArraysofEqualXOR c = new CountTripletsThatCanFormTwoArraysofEqualXOR();
 
@@ -9,7 +15,13 @@ public class CountTripletsThatCanFormTwoArraysofEqualXOR extends LeetCodeExercis
 		int [] a =  stringToArray("[2,3,1,6,7]");
 		System.out.println(c.countTriplets(a));
 	}
+	
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/	
 	/**
+	 * [WRONG]
+	 * 
     	@comments
     		very difficult to debug this question
     		The algorithm that I created was working as expected but was not covering all the cases
