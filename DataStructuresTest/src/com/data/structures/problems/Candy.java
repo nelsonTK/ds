@@ -41,8 +41,8 @@ public class Candy extends LeetCodeExercise{
 	 *       3) sign missing it was <= instead of just <
 	 *       4) missing situation on items update, which is in a slop and we dont need to update backwards
 	 *
-     * @time O(N^2)
-     * @space O(N)	
+	 * @time O(N^2)
+	 * @space O(N)	
 	 * 
 	 * @param rates
 	 * @return

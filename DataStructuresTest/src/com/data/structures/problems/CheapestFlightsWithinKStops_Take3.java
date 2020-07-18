@@ -34,22 +34,22 @@ public class CheapestFlightsWithinKStops_Take3 extends LeetCodeExercise {
 	/**
 	 * 
 	 * @intuition
-     *	I just applied a adapted lazy Dijkstra Algorithm approach on this problem.
-     *	
-     *	The adjustments included allow the answer to go throgh less optimal cost in general, be optimal for a given k
-     *
-     * @score
-     *		Runtime: 9 ms, faster than 63.17% of Java online submissions for Cheapest Flights Within K Stops.
+	 *	I just applied a adapted lazy Dijkstra Algorithm approach on this problem.
+	 *	
+	 *	The adjustments included allow the answer to go throgh less optimal cost in general, be optimal for a given k
+	 *
+	 * @score
+	 *		Runtime: 9 ms, faster than 63.17% of Java online submissions for Cheapest Flights Within K Stops.
 	 *		Memory Usage: 41.8 MB, less than 5.55% of Java online submissions for Cheapest Flights Within K Stops.
 	 *
-     * @fail
-     *    1) nullpointer, because of null edgest.... god damn, never gets old....
-     *    2) I was not returning -1 if the node was not found
-     *    3) there was a case that was not took into account, which is when the answer is through the node that has bigger cost
-     *
-     * @time	E + VLogE (I'm not sure)
-     * @space	
-     * @bcr
+	 * @fail
+	 *    1) nullpointer, because of null edgest.... god damn, never gets old....
+	 *    2) I was not returning -1 if the node was not found
+	 *    3) there was a case that was not took into account, which is when the answer is through the node that has bigger cost
+	 *
+	 * @time	E + VLogE (I'm not sure)
+	 * @space	
+	 * @bcr
 	 *
 	 *
 	 **/
