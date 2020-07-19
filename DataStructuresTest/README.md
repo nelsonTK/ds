@@ -34,15 +34,15 @@ As long as I keep track of the places that I need to refactor, fix bugs, develop
 
 **Data structutes**
 
-Some data structures have bugs, namely Hashmap, the rehashing is not working as expected in all the situations. Naming of the data structures are also poor, need some refactoring, some data structures that implemented do not behave as they should because I misunderstood them, example is LRUCache. However the correct implementation can be found in problem solving section.
+Some data structures have bugs, namely Hashmap, the rehashing is not working as expected in all the situations. Naming of the data structures are also poor, need some refactoring. In some cases I have more than one data structure implementation, I should keep just the best. Some data structures implemented do not behave as they should because I misunderstood them, example is LRUCache. However the correct implementation can be found in problem solving section. 
 
-More testes are requires for the data structures in order they can be trusted.
+More testes are required in order this data structures can be entrusted.
 
 
 
 **Algorithms**
 
-I need to clean and refactor this classes. I've implemented much more algorithms than those there, many of them are embedded in problem solving, others in the implementation of data structures, I might extract them from those places or reimplement them again.
+I need to clean and refactor this packages classes too	. I've implemented much more algorithms than those there, many of them are embedded in problem solving, others in the implementation of data structures, I might extract them from those places or reimplement them again.
 
 More tests are required for the algorithms.
 
@@ -62,8 +62,14 @@ One of the most important classes in this package is LeetcodeUtils. This class a
 
 ```java
 
-//Deserialize String to int array
+//Deserialize String to 1D int array
 int [] nums = stringToArray("[100, 4, 200, 1, 3, 2]");
+
+//Deserialize String to 2D int array
+int [][] matrix = stringToMatrix("[[7,24],[29,33],[45,57],[66,69],[94,99]]");
+
+//Deserialize String to Tree
+TreeNode n = stringToTreeNode("[5,2,3,4,5,null,null,null,null,6,3,null,null,8]");
 
 ```
 
@@ -75,17 +81,23 @@ Besides the will to improve the deserializer for int arrays to support NDimentio
 
 **Comments**
 
-Not all the questions comments share the same layout. You will find a tiny portion of problems where the comments section has a different layout, probably less attributes, or less separators. This is happens because during the process I have been improving the comments and new comment attribute that I find relevant, and each time A new element is added I don't go back and update 160 files, it's very time consuming. Not very productive, and as stated earlier it is not the "core business". 
+Not all the questions comments share the same layout. You will find a tiny portion of problems where the comments section has a different layout, probably less attributes, or less separators. This happens because I have been improving the comments layout and attributes along the way, and each time a new element is added I don't go back and update 160 files for the sake of consistency, it's very time consuming. Not very productive, and as stated earlier it is not the "core business". 
 
-For this reason comment sections are updated from time from time. Just Like the documentation itself.
+For this reason comment sections are updated from time to time. Just Like the documentation, the focus will always be to solve problems.
 
 
 
-# Problems
+**Package names**
 
-In this package you will find the majority of Leetcode problems that I've solved. All problems where solved independently, no copy pasting. I consulted other people solutions only after developing my own. That way I was able to confirm that I was learning and not just memorizing solutions which can happen when you jump directly to the solutions without coding a single line. The defining factor to solve this kind of problems is to know how to think. From there all the technical knowledge is a plus. It will help you do the job quicker, cleaner and more efficiently.
+The package names needs refactoring
 
-## 
+
+
+# Problems Package
+
+In this package you will find the majority of Leetcode problems that I've solved. All problems where solved independently, no copy pasting. I consulted other people's solutions only after developing my own. That way I was able to confirm that I was learning and not just memorizing solutions which can happen when you jump directly to the solutions without coding a single line. The defining factor to solve this kind of problems is to know how to think. From there all the technical knowledge is a plus. It will help you do the job quicker, cleaner and more efficiently.
+
+
 
 ## Problem Class
 
@@ -161,4 +173,4 @@ Is a sections that indicates the end of my solutions and the start of other solu
 
 ## Problem Tests
 
-In many situations I have created test cases in the main method instead of a separate test class. It is much faster and as Leetcode has its own test system, creating separated tests is indeed a redundant and unrewarding work. It results in better code display for sure but leetcode itself has a testcase console, so for the sake of produtivity I'll to keep myself away of creating segregated classes to test my solutions. And test directly in the main method.
+In many situations I have created test cases in the main method instead of a separate test class. It is much faster and as Leetcode has its own test system, creating separated tests is indeed a redundant and unrewarding work. It results in better code display for sure but leetcode itself has a testcase console, so for the sake of produtivity I'll to keep myself away of creating segregated classes (despite initial effort) and test directly in the main method.
