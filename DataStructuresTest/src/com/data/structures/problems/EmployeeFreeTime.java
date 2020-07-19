@@ -15,16 +15,6 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  */
 public class EmployeeFreeTime extends LeetCodeExercise{
 
-	private static List<Interval> convertToInterval(int [][] intervals){
-		List<Interval> result = new ArrayList<>();
-		for (int[] inter : intervals)
-		{
-			result.add(new Interval(inter[0],inter[1]));
-		}
-
-		return result;
-	}
-
 	static EmployeeFreeTime e = new EmployeeFreeTime();
 	static EmployeeFreeTimeUnofficialSolution1 e2 = new EmployeeFreeTimeUnofficialSolution1();
 	static EmployeeFreeTimeSolution2 e3 = new EmployeeFreeTimeSolution2();
@@ -41,6 +31,17 @@ public class EmployeeFreeTime extends LeetCodeExercise{
 		System.out.println(Arrays.toString(e2.employeeFreeTime(input).toArray()));
 		System.out.println(Arrays.toString(e3.employeeFreeTime(input).toArray()));
 
+	}
+	
+
+	private static List<Interval> convertToInterval(int [][] intervals){
+		List<Interval> result = new ArrayList<>();
+		for (int[] inter : intervals)
+		{
+			result.add(new Interval(inter[0],inter[1]));
+		}
+
+		return result;
 	}
 	
 	/*********************************
