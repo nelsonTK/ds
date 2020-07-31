@@ -32,7 +32,7 @@ As long as I keep track of the places that I need to refactor, fix bugs, develop
 
 
 
-**Data structutes**
+## **Data structutes**
 
 Some data structures have bugs, namely Hashmap, the rehashing is not working as expected in all the situations. Naming of the data structures are also poor, need some refactoring. In some cases I have more than one data structure implementation, I should keep just the best. Some data structures implemented do not behave as they should because I misunderstood them, example is LRUCache. However the correct implementation can be found in problem solving section. 
 
@@ -40,7 +40,7 @@ More testes are required in order this data structures can be entrusted.
 
 
 
-**Algorithms**
+## **Algorithms**
 
 I need to clean and refactor this packages classes too	. I've implemented much more algorithms than those there, many of them are embedded in problem solving, others in the implementation of data structures, I might extract them from those places or reimplement them again.
 
@@ -48,13 +48,13 @@ More tests are required for the algorithms.
 
 
 
-**Performance/Benchmarking**
+## **Performance/Benchmarking**
 
 Benchmarking class is not completed, it supports functions where the input is an array of integers. But It is supposed to support other types of signatures in order to benchmark a broader set of problems.
 
 
 
-**Utils**
+## **Utils**
 
 One of the most important classes in this package is LeetcodeUtils. This class allows me to copy and paste Leetcode inputs and deserialize them for the correct object, this is a great help if I need to debug my code for whatever reason and a massive produtivity tool. At the moment there are two deserializers. Int Array, which supports from 1D to 2D arrays. And Tree deserializer that works perfectly fine.
 
@@ -79,7 +79,7 @@ Besides the will to improve the deserializer for int arrays to support NDimentio
 
 
 
-**Comments**
+## **Comments**
 
 Not all the questions comments share the same layout. You will find a tiny portion of problems where the comments section has a different layout, probably less attributes, or less separators. This happens because I have been improving the comments layout and attributes along the way, and each time a new element is added I don't go back and update 160 files for the sake of consistency, it's very time consuming. Not very productive, and as stated earlier it is not the "core business". 
 
@@ -87,7 +87,7 @@ For this reason comment sections are updated from time to time. Just Like the do
 
 
 
-**Package names**
+## **Package names**
 
 The package names needs refactoring
 
