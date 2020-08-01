@@ -18,9 +18,9 @@ Implementation of util classes which helps setting up Leetcode exercises easily.
 
 # Disclaimer
 
-The chances are I'm gonna share this repository with recruiters. However this project was not created with the intention to showcase, but rather to learn. This means that some practices used might be controversial. Like keeping different implementations for the same problem. This allows me to benchmark two solution quickly. And see how they behave from a time complexity point of view, side by side. 
+The chances are I'm gonna share this repository with recruiters. However this project was not created with the intention to showcase, but rather to learn. This means that some practices used might be controversial. Like keeping different implementations for the same problem. This allows me to benchmark two solutions quickly. And see how they behave from a time complexity point of view, side by side. 
 
-Copy and pasting solutions is not encoraged and was not practiced, so all the code you find is original code, except the section specially created for other people's code, which is clearly identified.
+Copy and pasting solutions is not encoraged and was not practiced, so all the code you find is original code, except the section specially dedicated to other people's code, which is clearly identified by #Others Solutions#.
 
 
 
@@ -42,15 +42,16 @@ More testes are required in order this data structures can be entrusted.
 
 ## **Algorithms**
 
-I need to clean and refactor this packages classes too	. I've implemented much more algorithms than those there, many of them are embedded in problem solving, others in the implementation of data structures, I might extract them from those places or reimplement them again.
+I need to clean and refactor this package. I've implemented much more algorithms than those there, many of them are embedded in problem solving, others in the implementation of data structures, I might extract them from those places or reimplement them again.
 
 More tests are required for the algorithms.
 
 
 
 ## **Performance/Benchmarking**
-
-Benchmarking class is not completed, it supports functions where the input is an array of integers. But It is supposed to support other types of signatures in order to benchmark a broader set of problems.
+The goal of this package is to provide a tool that allows me to compare the performance of too different solutions.
+Benchmarking class is not completed, in the sense it only supports functions where the input is an array of integers. 
+In the future it is expected to add support for other signatures in order to be able to compare a broader range of solutions.
 
 
 
@@ -95,13 +96,13 @@ The package names needs refactoring
 
 # Problems Package
 
-In this package you will find the majority of Leetcode problems that I've solved. All problems where solved independently, no copy pasting. I consulted other people's solutions only after developing my own. That way I was able to confirm that I was learning and not just memorizing solutions which can happen when you jump directly to the solutions without coding a single line. The defining factor to solve this kind of problems is to know how to think. From there all the technical knowledge is a plus. It will help you do the job quicker, cleaner and more efficiently.
+In this package you will find the majority of Leetcode problems that I've solved. All problems where solved independently, no copy pasting. I consulted other people's solutions only after developing my own. That way I was able to confirm that I was learning and not just memorizing solutions which can happen when you jump directly to solutions without coding a single line. The defining factor to solve this kind of problems is to know how to think. From there all the technical knowledge is a plus. It will help you do the job quicker, cleaner and more efficiently.
 
 
 
 ## Problem Class
 
-This is the class where I solve the problems.
+This is the class where I solve the problems. Normaly each class has the same name of the exercise.
 
 ### Naming
 
@@ -131,17 +132,20 @@ At the top of the class you will find the link of the problem, and the difficult
 
 #### Solution Comments
 
-This is the comments that you find at the top of the solution. Here you can find the following tags.
+This is the comments you find at the top of the solution. The commets are divided in the following tags:
 
 
 
 *@intuition*
 
-- This is the gist behind my solution brefly explained
+- This is the gist of my solution briefly explained
 
 *@score*
 
-- This is my solution's score compared with other submissions. Note that over time Leetcode performance tend to worsen because of system load. Solutions that in the past were 2ms, might take 4ms in the future. This score is more like a guide but its precision is dubious because it also depends on the current load.
+- This is how my solution's scores compared with other submissions. Note that over time Leetcode performance tend to worsen because of system load. Solutions that in the past were 2ms, might take 4ms in the future. This score is more like a guide but its precision is dubious because the performance of solutions are non deterministic. run the some code multiple times and see the time took varying.
+- Also keep in mind that sometimes a better time complexity do not immediatly translates to a better runtime. It can behave worst than a worst time complexity solution. It depends on the size of the input. But in the long run, as the input grows the better time complexity solution will catch up and take less time.
+
+![Algorithm Analysis & Time Complexity Simplified | by ...](https://miro.medium.com/max/631/1*iEbD3x2S5KOiEI6ZOltp9w.png)
 
 *@time*
 
@@ -173,4 +177,4 @@ Is a sections that indicates the end of my solutions and the start of other solu
 
 ## Problem Tests
 
-In many situations I have created test cases in the main method instead of a separate test class. It is much faster and as Leetcode has its own test system, creating separated tests is indeed a redundant and unrewarding work. It results in better code display for sure but leetcode itself has a testcase console, so for the sake of produtivity I'll to keep myself away of creating segregated classes (despite initial effort) and test directly in the main method.
+In many situations I have created test cases in the main method instead of a separate test class. It is much faster and as Leetcode has its own test system, creating separated tests is indeed a redundant and unrewarding work. It results in better code display for sure but leetcode itself has a testcase console, so for the sake of produtivity I'll to keep myself away of creating segregated classes (despite initial effort), and I'll test directly in the main method.

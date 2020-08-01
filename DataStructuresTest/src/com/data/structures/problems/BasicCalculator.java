@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * https://leetcode.com/problems/basic-calculator/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class BasicCalculator {
 
 	public static void main(String[] args) {
