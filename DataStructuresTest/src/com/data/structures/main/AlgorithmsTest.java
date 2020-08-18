@@ -1,7 +1,7 @@
 package com.data.structures.main;
 
 import com.data.structures.algos.AlgoPractice;
-import com.data.structures.algos.MergeSort1;
+import com.data.structures.algos.MergeSort;
 import com.data.structures.algos.QuickSort3;
 import com.data.structures.utils.PrintHelper;
 
@@ -11,18 +11,19 @@ public class AlgorithmsTest {
 		// TODO Auto-generated method stub
 		int [] array = AlgorithmsTest.createArray(8);
 		//bubbleSortTest(array);
-		//mergeSortTest(array);
+		mergeSortTest(array);
 //		AlgoPractice.MergeSortFirst(array);
 //		AlgoSolutions.mergersort(array);
 		//AlgoPractice.quickSort(array);
-		PrintHelper.printArray(array);
-		QuickSort3.quickSort(array);
+		//PrintHelper.printArray(array);
+		//QuickSort3.quickSort(array);
 		//Collections.swap(new ArrayList<String>(), 0, 4); 
 	}
 
 	public static void mergeSortTest(int [] array) {
 		//Algorithm.MergeSort(array);
-		MergeSort1.MergeSort(array);
+		//MergeSort1.mergeSort0(array);
+		MergeSort.mergeSort(array);
 	}
 
 	public static void bubbleSortTest(int array[]) {

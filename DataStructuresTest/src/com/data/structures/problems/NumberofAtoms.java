@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
+import java.util.TreeMap;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
@@ -26,6 +28,9 @@ public class NumberofAtoms extends LeetCodeExercise{
 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		use a stack to solve this problem.
@@ -224,4 +229,47 @@ public class NumberofAtoms extends LeetCodeExercise{
 			return name.toString() + (quantity == 1 ? "" : "" + quantity);
 		}
 	}
+}
+
+/*********************
+* OTHERS SOLUTIONS
+*********************/
+class NumberofAtomsSolution2 {
+    public String countOfAtoms(String formula) {
+        int N = formula.length();
+        Stack<Map<String, Integer>> stack = new Stack();
+        stack.push(new TreeMap());
+
+        for (int i = 0; i < N;) {
+            if (formula.charAt(i) == '(') {
+                stack.push(new TreeMap());
+                i++;
+            } else if (formula.charAt(i) == ')') {
+                Map<String, Integer> top = stack.pop();
+                int iStart = ++i, multiplicity = 1;
+                while (i < N && Character.isDigit(formula.charAt(i))) i++;
+                if (i > iStart) multiplicity = Integer.parseInt(formula.substring(iStart, i));
+                for (String c: top.keySet()) {
+                    int v = top.get(c);
+                    stack.peek().put(c, stack.peek().getOrDefault(c, 0) + v * multiplicity);
+                }
+            } else {
+                int iStart = i++;
+                while (i < N && Character.isLowerCase(formula.charAt(i))) i++;
+                String name = formula.substring(iStart, i);
+                iStart = i;
+                while (i < N && Character.isDigit(formula.charAt(i))) i++;
+                int multiplicity = i > iStart ? Integer.parseInt(formula.substring(iStart, i)) : 1;
+                stack.peek().put(name, stack.peek().getOrDefault(name, 0) + multiplicity);
+            }
+        }
+
+        StringBuilder ans = new StringBuilder();
+        for (String name: stack.peek().keySet()) {
+            ans.append(name);
+            int multiplicity = stack.peek().get(name);
+            if (multiplicity > 1) ans.append("" + multiplicity);
+        }
+        return new String(ans);
+    }
 }

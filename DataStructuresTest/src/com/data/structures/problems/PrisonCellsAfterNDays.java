@@ -7,6 +7,12 @@ import java.util.List;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/prison-cells-after-n-days/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class PrisonCellsAfterNDays extends LeetCodeExercise{
 
 	static PrisonCellsAfterNDays p = new PrisonCellsAfterNDays();
@@ -213,6 +219,11 @@ public class PrisonCellsAfterNDays extends LeetCodeExercise{
 	 * 		1) The first mathematical formula failed because I assumed that the cycles would be perfect, 
 	 * 		always from begining to end, but it can be different, the nodes co go to any of the previous
 	 *
+	 * @time
+	 * 		O()
+	 * 
+	 * @space
+	 *		O()
 	 **/
 	public int[] prisonAfterNDays(int[] cells, int n) {
 

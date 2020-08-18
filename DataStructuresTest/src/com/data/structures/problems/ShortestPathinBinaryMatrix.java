@@ -6,6 +6,12 @@ import java.util.Queue;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/shortest-path-in-binary-matrix/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class ShortestPathinBinaryMatrix extends LeetCodeExercise
 {
 	static ShortestPathinBinaryMatrix s = new ShortestPathinBinaryMatrix();
