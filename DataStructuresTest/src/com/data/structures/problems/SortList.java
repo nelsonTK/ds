@@ -26,7 +26,7 @@ public class SortList extends LeetCodeExercise{
 	}
 
 	/*********************************
-	* SOLUTION  1
+	* SOLUTION  2
 	********************************/
 	/**
 	 * @intuition
@@ -43,7 +43,8 @@ public class SortList extends LeetCodeExercise{
 	 *  	2) mergeHalves was wrong the limits where wrong once again for the same reason
 	 *  	3) nullpointer exception because of fast pointer and the changes to include size
 	 *  	4) a lot of errors related with the pointers
-	 *  	5) all nodes were linked and caused a lot of trouble, the solution itself is messy
+	 *  	5) all nodes were linked and caused a lot of trouble, the solution itself is messy 
+	 *  	[started a fresh new implementation and had no errors]
 	 *  
 	 * @comment
 	 * 		The question asked for a O(1) space complexity, I need to repeat it because my solution don't respect that requirement

@@ -66,6 +66,8 @@ public class QuickSort3 {
 			if (fromLeft < fromRight)
 			{
 				swap(a, fromLeft, fromRight);
+				fromLeft++;
+				fromRight--;
 			}
 			else
 			{

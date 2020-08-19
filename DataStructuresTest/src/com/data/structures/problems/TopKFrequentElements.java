@@ -33,7 +33,7 @@ public class TopKFrequentElements extends LeetCodeExercise{
 	/**************************************
 	 * SOLUTION 1
 	 *************************************/
-	
+
 	/**
 	 *  [ATTENTION THE ANSWER FORMAT IS WRONG IN LEETCODE, IT ASKS LIST<INTEGER> BUT EXPECTS IS INT[] 
 	 *  
@@ -191,6 +191,9 @@ public class TopKFrequentElements extends LeetCodeExercise{
 }
 
 
+/*********************
+ * OTHERS SOLUTIONS
+ *********************/
 /**
  * Interesting solution, very interesting solution
  * 
@@ -221,7 +224,7 @@ public class TopKFrequentElements extends LeetCodeExercise{
  *
  */
 class TopKFrequentElementsSolution1 {
-	
+
 	/**
 	 * up to date return type
 	 * 

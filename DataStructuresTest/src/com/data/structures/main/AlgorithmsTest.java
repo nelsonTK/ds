@@ -3,20 +3,21 @@ package com.data.structures.main;
 import com.data.structures.algos.AlgoPractice;
 import com.data.structures.algos.MergeSort;
 import com.data.structures.algos.QuickSort3;
+import com.data.structures.problems.ds.LeetCodeExercise;
 import com.data.structures.utils.PrintHelper;
 
-public class AlgorithmsTest {
+public class AlgorithmsTest extends  LeetCodeExercise{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] array = AlgorithmsTest.createArray(8);
 		//bubbleSortTest(array);
-		mergeSortTest(array);
+//		mergeSortTest(array);
 //		AlgoPractice.MergeSortFirst(array);
 //		AlgoSolutions.mergersort(array);
 		//AlgoPractice.quickSort(array);
 		//PrintHelper.printArray(array);
-		//QuickSort3.quickSort(array);
+		QuickSort3.quickSort(stringToArray("[2,3,4,1,4,0,4,-1,-2,-1]"));
 		//Collections.swap(new ArrayList<String>(), 0, 4); 
 	}
 
