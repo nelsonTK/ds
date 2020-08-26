@@ -24,7 +24,7 @@ Copy and pasting solutions is not encoraged and was not practiced, so all the co
 
 
 
-# On Going Project
+# On Going Work
 
 This is an on going project, with emphasis on problem solving. Which means that all the other parallel developments became subsidiary of this main goal. At the time of writing (July 2020) I've many packages that requires improvements. Hopefully I'll get there sooner than later.
 
