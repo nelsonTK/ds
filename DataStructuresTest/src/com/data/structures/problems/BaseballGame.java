@@ -20,6 +20,8 @@ public class BaseballGame extends LeetCodeExercise {
 	 * 		I used stack to solve this problem.
 	 * 		I always maintained numbers in the stack and after going thorugh all the array I just sum up the values in the stack and return a total
 	 * 
+	 * 		I use a lot of code for my solution because Im protecting against empty stack.
+	 * 
 	 * 		It's a Greedy Solution
 	 * 	
 	 * 	@score
