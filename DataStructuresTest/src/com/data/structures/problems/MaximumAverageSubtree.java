@@ -2,12 +2,21 @@ package com.data.structures.problems;
 
 import com.data.structures.problems.ds.TreeNode;
 
+/**
+ * https://leetcode.com/problems/maximum-average-subtree
+ * MED
+ * @author Nelson Costa
+ *
+ */
 public class MaximumAverageSubtree {
 
 	public static void main(String[] args) {
 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
     double max;
     Pair empty = new Pair();
     /**

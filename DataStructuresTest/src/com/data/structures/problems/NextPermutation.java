@@ -2,6 +2,12 @@ package com.data.structures.problems;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/next-permutation/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class NextPermutation extends LeetCodeExercise{
 	static NextPermutation n = new NextPermutation();
 	public static void main(String[] args) {
