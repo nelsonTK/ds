@@ -8,6 +8,12 @@ import java.util.Set;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/design-snake-game/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class DesignSnakeGame extends LeetCodeExercise{
 
 	static DesignSnakeGame d = new DesignSnakeGame();
@@ -25,6 +31,10 @@ public class DesignSnakeGame extends LeetCodeExercise{
 		System.out.println(s.move("U"));
 
 	}
+	
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 	@intuition
 	 * 		Despite it has worked it consumes too much memory

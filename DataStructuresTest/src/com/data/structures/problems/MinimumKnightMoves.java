@@ -9,7 +9,8 @@ import java.util.Set;
 import com.data.structures.problems.ds.LeetCodeExercise;
 
 /**
- * 
+ * https://leetcode.com/problems/minimum-knight-moves/
+ * MEDIUM
  * @author Nelson Costa
  *
  */
@@ -303,6 +304,9 @@ public class MinimumKnightMoves extends LeetCodeExercise{
 	}
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * This is the top 2 solution
  * 

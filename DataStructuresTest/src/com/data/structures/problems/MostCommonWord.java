@@ -5,13 +5,22 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/problems/most-common-word/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class MostCommonWord {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
-	//
+
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Nothing fancy was applied, I just broke the paragraph in pieces and when a word is finished I added it to the mapcounter.

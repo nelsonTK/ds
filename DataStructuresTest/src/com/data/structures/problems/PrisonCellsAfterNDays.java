@@ -75,8 +75,6 @@ public class PrisonCellsAfterNDays extends LeetCodeExercise{
 				//previous advances
 				prev = cur;
 			}
-			//cells[0] = 0;
-			//cells[cells.length - 1] = 0;
 		}
 
 

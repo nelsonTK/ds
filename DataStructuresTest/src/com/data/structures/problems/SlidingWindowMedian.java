@@ -7,6 +7,12 @@ import java.util.PriorityQueue;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/sliding-window-median/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class SlidingWindowMedian extends LeetCodeExercise{
 	static SlidingWindowMedian s = new SlidingWindowMedian();
 	static SlidingWindowMedianUnofficialSolution1 s1 = new SlidingWindowMedianUnofficialSolution1();

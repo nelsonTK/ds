@@ -13,6 +13,12 @@ import java.util.stream.Collectors;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/design-search-autocomplete-system/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class DesignSearchAutocompleteSystem extends LeetCodeExercise {
 	static DesignSearchAutocompleteSystem d = new DesignSearchAutocompleteSystem();
 	public static void main(String[] args) {
@@ -36,6 +42,9 @@ public class DesignSearchAutocompleteSystem extends LeetCodeExercise {
 	}
 
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		The goal here was to create a Trie that can save the state of the searches 

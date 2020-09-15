@@ -17,6 +17,9 @@ public class AddStrings {
 	}
 
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @comments
 	 * 		I could better use math operations like mode to get the value for instance

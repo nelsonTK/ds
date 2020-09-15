@@ -26,6 +26,9 @@ public class BinarySearchTreeIterator extends LeetCodeExercise{
 		boolean param_2 = obj.hasNext();
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * 

@@ -39,6 +39,9 @@ public class RemoveInvalidParentheses {
 	Set<String> ans;
 
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		in the nutshell I break the string in 3 parts based on parentheses

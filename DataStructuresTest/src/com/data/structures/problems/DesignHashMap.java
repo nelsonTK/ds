@@ -15,18 +15,18 @@ public class DesignHashMap {
 	 * 		Super Lazy implementation given the level of difficulty was easy
 	 * 
 	 * 	@score
-			Runtime: 88 ms, faster than 15.67% of Java online submissions for Design HashMap.
-			Memory Usage: 91.2 MB, less than 5.05% of Java online submissions for Design HashMap.
-		
-		@comments
-			I could have done better If added more optimizations like increase capacity has the array grows.
-		
-		@time
-			O(1)
-			
-		@space
-			O(1)
-			
+	 * 		Runtime: 88 ms, faster than 15.67% of Java online submissions for Design HashMap.
+	 *		Memory Usage: 91.2 MB, less than 5.05% of Java online submissions for Design HashMap.
+	 *	
+	 *	@comments
+	 *		I could have done better If added more optimizations like increase capacity has the array grows.
+	 *	
+	 *	@time
+	 *		O(1)
+	 *		
+	 *	@space
+	 *		O(1)
+	 *		
 	 * @author Nelson Costa
 	 *
 	 */

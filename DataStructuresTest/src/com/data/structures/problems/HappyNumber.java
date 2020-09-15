@@ -3,6 +3,12 @@ package com.data.structures.problems;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/problems/happy-number/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class HappyNumber {
 
 	public static void main(String[] args) {
@@ -10,6 +16,9 @@ public class HappyNumber {
 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		put duplicates in the set, as soon as we find a duplicate we return false;
@@ -28,7 +37,6 @@ public class HappyNumber {
         while(num > 0 && num != 1)
         {
             num = digitCalc(num);
-            //System.out.println(num);
             if(!set.add(num))
                 return false;
         }

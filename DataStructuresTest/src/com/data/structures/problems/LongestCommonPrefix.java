@@ -16,7 +16,10 @@ public class LongestCommonPrefix {
 	
 	
     int size = 0; String ans = "";
-    
+
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
     /**
      * @intuition
      * 		It is just a simple solution with trie, it was made at maximum speed so I had not much time to think about other possibilities

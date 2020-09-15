@@ -3,6 +3,12 @@ package com.data.structures.problems;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://leetcode.com/problems/strong-password-checker/
+ * HARD
+ * @author Nelson Costa
+ *
+ */
 public class StrongPasswordChecker {
 	/**
 	 * 
@@ -41,6 +47,9 @@ public class StrongPasswordChecker {
 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/** 
 	 * 
 	 * [WRONG]
@@ -164,23 +173,6 @@ public class StrongPasswordChecker {
 					return (int) Math.abs(finalState[size]) + finalState[caseCheck] + finalState[digit];
 				}
 			}
-			/*
-            if (finalState[size] > finalState[caseCheck])
-            {
-                //ignore caseCheck
-
-                result = finalState[size] + finalState[repeated];
-            }
-            //not bigger but it is positive we can discount caseCheck
-            else if (finalState[size] > 0)
-            {
-                result = finalState[caseCheck] - finalState[size] + finalState[repeated];
-            }
-            else //when size is negative which means the password is too big
-            {
-                result = finalState[caseCheck] + Math.abs(finalState[size]) + finalState[repeated];
-            }
-			 */
 		}
 
 
@@ -322,19 +314,9 @@ public class StrongPasswordChecker {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	 /*********************************
+	 * SOLUTION 2
+	 ********************************/
 	/** 
 	 * 
 	 * [WRONG]

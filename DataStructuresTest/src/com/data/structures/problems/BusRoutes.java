@@ -25,6 +25,8 @@ public class BusRoutes extends LeetCodeExercise{
 	}
 
 	/**
+	 * [FAIL]
+	 * 
 	 * @fail
 	 * 		1) passed the object instead of the value in the neighhbor inspection phase
 	 * 		2) initialization of stations is wrong at the graph stage

@@ -1,5 +1,11 @@
 package com.data.structures.problems;
 
+/**
+ * https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class FindtheSmallestDivisorGivenaThreshold {
 
 	public static void main(String[] args) {
@@ -8,6 +14,9 @@ public class FindtheSmallestDivisorGivenaThreshold {
 	}
 
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		The intuition for this problem is to find a value between a minimum and a maximum. 

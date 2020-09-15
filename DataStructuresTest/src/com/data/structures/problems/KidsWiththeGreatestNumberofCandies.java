@@ -17,6 +17,9 @@ public class KidsWiththeGreatestNumberofCandies {
 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Just a straigth forward solution
@@ -57,6 +60,9 @@ public class KidsWiththeGreatestNumberofCandies {
 }
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Same concept but using Streams
  * @author Nelson Costa

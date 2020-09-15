@@ -59,6 +59,9 @@ public class SnakesandLadders extends LeetCodeExercise{
 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		The intuition is to do breath first search over the 6 possibilities of each cell.
@@ -207,6 +210,9 @@ public class SnakesandLadders extends LeetCodeExercise{
 }
 
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * 
  * 

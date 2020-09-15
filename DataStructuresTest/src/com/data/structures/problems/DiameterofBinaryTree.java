@@ -25,7 +25,10 @@ public class DiameterofBinaryTree extends LeetCodeExercise{
         solve(root);
         return max;
     }
-    
+
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
     /**
      * 
      * @intuition

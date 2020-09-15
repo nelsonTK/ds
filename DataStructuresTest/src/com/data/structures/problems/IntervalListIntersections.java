@@ -16,6 +16,10 @@ public class IntervalListIntersections {
 	}
     int start = 0;
     int end = 1;
+
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
     /** 
      * @intuition
      * 		The intuition is simple, is try to compare the intervals in a greedy way

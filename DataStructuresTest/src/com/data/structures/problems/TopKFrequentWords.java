@@ -29,6 +29,9 @@ public class TopKFrequentWords extends LeetCodeExercise{
 		 
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * @score
@@ -88,6 +91,9 @@ public class TopKFrequentWords extends LeetCodeExercise{
 
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * This is n log k solution
  * because they never let heap get bigger than k

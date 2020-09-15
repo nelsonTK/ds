@@ -93,20 +93,16 @@ public class BasicCalculator {
 			//if digit add all the number to math expression
 			if (Character.isDigit(s.charAt(i)))
 			{
-				//curNum = new StringBuilder("");
-				//curNum.append(s.charAt(i));
 				curNum = 0;
 				curNum = 10 * curNum + (s.charAt(i) - '0');
 				i++;
 
 				while(i < s.length() && Character.isDigit(s.charAt(i)))
-				{            
-					//curNum.append(s.charAt(i));    
+				{               
 					curNum = 10 * curNum + (s.charAt(i) - '0');
 					i++;
 				}
-
-				//mathExpression.add(Integer.parseInt(curNum.toString()));    
+ 
 				mathExpression.add(curNum);     
 			}
 			// if open parentheses we open a new dfs and update our index

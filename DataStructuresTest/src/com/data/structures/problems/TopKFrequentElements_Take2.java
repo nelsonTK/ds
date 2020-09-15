@@ -4,6 +4,12 @@ import java.util.HashMap;
 
 import com.data.structures.problems.ds.LeetCodeExercise;
 
+/**
+ * https://leetcode.com/problems/top-k-frequent-elements/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class TopKFrequentElements_Take2 extends LeetCodeExercise{
 
 	static TopKFrequentElements_Take2 t = new TopKFrequentElements_Take2();
@@ -22,6 +28,9 @@ public class TopKFrequentElements_Take2 extends LeetCodeExercise{
 
 	HashMap<Integer, Integer> freq;
 	int k;
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 
 	 * @score
