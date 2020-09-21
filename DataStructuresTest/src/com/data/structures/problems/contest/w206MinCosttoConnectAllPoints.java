@@ -15,11 +15,11 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  * @author Nelson Costa
  *
  */
-public class MinCosttoConnectAllPoints extends LeetCodeExercise {
+public class w206MinCosttoConnectAllPoints extends LeetCodeExercise {
 
 	public static void main(String[] args) {
 		int [][] points = stringToMatrix("[[0,0],[2,2],[3,10],[5,2]");
-		MinCosttoConnectAllPoints m = new MinCosttoConnectAllPoints();
+		w206MinCosttoConnectAllPoints m = new w206MinCosttoConnectAllPoints();
 		System.out.println(m.minCostConnectPoints(points));
 	}
 

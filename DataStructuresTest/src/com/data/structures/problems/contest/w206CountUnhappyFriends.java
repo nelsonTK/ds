@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author Nelson Costa
  *
  */
-public class CountUnhappyFriends {
+public class w206CountUnhappyFriends {
 
 	public static void main(String[] args) {
 

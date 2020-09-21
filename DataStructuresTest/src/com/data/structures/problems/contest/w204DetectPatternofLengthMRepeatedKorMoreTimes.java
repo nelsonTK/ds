@@ -11,8 +11,8 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  * @author Nelson Costa
  *
  */
-public class DetectPatternofLengthMRepeatedKorMoreTimes extends LeetCodeExercise{
-	static DetectPatternofLengthMRepeatedKorMoreTimes d = new DetectPatternofLengthMRepeatedKorMoreTimes();
+public class w204DetectPatternofLengthMRepeatedKorMoreTimes extends LeetCodeExercise{
+	static w204DetectPatternofLengthMRepeatedKorMoreTimes d = new w204DetectPatternofLengthMRepeatedKorMoreTimes();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] arr = stringToArray("[1,2,4,4,4,4]");

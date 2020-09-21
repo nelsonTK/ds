@@ -7,7 +7,7 @@ package com.data.structures.problems.contest;
  * @author Nelson Costa
  *
  */
-public class WaterBottles {
+public class w198WaterBottles {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

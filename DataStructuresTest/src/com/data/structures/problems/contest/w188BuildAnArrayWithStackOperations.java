@@ -10,7 +10,7 @@ import com.data.structures.problems.ds.LeetCodeExercise;
 	 * EASY
 	 * @param args
 	 */
-public class BuildAnArrayWithStackOperations extends LeetCodeExercise{
+public class w188BuildAnArrayWithStackOperations extends LeetCodeExercise{
 
 	/**
 	 * https://leetcode.com/problems/build-an-array-with-stack-operations/

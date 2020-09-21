@@ -7,7 +7,7 @@ package com.data.structures.problems.contest;
  * @author Nelson Costa
  *
  */
-public class SpecialPositionsinaBinaryMatrix {
+public class w206SpecialPositionsinaBinaryMatrix {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

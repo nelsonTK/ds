@@ -8,8 +8,8 @@ import com.data.structures.problems.ds.LeetCodeExercise;
  * @author Nelson Costa
  *
  */
-public class CountTripletsThatCanFormTwoArraysofEqualXOR extends LeetCodeExercise {
-	static CountTripletsThatCanFormTwoArraysofEqualXOR c = new CountTripletsThatCanFormTwoArraysofEqualXOR();
+public class w188CountTripletsThatCanFormTwoArraysofEqualXOR extends LeetCodeExercise {
+	static w188CountTripletsThatCanFormTwoArraysofEqualXOR c = new w188CountTripletsThatCanFormTwoArraysofEqualXOR();
 
 	public static void main(String[] args) {
 		int [] a =  stringToArray("[2,3,1,6,7]");
