@@ -3,6 +3,12 @@ package com.data.structures.problems.contest;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://leetcode.com/problems/rearrange-spaces-between-words/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class w207RearrangeSpacesBetweenWords {
 	/**
 	 * @intuition

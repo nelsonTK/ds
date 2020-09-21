@@ -2,8 +2,18 @@ package com.data.structures.problems.contest;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class b35MaximumSumObtainedofAnyPermutation {
 
+
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * [TIME LIMIT EXCEEDED]
 	 * 
@@ -25,7 +35,7 @@ public class b35MaximumSumObtainedofAnyPermutation {
 	 * @param request
 	 * @return
 	 */
-	public int maxSumRangeQuery(int[] nums, int[][] request) {
+	public int maxSumRangeQuery0(int[] nums, int[][] request) {
 
 		int size = (int)1e5+7;
 		Integer [] num = new Integer[size];
@@ -62,7 +72,74 @@ public class b35MaximumSumObtainedofAnyPermutation {
 
 		return (int) (total % (1_000_000_000 + 7));
 	}
+
+
+
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
+	/**
+	 * 
+	 * [UPSOLVING]
+	 * 
+	 * @intuition
+	 * 		the intuition works on top of my previous solution logic. 
+	 * 		Essentially multiply the biggest number for the biggest frequency.
+	 * 
+	 * 		But I use a few powerfull things here.
+	 * 
+	 * 		the sweepline algorithm to improve how I mark the frequency of the elements.
+	 * 
+	 * @time 
+	 * 		O(NLogN)
+	 * 		O(NLogN)
+	 * 
+	 * @space
+	 * 		O(N)
+	 * 
+	 * @param nums
+	 * @param requests
+	 * @return
+	 */
+	public int maxSumRangeQuery(int[] nums, int[][] requests) {
+		int n = nums.length;
+		int [] freq = new int[n];
+		int mod = 1_000_000_007;
+		
+		//Mark beginning and start of each interval
+		int start, end;
+		for (int[] r : requests)
+		{
+			start   = r[0];
+			end     = r[1];
+
+			if(end +1 < n)
+				freq[end+1]--;            
+			freq[start]++;
+		}
+
+		//Comulative sum, at the end all elements will have 
+		for (int i = 1; i < freq.length; i++)
+		{
+			freq[i] += freq[i - 1];
+		}
+
+		//sort from beginning to end
+		Arrays.sort(nums);
+		Arrays.sort(freq);
+
+		long ans = 0;
+		for (int i = n - 1; i >=0; i--)
+		{
+			ans += freq[i]*nums[i];
+		}
+
+		return (int)(ans % mod);
+	}
 }
+
+
+
 
 /**
  * The goal is add 1 to the start index, and subtract -1 to the element next to the end.
