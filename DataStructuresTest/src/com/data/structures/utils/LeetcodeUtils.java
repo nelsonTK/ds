@@ -1,6 +1,7 @@
 package com.data.structures.utils;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +36,30 @@ public final class LeetcodeUtils {
 		return array;
 	}
 
+
+	/**
+	 * Given a string return a list of lists
+	 * @param s
+	 * @return
+	 */
+	public static List<List<Integer>> stringToListOfLists(String s){
+
+		int [][] matrix = stringToMatrix(s);
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<Integer> row; 
+		for (int i = 0; i < matrix.length;i++)
+		{
+			row = new ArrayList<>();
+			for (int j = 0; j < matrix[i].length;j++)
+			{
+				row.add(matrix[i][j]);
+			}
+			result.add(row);
+		}
+		
+		return result;
+	}
+	
 	/**
 	 * Given a Leetcode serialized array, returns the array object
 	 * @param s

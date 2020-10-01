@@ -10,15 +10,16 @@ public class w207MaximumNonNegativeProductinaMatrix {
 	/**
 	 * 
 	 * @intuition
-	 * 		dynamic programming with pais that holds max value and min value.
-	 * 		the last position will have the greates and the smallest value.
+	 * 		dynamic programming with pairs that holds max value and min value.
+	 * 		the last position will have the greatest and the smallest value.
 	 * 		We could also use a 3D matrix instead of pair class.
 	 * 		the tricky part here is how to deal with rows and columns when they are not eligible.
 	 * 		because increasing the size of the array would not work because it would change the value of it.
 	 * 
 	 * 
 	 * @fail
-	 * 		1) Commited added in the array 1 line and 1 column with pair(1,1) and that caused the final result to be changed. It was a bad misjudgement that could be avoided if I tested my hypotheses.
+	 * 		1) Commited added in the array 1 line and 1 column with pair(1,1) and that caused the final result to be changed. 
+	 * 		It was a bad misjudgement that could be avoided if I tested my hypotheses.
 	 * 		
 	 * 
 	 * @score

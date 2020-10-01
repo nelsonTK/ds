@@ -1,5 +1,7 @@
 package com.data.structures.problems.ds;
 
+import java.util.List;
+
 import com.data.structures.utils.LeetcodeUtils;
 import com.data.structures.utils.PrintHelper;
 
@@ -19,6 +21,11 @@ public abstract class LeetCodeExercise {
 	public static int [] stringToArray(String s)
 	{
 		return LeetcodeUtils.stringToArray(s);
+	}
+	
+	public static List<List<Integer>> stringToListOfLists(String s)
+	{
+		return LeetcodeUtils.stringToListOfLists(s);
 	}
 
 	/**
