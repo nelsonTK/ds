@@ -72,7 +72,6 @@ public class Graph2<T> {
 
 		if (edges.size() == 0) {
 			edges.add(edge);
-			//			System.out.println("New Edge Created");
 		}
 		else
 		{
@@ -90,7 +89,6 @@ public class Graph2<T> {
 			else
 			{
 				edges.add(edge);
-				//				System.out.println("New Edge Created");
 			}
 
 		}
