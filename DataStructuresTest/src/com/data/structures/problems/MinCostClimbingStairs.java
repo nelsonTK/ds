@@ -1,5 +1,11 @@
 package com.data.structures.problems;
 
+/**
+ * https://leetcode.com/problems/min-cost-climbing-stairs/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class MinCostClimbingStairs {
 
 	/**

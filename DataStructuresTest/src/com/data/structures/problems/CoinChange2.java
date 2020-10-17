@@ -9,6 +9,9 @@ package com.data.structures.problems;
 public class CoinChange2 {
 
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
     /**
     * @intuition
     * 		The sense of this question is using the coin vs not using the coin.

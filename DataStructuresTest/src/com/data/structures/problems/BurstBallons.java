@@ -14,7 +14,10 @@ public class BurstBallons {
 	}
 
 
-    //I Messed up with the windows sizes, I was having my window too short
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	//I Messed up with the windows sizes, I was having my window too short
 	/**
 	 * @intuition
 	 * 		The intuition is very tough to explain for this question.
@@ -62,63 +65,66 @@ public class BurstBallons {
 	 * @param nums
 	 * @return
 	 */
-    public int maxCoins(int[] nums) {
-        // create dp matrix size == nums.length + 2
-        // add new array nums +2 len
-        // fill the array from i =  i < nums.length (+1 when adding to new array)
-        // fill position 0 and n with 1; 
-        
-        //create for from 1 to len of nums as window (winLen)
-        //iterate from 1 to len of num - window (winStart)
-        //iterate from 1 to 1 + winSize - 1 (lastBurst)
-        
-            //dp[winStart][winstart+winlen-1] = //Math.max();
-            //winEnd = winStart + winlen - 1
-        
-            //int cur = array[lastBurst] * array[winEnd + 1] * array[winStart - 1];
-            //if  (lastBurst + 1 >= winEnd) right is zero;
-                //int right = dp[lastBurst + 1][winEnd];
-            //if  (winstart >= lastBurst-1) left is zero;
-                //int left =  dp[winStart][lastBurst-1];//--dp[lastBurst - 1][winStart];
-           
-            // dp[winStart][winEnd] = Math.max(left + cur + right, dp[winStart][winEnd]);
-        
-        if (nums == null || nums.length == 0)
-            return 0;
-            
-        int [] arr = new int[nums.length + 2]; 
-        int [][] dp = new int [arr.length][arr.length];
-        
-        
-        //convert old array to [1, nums,  1]
-        for (int i = 0; i < nums.length; i++)
-        {
-            arr[i + 1] = nums[i];
-        }
-        arr[0] = 1;
-        arr[arr.length - 1] = 1;
-        
-        //perform dp with window logic
-        for (int winlen = 1; winlen <= nums.length; winlen++)
-        {
-            for (int winStart = 1; winStart <= nums.length + 1 - winlen; winStart++)
-            {
-                for (int lastBurst = winStart; lastBurst < winStart + winlen; lastBurst++ )
-                {
-                    int winEnd = winStart + winlen - 1;                    
-                    int cur = arr[lastBurst] * arr[winEnd + 1] * arr[winStart - 1];
-                    int right = dp[lastBurst + 1][winEnd];
-                    int left = dp[winStart][lastBurst - 1];
-                    
-                    dp[winStart][winEnd] = Math.max(left + cur + right, dp[winStart][winEnd]);
-                }
-            }
-        }
-        return dp[1][arr.length-2];
-    }
+	public int maxCoins(int[] nums) {
+		// create dp matrix size == nums.length + 2
+		// add new array nums +2 len
+		// fill the array from i =  i < nums.length (+1 when adding to new array)
+		// fill position 0 and n with 1; 
+
+		//create for from 1 to len of nums as window (winLen)
+		//iterate from 1 to len of num - window (winStart)
+		//iterate from 1 to 1 + winSize - 1 (lastBurst)
+
+		//dp[winStart][winstart+winlen-1] = //Math.max();
+		//winEnd = winStart + winlen - 1
+
+		//int cur = array[lastBurst] * array[winEnd + 1] * array[winStart - 1];
+		//if  (lastBurst + 1 >= winEnd) right is zero;
+		//int right = dp[lastBurst + 1][winEnd];
+		//if  (winstart >= lastBurst-1) left is zero;
+		//int left =  dp[winStart][lastBurst-1];//--dp[lastBurst - 1][winStart];
+
+		// dp[winStart][winEnd] = Math.max(left + cur + right, dp[winStart][winEnd]);
+
+		if (nums == null || nums.length == 0)
+			return 0;
+
+		int [] arr = new int[nums.length + 2]; 
+		int [][] dp = new int [arr.length][arr.length];
+
+
+		//convert old array to [1, nums,  1]
+		for (int i = 0; i < nums.length; i++)
+		{
+			arr[i + 1] = nums[i];
+		}
+		arr[0] = 1;
+		arr[arr.length - 1] = 1;
+
+		//perform dp with window logic
+		for (int winlen = 1; winlen <= nums.length; winlen++)
+		{
+			for (int winStart = 1; winStart <= nums.length + 1 - winlen; winStart++)
+			{
+				for (int lastBurst = winStart; lastBurst < winStart + winlen; lastBurst++ )
+				{
+					int winEnd = winStart + winlen - 1;                    
+					int cur = arr[lastBurst] * arr[winEnd + 1] * arr[winStart - 1];
+					int right = dp[lastBurst + 1][winEnd];
+					int left = dp[winStart][lastBurst - 1];
+
+					dp[winStart][winEnd] = Math.max(left + cur + right, dp[winStart][winEnd]);
+				}
+			}
+		}
+		return dp[1][arr.length-2];
+	}
 }
 
 
+/*********************
+ * OTHERS SOLUTIONS
+ *********************/
 /**
  * I cannot understand this solution quite well but I see similarities with my solution
  * @author Nelson Costa
@@ -126,29 +132,29 @@ public class BurstBallons {
  */
 class BurstBallonsSolution2{
 
-    public int maxCoins(int[] nums) {
-        // reframe the problem
-        int n = nums.length + 2;
-        int[] new_nums = new int[n];
+	public int maxCoins(int[] nums) {
+		// reframe the problem
+		int n = nums.length + 2;
+		int[] new_nums = new int[n];
 
-        for(int i = 0; i < nums.length; i++){
-            new_nums[i+1] = nums[i];
-        }
+		for(int i = 0; i < nums.length; i++){
+			new_nums[i+1] = nums[i];
+		}
 
-        new_nums[0] = new_nums[n - 1] = 1;
+		new_nums[0] = new_nums[n - 1] = 1;
 
-        // dp will store the results of our calls
-        int[][] dp = new int[n][n];
+		// dp will store the results of our calls
+		int[][] dp = new int[n][n];
 
-        // iterate over dp and incrementally build up to dp[0][n-1]
-        for (int left = n-2; left > -1; left--)
-            for (int right = left+2; right < n; right++) {
-                for (int i = left + 1; i < right; ++i)
-                    // same formula to get the best score from (left, right) as before
-                    dp[left][right] = Math.max(dp[left][right],
-                    new_nums[left] * new_nums[i] * new_nums[right] + dp[left][i] + dp[i][right]);
-            }
+		// iterate over dp and incrementally build up to dp[0][n-1]
+		for (int left = n-2; left > -1; left--)
+			for (int right = left+2; right < n; right++) {
+				for (int i = left + 1; i < right; ++i)
+					// same formula to get the best score from (left, right) as before
+					dp[left][right] = Math.max(dp[left][right],
+							new_nums[left] * new_nums[i] * new_nums[right] + dp[left][i] + dp[i][right]);
+			}
 
-        return dp[0][n - 1];
-    }
+		return dp[0][n - 1];
+	}
 }

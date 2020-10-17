@@ -6,12 +6,21 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/problems/course-schedule/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class CourseSchedule {
 	int white = 0;
 	int grey = 1;
 	int black = 2; 
 
-	
+
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		Graph coloring exercise, the challenge of this exercise was to find if the graph had cycle

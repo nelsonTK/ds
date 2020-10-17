@@ -23,6 +23,9 @@ public class MaximumSubarray extends LeetCodeExercise {
 		System.out.println("max sum: " + m.maxSubArray(a));
 	}
 
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * @intuition
 	 * 		1) Negative numbers never sum up its always about the largest of the negative numbers
@@ -105,6 +108,9 @@ public class MaximumSubarray extends LeetCodeExercise {
 		return max;
 	}
 
+	/*********************************
+	 * SOLUTION 2
+	 ********************************/
 	/**
 	 * @intition
 	 * 		just comparing the current with the following, if the current is negative, we continue the sum only if the carry stays positive after sum
@@ -116,7 +122,7 @@ public class MaximumSubarray extends LeetCodeExercise {
 	 * @score
 			Runtime: 1 ms, faster than 66.32% of Java online submissions for Maximum Subarray.
 			Memory Usage: 39.4 MB, less than 9.39% of Java online submissions for Maximum Subarray.
-			
+
 	 * @fail
 	 * 		1) I was not dealing with the case where the negative number is first and adds to a positive number, reducing possible values.
 	 * 		2) I excluded zero from the sum, it was a mistake 
@@ -145,7 +151,7 @@ public class MaximumSubarray extends LeetCodeExercise {
 
 		for(int i = 0; i < a.length - 1; i++)
 		{
-			
+
 			if(a[i] < 0 || carry + a[i] + a[i + 1] < 0)
 			{
 				if (carry > 0)
@@ -179,6 +185,9 @@ public class MaximumSubarray extends LeetCodeExercise {
 	}
 }
 
+/*********************
+ * OTHERS SOLUTIONS
+ *********************/
 /**
  * Very Clean solution with Dynamic programming
  * 
@@ -190,15 +199,15 @@ public class MaximumSubarray extends LeetCodeExercise {
  *
  */
 class MaximumSubarraySolution3 {
-	  public int maxSubArray(int[] nums) {
-	    int n = nums.length, maxSum = nums[0];
-	    for(int i = 1; i < n; ++i) {
-	      if (nums[i - 1] > 0) nums[i] += nums[i - 1];
-	      maxSum = Math.max(nums[i], maxSum);
-	    }
-	    return maxSum;
-	  }
+	public int maxSubArray(int[] nums) {
+		int n = nums.length, maxSum = nums[0];
+		for(int i = 1; i < n; ++i) {
+			if (nums[i - 1] > 0) nums[i] += nums[i - 1];
+			maxSum = Math.max(nums[i], maxSum);
+		}
+		return maxSum;
 	}
+}
 
 /**
  * Greedy solution
@@ -206,22 +215,22 @@ class MaximumSubarraySolution3 {
  * @score
   		Runtime: 1 ms, faster than 66.32% of Java online submissions for Maximum Subarray.
 		Memory Usage: 39.3 MB, less than 9.39% of Java online submissions for Maximum Subarray.
-		 
+
  * @author Nelson Costa
  *
  */
 class MaximumSubarraySolution2 {
-	  public int maxSubArray(int[] nums) {
-	    int n = nums.length;
-	    int currSum = nums[0], maxSum = nums[0];
+	public int maxSubArray(int[] nums) {
+		int n = nums.length;
+		int currSum = nums[0], maxSum = nums[0];
 
-	    for(int i = 1; i < n; ++i) {
-	      currSum = Math.max(nums[i], currSum + nums[i]);
-	      maxSum = Math.max(maxSum, currSum);
-	    }
-	    return maxSum;
-	  }
+		for(int i = 1; i < n; ++i) {
+			currSum = Math.max(nums[i], currSum + nums[i]);
+			maxSum = Math.max(maxSum, currSum);
+		}
+		return maxSum;
 	}
+}
 
 /**
  * The worst performing solution but is that catch my most interest
@@ -239,39 +248,39 @@ class MaximumSubarraySolution2 {
  *
  */
 class MaximumSubarraySolution1 {
-	  public int crossSum(int[] nums, int left, int right, int p) {
-	    if (left == right) return nums[left];
+	public int crossSum(int[] nums, int left, int right, int p) {
+		if (left == right) return nums[left];
 
-	    int leftSubsum = Integer.MIN_VALUE;
-	    int currSum = 0;
-	    for(int i = p; i > left - 1; --i) {
-	      currSum += nums[i];
-	      leftSubsum = Math.max(leftSubsum, currSum);
-	    }
+		int leftSubsum = Integer.MIN_VALUE;
+		int currSum = 0;
+		for(int i = p; i > left - 1; --i) {
+			currSum += nums[i];
+			leftSubsum = Math.max(leftSubsum, currSum);
+		}
 
-	    int rightSubsum = Integer.MIN_VALUE;
-	    currSum = 0;
-	    for(int i = p + 1; i < right + 1; ++i) {
-	      currSum += nums[i];
-	      rightSubsum = Math.max(rightSubsum, currSum);
-	    }
+		int rightSubsum = Integer.MIN_VALUE;
+		currSum = 0;
+		for(int i = p + 1; i < right + 1; ++i) {
+			currSum += nums[i];
+			rightSubsum = Math.max(rightSubsum, currSum);
+		}
 
-	    return leftSubsum + rightSubsum;
-	  }
-
-	  public int helper(int[] nums, int left, int right) {
-	    if (left == right) return nums[left];
-
-	    int p = (left + right) / 2;
-
-	    int leftSum = helper(nums, left, p);
-	    int rightSum = helper(nums, p + 1, right);
-	    int crossSum = crossSum(nums, left, right, p);
-
-	    return Math.max(Math.max(leftSum, rightSum), crossSum);
-	  }
-
-	  public int maxSubArray(int[] nums) {
-	    return helper(nums, 0, nums.length - 1);
-	  }
+		return leftSubsum + rightSubsum;
 	}
+
+	public int helper(int[] nums, int left, int right) {
+		if (left == right) return nums[left];
+
+		int p = (left + right) / 2;
+
+		int leftSum = helper(nums, left, p);
+		int rightSum = helper(nums, p + 1, right);
+		int crossSum = crossSum(nums, left, right, p);
+
+		return Math.max(Math.max(leftSum, rightSum), crossSum);
+	}
+
+	public int maxSubArray(int[] nums) {
+		return helper(nums, 0, nums.length - 1);
+	}
+}

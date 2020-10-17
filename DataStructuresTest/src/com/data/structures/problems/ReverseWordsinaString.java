@@ -12,6 +12,9 @@ import java.util.List;
  */
 public class ReverseWordsinaString {
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/** 
 	 * @intuition
 	 * 		3 pass solution using string api
@@ -55,6 +58,9 @@ public class ReverseWordsinaString {
 	}
 }
 
+/*********************
+* OTHERS SOLUTIONS
+*********************/
 /**
  * Well done using the string API
  * @author Nelson Costa

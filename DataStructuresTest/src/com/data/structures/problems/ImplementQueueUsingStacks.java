@@ -2,9 +2,18 @@ package com.data.structures.problems;
 
 import java.util.Stack;
 
+/**
+ * https://leetcode.com/problems/implement-queue-using-stacks/
+ * EASY
+ * @author Nelson Costa
+ *
+ */
 public class ImplementQueueUsingStacks {
 	
-	
+
+	 /*********************
+	 * OTHERS SOLUTIONS
+	 *********************/
 	/**
 	 * @Intuition
 	 * 		this is like the obvious implementation of a queue using stacks
