@@ -9,9 +9,23 @@ package com.data.structures.problems.contest;
  */
 public class b37CoordinateWithMaximumNetworkQuality {
 	/**
-	 * Runtime: 43 ms, faster than 100.00% of Java online submissions for Coordinate With Maximum Network Quality.
-	 * Memory Usage: 39.2 MB, less than 50.00% of Java online submissions for Coordinate With Maximum Network Quality.
-	 * 
+	 * @intuition
+	 * 		The intuition was to create a square that covers all the points
+	 * 		and than calculate the maximum quality for every point inside
+	 * 		
+	 * @media
+	 * 		https://imgur.com/4ulbfEc
+	 * 		
+	 * @score	 
+	 * 		Runtime: 43 ms, faster than 100.00% of Java online submissions for Coordinate With Maximum Network Quality.
+	 * 		Memory Usage: 39.2 MB, less than 50.00% of Java online submissions for Coordinate With Maximum Network Quality.
+	 * 		
+	 * @time
+	 * 		
+	 * 		
+	 * @space
+	 * 		
+	 * 		
 	 * @author Nelson Costa
 	 *
 	 */

@@ -33,7 +33,7 @@ public class QuickSort3 {
 
 		int pivot = l + ((r - l) >> 1);
 		
-		//Partition
+        //Partition, get pivot correct position with all elements on the right greater, and left smaller
 		int partitionIndex = partitioning(a, pivot, l, r);
 		
 		//Repeat for left and right site

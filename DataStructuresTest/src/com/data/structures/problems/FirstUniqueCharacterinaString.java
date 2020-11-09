@@ -10,7 +10,7 @@ public class FirstUniqueCharacterinaString {
 
 	/**
 	 * @intuition
-	 * 		Nothing special, just a counter for the leathers.
+	 * 		Nothing special, just a counter for the letters.
 	 * 		perhaps there is a way of do it in one pass
 	 *  
 	 *  @score

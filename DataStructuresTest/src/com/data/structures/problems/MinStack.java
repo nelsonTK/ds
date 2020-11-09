@@ -1,6 +1,7 @@
 package com.data.structures.problems;
 
 import java.util.ArrayDeque;
+import java.util.Stack;
 import java.util.TreeMap;
 
 /**
@@ -83,5 +84,57 @@ public class MinStack {
 	public int getMin() {
 		return map.firstKey();
 	}
+}
+
+
+/**	
+ * @intuition
+ * 		using a stack to maintain the current and the min value
+ * 
+ * @score
+ * 		Runtime: 4 ms, faster than 91.18% of Java online submissions for Min Stack.
+ * 		Memory Usage: 40.5 MB, less than 11.66% of Java online submissions for Min Stack.
+ * 
+ * @time
+ * 		O(N)
+ * 
+ * @space
+ * 		O(N)
+ * 
+ * @author Nelson Costa
+ *
+ */
+class MinStack2 {
+    Stack<int[]> stack;
+    /** initialize your data structure here. */
+    public MinStack2() {
+        stack = new Stack<>();
+    }
+    
+    public void push(int x) {
+        if (stack.isEmpty())
+        {
+            stack.push(new int[]{x, x});
+        }
+        else
+        {
+            stack.push(new int[]{x, Math.min(stack.peek()[1], x)});
+        }
+    }
+    
+    public void pop() {
+        if (!stack.isEmpty())
+            stack.pop();
+    }
+    
+    public int top() {
+        
+        return stack.peek()[0];
+        
+    }
+    
+    public int getMin() {
+        return stack.peek()[1];
+    }
 }
 

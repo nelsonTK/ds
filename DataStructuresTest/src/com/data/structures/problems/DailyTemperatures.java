@@ -1,5 +1,7 @@
 package com.data.structures.problems;
 
+import java.util.Stack;
+
 /**
  * https://leetcode.com/problems/daily-temperatures/
  * MEDIUM
@@ -9,7 +11,7 @@ package com.data.structures.problems;
 public class DailyTemperatures {
 
 
-	 /*********************************
+	/*********************************
 	 * SOLUTION 1
 	 ********************************/
 	/**
@@ -38,7 +40,7 @@ public class DailyTemperatures {
 	 * @param t
 	 * @return
 	 */
-	public int[] dailyTemperatures(int[] t) {
+	public int[] dailyTemperatures0(int[] t) {
 
 		if (t.length == 1)
 			return new int[]{0};
@@ -69,10 +71,68 @@ public class DailyTemperatures {
 
 		return ans;
 	}
+
+
+	/*********************************
+	 * SOLUTION 1
+	 ********************************/
+	/**
+	 * @intuition
+	 * 		The solution is stack based, we start from the end and 
+	 * 		we add in the stack the value and the index
+	 * 		and when we find in the stack a value that is greater we dont remove it and we add to the answer the subtraction of the indexes
+	 * 
+	 * @scope
+	 * 		Runtime: 19 ms, faster than 35.62% of Java online submissions for Daily Temperatures.
+	 *		Memory Usage: 48.5 MB, less than 7.74% of Java online submissions for Daily Temperatures.
+	 * 
+	 * @time
+	 * 		O(N)
+	 * 
+	 * @space
+	 * 		O(N)
+	 * 
+	 * @author Nelson Costa
+	 *
+	 */
+	public int[] dailyTemperatures(int[] t) {
+		Stack<int []> stack = new Stack<>();
+		int [] ans = new int[t.length];
+
+		for (int i = t.length - 1; i >= 0; i--)
+		{
+			if (stack.isEmpty())
+			{
+				ans[i] = 0;
+			}
+			else
+			{
+				//remove elements if they are smaller, keep larger elements
+				while (!stack.isEmpty() && t[i] >= stack.peek()[0])
+				{
+					stack.pop();
+				}
+
+				//subtract indexes
+				if (stack.isEmpty())
+				{
+					ans[i] = 0;
+				}
+				else if (t[i] < stack.peek()[0])
+				{
+					ans[i] = stack.peek()[1] - i;
+				}
+			}
+
+			stack.push(new int [] {t[i], i});
+		}
+
+		return ans;
+	}
 }
 
 
 
 /*********************
-* OTHERS SOLUTIONS
-*********************/
+ * OTHERS SOLUTIONS
+ *********************/
