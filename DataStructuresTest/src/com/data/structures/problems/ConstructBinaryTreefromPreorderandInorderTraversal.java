@@ -131,7 +131,7 @@ class UnofficialSolution {
 	   int pos[] = new int[]{0,0};
 	    public TreeNode buildTree(int[] preorder, int[] inorder) {
 	        return buildTree(preorder, inorder, null);
-	    }
+	    } 
 
 	    public TreeNode buildTree(int[] preorder,int[] inorder, TreeNode parent) {
 	        if (pos[0] == preorder.length){
