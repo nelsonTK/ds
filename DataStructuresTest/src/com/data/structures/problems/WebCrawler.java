@@ -99,7 +99,6 @@ public class WebCrawler {
 
 	private String getHost(String url){
 		int start = "http://".length();
-		char c = url.charAt(start);
 		int i = start;
 
 		StringBuilder host = new StringBuilder("");

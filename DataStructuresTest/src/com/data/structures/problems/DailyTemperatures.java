@@ -74,7 +74,7 @@ public class DailyTemperatures {
 
 
 	/*********************************
-	 * SOLUTION 1
+	 * SOLUTION 2
 	 ********************************/
 	/**
 	 * @intuition
