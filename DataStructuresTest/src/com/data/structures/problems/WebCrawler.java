@@ -36,6 +36,9 @@ public class WebCrawler {
 	 *  //if has the same host add to queue / compare ids
 	 *  //update hostid with not present
 	 * 	
+	 * @comments
+	 * 		I could have used slipt instead of a custom method for getting the host
+	 * 
 	 * @score
 	 * 		Runtime: 4 ms, faster than 86.67% of Java online submissions for Web Crawler.
 	 * 		Memory Usage: 46.6 MB, less than 5.03% of Java online submissions for Web Crawler.

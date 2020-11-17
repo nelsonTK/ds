@@ -32,6 +32,7 @@ public class EvenFibonaccinumbers {
 			sum += (tmp) % 2 == 0? tmp : 0;
 			beforePrevious = previous;
 			previous = tmp;
+			System.out.println(i);
 		}
 		
 		return sum;

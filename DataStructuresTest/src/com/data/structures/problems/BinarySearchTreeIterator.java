@@ -24,6 +24,7 @@ public class BinarySearchTreeIterator extends LeetCodeExercise{
 		BSTIterator obj = b.new BSTIterator(t);
 		int param_1 = obj.next();
 		boolean param_2 = obj.hasNext();
+		System.out.println(param_1 + " " + param_2);
 	}
 
 	 /*********************************

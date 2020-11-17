@@ -313,7 +313,7 @@ class AnalyzeUserWebsiteVisitPatternUnofficialSolution2{
     }
 
     public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
-        List<Node> list = new ArrayList();
+        List<Node> list = new ArrayList<>();
         
         // add each web access to a list
         for(int i = 0; i < username.length; i++){
@@ -324,14 +324,14 @@ class AnalyzeUserWebsiteVisitPatternUnofficialSolution2{
         Collections.sort(list, (x,y)->x.time-y.time);
         
         //get a list of websites entered by the user
-        Map<String, List<String>> userWebMap = new HashMap();
+        Map<String, List<String>> userWebMap = new HashMap<>();
         for(int i = 0; i < list.size(); i++){
-            userWebMap.putIfAbsent(list.get(i).name, new ArrayList());
+            userWebMap.putIfAbsent(list.get(i).name, new ArrayList<>());
             userWebMap.get(list.get(i).name).add(list.get(i).web);
         }
         
         //for each user generate each 3 website pair in order
-        Map<List<String>, Integer> webUserFreqMap = new HashMap();
+        Map<List<String>, Integer> webUserFreqMap = new HashMap<>();
         for(String user: userWebMap.keySet()){
             Set<List<String>> seqs = generateWebsite(userWebMap.get(user));
             
@@ -342,7 +342,7 @@ class AnalyzeUserWebsiteVisitPatternUnofficialSolution2{
         
         // go through each set of 3 and grab the one that occours the most
         int max = 0;
-        List<String> res = new ArrayList();
+        List<String> res = new ArrayList<>();
         
         for(List<String> l: webUserFreqMap.keySet()){
             if(webUserFreqMap.get(l) > max){
@@ -366,12 +366,12 @@ class AnalyzeUserWebsiteVisitPatternUnofficialSolution2{
     // generates each 3 website combination the list is per user, inorder by time visited
     //uses collection as key
     Set<List<String>> generateWebsite(List<String> list){
-        Set<List<String>> set = new HashSet();
+        Set<List<String>> set = new HashSet<>();
         
         for(int i = 0; i < list.size(); i++){
             for(int j = i+1; j < list.size(); j++){
                 for(int k = j+1; k < list.size(); k++){
-                    List<String> l = new ArrayList();
+                    List<String> l = new ArrayList<>();
                     l.add(list.get(i));
                     l.add(list.get(j));
                     l.add(list.get(k));

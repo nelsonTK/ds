@@ -181,6 +181,7 @@ public class CheapestFlightsWithinKStops_Take1 extends LeetCodeExercise{
 	}
 
 
+	@SuppressWarnings("unused")
 	private int findCheapest1(int cur, int dst, int k, int curPrice) {
 
 		if (memo[cur] != 0)

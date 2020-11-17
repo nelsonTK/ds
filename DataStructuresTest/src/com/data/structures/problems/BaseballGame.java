@@ -126,7 +126,7 @@ public class BaseballGame extends LeetCodeExercise {
  */
 class BaseballGameSolution1 {
     public int calPoints(String[] ops) {
-        Stack<Integer> stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
 
         for(String op : ops) {
             if (op.equals("+")) {
