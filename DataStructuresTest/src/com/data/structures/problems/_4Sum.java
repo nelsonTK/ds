@@ -8,6 +8,10 @@ import java.util.Set;
 
 public class _4Sum {
 
+	public static void main(String[] args) {
+		
+	}
+	
 	Set<List<Integer>> repeated;
 	/**
 	 * @intuition
