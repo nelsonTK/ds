@@ -23,7 +23,7 @@ public class CoinChange2 {
     * 		the position y ; x - newcoin tells us how it is to use the coin, where x is the coin amount.
     * 		dp[y][x - newcoin] means to search if there is a coin at which we can sum the newcoin to return the desired amount
     * 
-    * 			not using = sum dp[r + 1][c] -> 
+    * 			not using = sum dp[r - 1][c] -> 
     *			using current = sum coin dp[r][c - coins[coinIndex]];
     *
     *	PROOFING

@@ -68,6 +68,9 @@ public class RotateArray {
 	 * 
 	 * @score
 	 * 
+	 * @fail
+	 * 		TLE, because I forgot to remove redundant elements
+	 * 
 	 * @time
 	 * 		O(N)
 	 * 
