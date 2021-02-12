@@ -34,10 +34,6 @@ public class WordBreak extends LeetCodeExercise {
 		s = "aaaaaaaaaaaaaaaaaaaaaaaaaaab";
 		words = new String[]{"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"};
 
-		//		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab		
-		//		["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]
-
-
 		List<String> wordDict = Arrays.asList(words);
 
 		System.out.println(b.wordBreak(s, wordDict));

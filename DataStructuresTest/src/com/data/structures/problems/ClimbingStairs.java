@@ -24,6 +24,9 @@ public class ClimbingStairs {
 		return calculateCombinations(0);
 	}
 
+	 /*********************************
+	 * SOLUTION 1
+	 ********************************/
 	/**
 	 * 	Runtime: 0 ms, faster than 100.00% of Java online submissions for Climbing Stairs.
 		Memory Usage: 36.2 MB, less than 5.26% of Java online submissions for Climbing Stairs.

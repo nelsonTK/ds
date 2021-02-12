@@ -135,7 +135,7 @@ class WordBreakSolution4 {
  * The one that reaches the end of the string with success is the branch that was able to succeed, thus meaning there is a combination possible.
  * 
  * 
- * O (N^2)
+ * O (N^3) because of substring
  * O (N)
  * 
  * 

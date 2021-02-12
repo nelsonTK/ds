@@ -1,5 +1,11 @@
 package com.data.structures.problems;
 
+/**
+ * https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class LongestSubstringwithAtLeastKRepeatingCharacters {
 
 	static LongestSubstringwithAtLeastKRepeatingCharacters l = new LongestSubstringwithAtLeastKRepeatingCharacters();
@@ -66,11 +72,21 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
 	}
 
 
-
-	//failed  1) I was increasing the end too early
-	//2) I was missing reducing the window
-	//3) I was not removing the count of elements that were past in the past
-	//4) fail because I dont update the numbers while running
+	/**
+	 * THIS IS WRONG
+	 * @intuition
+	 * 		Sliding Window
+	 * 
+	 * @fail
+	 * 		1) I was increasing the end too early
+	 * 		2) I was missing reducing the window
+	 * 		3) I was not removing the count of elements that were past in the past
+	 * 		4) fail because I dont update the numbers while running
+	 * 
+	 * @param s
+	 * @param k
+	 * @return
+	 */
 	public int longestSubstring(String s, int k) {
 
 		//k == 1 -> all word;

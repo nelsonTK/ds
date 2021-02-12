@@ -2,6 +2,11 @@ package com.data.structures.problems.contest;
 
 import com.data.structures.problems.ds.ListNode;
 
+/**
+ * 
+ * @author Nelson Costa
+ *
+ */
 public class b40MergeInBetweenLinkedLists {
 
 class Solution {
