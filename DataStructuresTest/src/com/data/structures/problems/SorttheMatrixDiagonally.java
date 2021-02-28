@@ -2,6 +2,11 @@ package com.data.structures.problems;
 
 import java.util.PriorityQueue;
 
+/**
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class SorttheMatrixDiagonally {
 
 	/**

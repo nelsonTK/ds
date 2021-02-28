@@ -2,6 +2,12 @@ package com.data.structures.problems;
 
 import java.util.HashMap;
 
+/**
+ * https://leetcode.com/problems/coin-change/
+ * MEDIUM
+ * @author Nelson Costa
+ *
+ */
 public class CoinChange_Take2 {
 
 	    /**
