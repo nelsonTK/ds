@@ -3,6 +3,30 @@ package com.data.structures.problems;
 import java.util.TreeMap;
 
 public class AdvantageShuffle {
+	/**
+	 * @intuition
+	 * 		The gist of this solution is to find the element imediatly bigger thant the b element
+	 * 		And for that I used a TreeMap I add all element to a tree map and then I search for the elements
+	 * 		Immediatly bigger than the one existing in b if not found I mark the position to visit later and fill in with any number.
+	 * 
+	 * @score
+	 * 		Runtime: 72 ms, faster than 30.67% of Java online submissions for Advantage Shuffle.
+	 * 		Memory Usage: 40.5 MB, less than 95.51% of Java online submissions for Advantage Shuffle.
+	 * 
+	 * @fail
+	 * 		Failed because of the ceilling functions is greater or equal and not only greater
+	 * 
+	 * @time
+	 * 		O(NLogN)
+	 * 
+	 * @space
+	 * 		O(N)
+	 * 
+	 * 
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	 public int[] advantageCount(int[] a, int[] b) {
 	        
 	        TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
